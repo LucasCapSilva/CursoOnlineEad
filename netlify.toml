@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "dist/curso-online"
+
+[build.environment]
+  NODE_OPTIONS = "--openssl-legacy-provider"
