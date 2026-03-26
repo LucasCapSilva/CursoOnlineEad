@@ -1,0 +1,62 @@
+<div class="container">
+
+  <div class="row mt-3 mb-5 d-flex justify-content-center">
+    <div class="col-md-8 shadow ">
+
+
+      <div class="row mt-3">
+        <div class="col">
+          <div class="form-group">
+            <label for="turma">Turma</label>
+            <select class="form-control" id="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()">
+              <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                {{turma.descricao}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="participante">Participante</label>
+            <select class="form-control" id="participante" [(ngModel)]="idUser" (change)="findByIdUser()">
+              <option *ngFor='let user of turma.users' value={{user.id}}>
+                {{user.nome}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group mt-3">
+            <label for="vulnerabilidade ">Nível de urgência</label>
+            <select class="form-control" id="vulnerabilidade" (change)='vulnerabilidade($event)'>
+              <option disabled selected hidden>Selecione o nivel de urgência</option>
+              <option *ngFor='let prioridade of listaPrioridade' value={{prioridade}}>
+                {{prioridade}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição do atendimento</label>
+        <textarea type="text" class="form-control" id="descricao" placeholder="Descreva aqui o atendimento" rows='7' maxlength="63000" [(ngModel)]='form.descricao'></textarea>
+        <div class="d-flex justify-content-end">
+          <span class="text-danger">{{63000 - form.descricao?.length}} caracteres restantes</span>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center mt-3 mb-3">
+        <button type="submit" class="btn btn-outline-success" (click)='finalizar()'>Finalizar</button>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
+
+

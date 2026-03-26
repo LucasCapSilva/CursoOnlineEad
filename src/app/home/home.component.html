@@ -1,0 +1,12 @@
+<div *ngIf='auth.instrutores() || auth.adm()'>
+  <app-area-facilitador></app-area-facilitador>
+</div>
+
+
+<div *ngIf='auth.participante()'>
+  <app-area-participante></app-area-participante>
+</div>
+
+<div *ngIf='auth.bemestar()'>
+  <app-area-bemestar></app-area-bemestar>
+</div>

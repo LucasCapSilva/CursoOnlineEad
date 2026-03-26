@@ -1,0 +1,513 @@
+img{
+  cursor: pointer;
+}
+
+.background-xmas{
+  background-image: url(../../assets/kisspng-hat-bonnet-christmas-icon-christmas-hats-5a7dcbf33946c7.5563254615181936512346.png)!important;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+#sidebar {
+  min-width: 270px;
+  max-width: 270px;
+  background: #2e86de;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  overflow: auto;
+  height: 100dvh;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+}
+
+#sidebar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #2e86de;
+}
+
+#sidebar::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #2e86de;
+}
+
+#sidebar::-webkit-scrollbar-thumb
+{
+	background-color: #fff;
+}
+
+#sidebar.active {
+  min-width: 80px;
+  max-width: 80px;
+  text-align: center;
+}
+#sidebar.active ul.components li {
+  font-size: 14px;
+}
+#sidebar.active ul.components li a {
+  padding: 10px 0;
+}
+#sidebar.active ul.components li a span {
+  margin-right: 0;
+  display: block;
+  font-size: 24px;
+}
+#sidebar.active .logo {
+  padding: 10px 0;
+}
+#sidebar.active .footer {
+  display: none;
+}
+#sidebar .logo {
+  display: block;
+  color: #fff;
+  font-weight: 900;
+  padding: 10px 30px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (prefers-reduced-motion: reduce) {
+  #sidebar .logo {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+#sidebar ul.components {
+  padding: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (prefers-reduced-motion: reduce) {
+  #sidebar ul.components {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+#sidebar ul li {
+  font-size: 16px;
+}
+#sidebar ul li > ul {
+  margin-left: 10px;
+}
+#sidebar ul li > ul li {
+  font-size: 14px;
+}
+#sidebar ul li a {
+  padding: 10px 30px;
+  display: block;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#sidebar ul li a span {
+  margin-right: 15px;
+}
+/* Breakpoint tablet/mobile até 1023px: ícones e textos do menu ficam visíveis no modo overlay */
+@media (max-width: 1023px) {
+  #sidebar ul li a span {
+    display: block;
+  }
+}
+#sidebar ul li a:hover {
+  color: #fff;
+}
+#sidebar ul li.active > a {
+  background: transparent;
+  color: #fff;
+}
+/* Breakpoint tablet/mobile até 1023px: sidebar vira gaveta lateral com animação */
+@media (max-width: 1023px) {
+  #sidebar {
+    min-width: 270px;
+    max-width: 270px;
+    text-align: left;
+    margin-left: -270px !important;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1040;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+  }
+  #sidebar.active {
+    margin-left: -270px !important;
+  }
+  #sidebar.mobile-open {
+    margin-left: 0 !important;
+  }
+  #sidebar ul li a span {
+    display: inline-block;
+  }
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Breakpoint tablet/mobile até 1023px: botão hambúrguer simplifica conteúdo textual auxiliar */
+@media (max-width: 1023px) {
+  #sidebarCollapse span {
+    display: none;
+  }
+}
+
+.footer {
+  padding: 0 30px;
+}
+/* Breakpoint tablet/mobile até 1023px: rodapé do menu permanece empilhado e legível */
+@media (max-width: 1023px) {
+  .footer {
+    display: inline;
+  }
+}
+/* Breakpoint tablet/mobile até 1023px: mantém rótulos acessíveis sem poluir visual do botão */
+@media (max-width: 1023px) {
+  #sidebarCollapse span {
+    display: none;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100dvh;
+}
+#content {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  min-height: 100dvh;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: auto;
+}
+
+#content::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #fff;
+}
+
+#content::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #fff;
+}
+
+#content::-webkit-scrollbar-thumb
+{
+	background-color: #2e86de;
+}
+
+.navbar {
+  padding: 15px 10px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 25px;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar-btn {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.btn.btn-primary {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+a {
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  color: #ffffff;
+}
+a:hover,
+a:focus {
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+/*footer social icons*/
+
+
+
+#social-network ul {
+  list-style: none;
+  display: inline;
+  padding: 0;
+}
+
+#social-network ul li {
+  display: inline;
+  margin: 0;
+  padding: 5px;
+}
+
+.fa-facebook, .fa-linkedin, .fa-instagram{
+    color: white;
+    font-size: 18pt !important;
+}
+
+.fa-facebook:hover{
+  color: #3b5998;
+}
+
+.fa-linkedin:hover{
+color: #0072b1;
+}
+
+.fa-instagram:hover{
+color: #C13584;
+}
+
+
+a{
+  color: #fff !important;
+}
+
+#content{
+  background-color: #fff;
+}
+
+#navbarcontent{
+  background-color: #2e86de;
+  box-shadow: 0px 0px 20px -10px rgba(0,0,0,0.75);
+}
+
+#nome{
+  color: #fff;
+  font-size: 1rem;
+}
+
+
+/*
+Botão lateral
+*/
+
+b{
+  position: fixed;
+  bottom:10px;
+  right:10px;
+}
+
+.fab button{
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #2e86de;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  font-size: 24px;
+  color: white;
+
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab button:hover{
+
+  color: red;
+}
+
+.fab button.main:hover{
+  background-color: #fff;
+}
+
+.fab button.main{
+  position: fixed;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+
+
+.fab button.main:active,
+.fab button.main:focus{
+  outline: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,.5);
+ }
+
+.fab button.main:active + ul,
+.fab button.main:focus + ul{
+  bottom: 70px;
+}
+
+.fab button.main:active + ul li,
+.fab button.main:focus + ul li{
+  margin-bottom: 10px;
+  opacity: 1;
+}
+
+.fab button.main:active + ul li:hover label,
+.fab button.main:focus + ul li:hover label{
+  opacity: 1;
+}
+
+a{
+  cursor: pointer;
+}
+
+#titulos{
+  padding: 6px 12px;
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.icon{
+    font-size: 22pt;
+}
+
+/* Breakpoint tablet/mobile até 1023px: ajusta barras de título e saudação para linhas múltiplas */
+@media (max-width: 1023px) {
+  #content {
+    padding-bottom: 16px;
+  }
+
+  #navbarcontent {
+    margin-bottom: 16px;
+  }
+
+  #titulos {
+    padding: 6px 0;
+  }
+}
+
+/* Breakpoint mobile até 767px: reduz paddings e tipografia para telas estreitas */
+@media (max-width: 767px) {
+  #content {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 10px !important;
+  }
+
+  #titulos {
+    font-size: 1rem;
+  }
+
+  #nome {
+    font-size: 0.95rem;
+  }
+
+  .navbar {
+    padding: 10px 8px;
+  }
+}
+
+#sidebarCollapse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+#sidebarCollapse:hover, #sidebarCollapse:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+  outline: none;
+  box-shadow: none;
+}
+
+.hamburger-lines {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 14px;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 999px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+
+#sidebarCollapse.is-open .hamburger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+#sidebarCollapse.is-open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#sidebarCollapse.is-open .hamburger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Additional fixes for mobile layout */
+@media (max-width: 767px) {
+  #sidebar {
+    width: 270px;
+    max-width: 100vw;
+  }
+  .navbar .btn-group img {
+    width: 20px !important;
+  }
+  #titulos {
+    font-size: 1.2rem;
+  }
+  #nome {
+    font-size: 1.1rem;
+  }
+}

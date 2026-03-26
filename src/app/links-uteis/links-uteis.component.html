@@ -1,0 +1,148 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-md-8">
+    <div class="accordion" id="accordionExample">
+      <div class="card border-0">
+        <button
+          class="btn btn-link btn-inserir border-0 p-0 collapsed rounded text-uppercase text-center font-weight-bold"
+          type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+          aria-controls="collapseTwo">
+          <div class="card-header inserir border-0" id="headingTwo">
+            <h5 class="mb-0">
+              Insira um novo link útil
+            </h5>
+          </div>
+        </button>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <div>
+              <div class="form-group">
+                <label class="" for="titulo">Descrição:</label>
+                <input type="text" class="form-control" name="descricao" id="descricao"
+                  placeholder="Insira aqui a descrição" [(ngModel)]='link.descricao'>
+              </div>
+
+              <div class="form-group">
+                <label class="" for="texto">Link:</label>
+                <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Insira aqui o link"
+                  [(ngModel)]='link.link'>
+              </div>
+
+              <div class="d-flex justify-content-center mt-5">
+                <button class="btn btn-outline-primary btn-responsive" (click)='findByLink()'>Inserir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<hr class="mt-5 mb-5 w-50">
+
+<div class="row mb-5 mt-5">
+  <div class="col-md-12">
+
+    <ul class="nav nav-tabs d-flex flex-nowrap" style="overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; border-bottom: none;" id="myTab" role="tablist">
+      <li class="nav-item flex-shrink-0">
+        <a class="nav-link text-secondary active" id="instrutores-menu" data-toggle="tab" href="#instrutores-conteudo"
+          role="tab" aria-controls="home" aria-selected="true">Links de Instrutores</a>
+      </li>
+      <li class="nav-item flex-shrink-0">
+        <a class="nav-link text-secondary" id="participante-menu" data-toggle="tab" href="#participante-conteudo"
+          role="tab" aria-controls="profile" aria-selected="false">Links de Participantes</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="instrutores-conteudo" role="tabpanel" aria-labelledby="instrutores">
+        <div class="table-responsive">
+  <table class="table table-hover table-borderless">
+
+          <thead>
+            <tr class="table-primary">
+              <th scope="col">Autor(a)</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Links</th>
+              <th scope="col">Modificar</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr
+              *ngFor='let link of listaLinksFixos | orderBy : key : reverse | paginate: { itemsPerPage: 5, currentPage: pageInstrutor }'>
+              <td>{{link.user.nome}}</td>
+              <td>{{link.descricao}}</td>
+              <td><a href="{{link.link}}" class="p-0" target="_blanck">{{link.link}}</a></td>
+              <div *ngIf='idUser == link.user.id; else nao'>
+                <td>
+                  <button class="btn btn-link" (click)="titulos('Editar Link', 'link')" [routerLink]="['/editar-links', link.id]">Editar</button>
+                </td>
+              </div>
+              <ng-template #nao>
+                <td>
+                  <button class="btn btn-link" disabled='disabled'
+                    [routerLink]="['/editar-links', link.id]">Editar</button>
+                </td>
+              </ng-template>
+            </tr>
+          </tbody>
+        </table>
+</div>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center">
+            <pagination-controls class="p-zero" (pageChange)="pageInstrutor = $event" previousLabel="Anterior"
+              nextLabel="Próximo" responsive="true">
+            </pagination-controls>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="participante-conteudo" role="tabpanel" aria-labelledby="participante-conteudo">
+        <div class="table-responsive">
+  <table class="table table-hover table-borderless">
+
+          <thead>
+            <tr class="table-primary">
+              <th scope="col">Autor(a)</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Links</th>
+              <th scope="col">Modificar</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr
+              *ngFor='let link of listaLinksDinamicos | orderBy : key : reverse | paginate: { itemsPerPage: 5, currentPage: page }'>
+              <td>{{link.user.nome}}</td>
+              <td>{{link.descricao}}</td>
+              <td><a href="{{link.link}}" class="p-0" target="_blanck">{{link.link}}</a></td>
+              <div *ngIf='idUser == link.user.id; else nao'>
+                <td>
+                  <button class="btn btn-link"  (click)="titulos('Editar Link', 'link')" [routerLink]="['/editar-links', link.id]">Editar</button>
+                </td>
+              </div>
+              <ng-template #nao>
+                <td>
+                  <button class="btn btn-link" disabled='disabled'
+                    [routerLink]="['/editar-links', link.id]">Editar</button>
+                </td>
+              </ng-template>
+            </tr>
+          </tbody>
+        </table>
+</div>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center">
+            <pagination-controls class="p-zero" (pageChange)="page = $event" previousLabel="Anterior"
+              nextLabel="Próximo" responsive="true">
+            </pagination-controls>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

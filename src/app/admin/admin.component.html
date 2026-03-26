@@ -1,0 +1,51 @@
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+    <a class="nav-item nav-link active text-primary font-weight-bold" id="nav-cadastros-tab" data-toggle="tab" href="#cadastros" role="tab"
+      aria-controls="nav-cadastro" aria-selected="true">Cadastro de Usuários</a>
+
+    <a class="nav-item nav-link text-primary font-weight-bold" id="nav-remocao-tab" data-toggle="tab" href="#remocao" role="tab"
+      aria-controls="nav-remocao" aria-selected="false">Remoção de Usuários</a>
+
+      <a *ngIf='auth.programas() == false' class="nav-item nav-link text-primary font-weight-bold" id="nav-revisao-tab" data-toggle="tab" href="#revisao" role="tab"
+      aria-controls="nav-revisao" aria-selected="false">Exercícios entre aulas</a>
+
+      <a *ngIf='auth.programas() == false' class="nav-item nav-link text-primary font-weight-bold" id="nav-obrig-tab" data-toggle="tab" href="#obrig" role="tab"
+      aria-controls="nav-obrig" aria-selected="false">Exercícios obrigatórios</a>
+
+      <a *ngIf='auth.programas() == false' class="nav-item nav-link text-primary font-weight-bold" id="nav-upload-tab" data-toggle="tab" href="#upload" role="tab"
+      aria-controls="nav-upload" aria-selected="false">Upload de Videos</a>
+
+      <a *ngIf='auth.programas() == false' class="nav-item nav-link text-primary font-weight-bold" id="nav-pendente-tab" data-toggle="tab" href="#userPendente" role="tab"
+      aria-controls="nav-upload" aria-selected="false">Email Atividades</a>
+
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+
+  <div class="tab-pane fade show active" id="cadastros" role="tabpanel" aria-labelledby="nav-cadastros-tab">
+    <app-cadastro></app-cadastro>
+  </div>
+
+  <div class="tab-pane fade" id="remocao" role="tabpanel" aria-labelledby="nav-remocao-tab">
+    <app-deletar-usuario></app-deletar-usuario>
+  </div>
+
+  <div class="tab-pane fade" id="revisao" role="tabpanel" aria-labelledby="nav-revisao-tab" *ngIf='auth.programas() == false'>
+    <app-criar-atividades-revisao></app-criar-atividades-revisao>
+  </div>
+
+  <div class="tab-pane fade" id="obrig" role="tabpanel" aria-labelledby="nav-obrig-tab" *ngIf='auth.programas() == false'>
+    <app-criar-exercicio-obrigatorio></app-criar-exercicio-obrigatorio>
+  </div>
+
+  <div class="tab-pane fade" id="upload" role="tabpanel" aria-labelledby="nav-upload-tab" *ngIf='auth.programas() == false'>
+    <app-cadastro-video></app-cadastro-video>
+  </div>
+
+  <div class="tab-pane fade" id="userPendente" role="tabpanel" aria-labelledby="nav-pendente-tab" *ngIf='auth.programas() == false'>
+    <app-user-pendente></app-user-pendente>
+  </div>
+
+</div>

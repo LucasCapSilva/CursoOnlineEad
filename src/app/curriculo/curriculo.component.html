@@ -1,0 +1,165 @@
+<div class="container wrap">
+
+  <div class="row d-flex justify-content-center">
+    <ng-container *ngIf='!curriculo.temCurriculo()'>
+      <div class="col-md-3 d-flex justify-content-center">
+        <a routerLink='/criar-curriculo' (click)="titulo('Criar', 'plus')">
+          <div class="card">
+            <p class="fa fa-plus"></p>
+            <h3>Criar</h3>
+          </div>
+        </a>
+      </div>
+
+    </ng-container>
+
+
+
+    <ng-container *ngIf='curriculo.temCurriculo()'>
+      <div class="col-md-3 d-flex justify-content-center">
+        <a [routerLink]="['/criar-curriculo','editar',idUser]" (click)="titulo('Alterar', 'pencil-square-o')">
+          <div class="card">
+            <p class="fa fa-pencil-square-o"></p>
+            <h3>Alterar meu curriculo</h3>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+    <div class="col-md-3 d-flex justify-content-center">
+      <a routerLink='/visualizar-curriculo' (click)="titulo('Visualizar', 'binoculars')">
+        <div class="card">
+          <p class="fa fa-binoculars"></p>
+          <h3>Visualizar meu curriculo</h3>
+        </div>
+      </a>
+    </div>
+    <ng-container *ngIf="auth.adm()||auth.programas()||auth.instrutores()">
+      <div class="col-md-3 d-flex justify-content-center">
+        <a routerLink='/visualizar-curriculo-turma' (click)="titulo('Visualizar', 'binoculars')">
+          <div class="card">
+            <p class="fa fa-binoculars"></p>
+            <h5>Visualizar curriculos em massa</h5>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="auth.adm()||auth.programas()">
+      <div class="col-md-3 d-flex justify-content-center">
+        <a data-toggle="modal" data-target="#exampleModal">
+          <div class="card">
+            <p class="fa fa-pencil-square-o"></p>
+            <h5>Alterar curriculos dos participantes</h5>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="auth.adm()||auth.programas()">
+      <div class="col-md-3 mt-5 d-flex justify-content-center">
+        <a data-toggle="modal" data-target="#exampleModal2">
+          <div class="card">
+            <p class="fa fa-pencil-square-o"></p>
+            <h5>Visualizar curriculo dos participantes</h5>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+
+
+  </div>
+
+
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Atualizar curriculo dos participantes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row mt-3">
+          <div class="col">
+            <div class="form-group">
+              <label for="turma">Turma</label>
+              <select class="form-control" id="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()">
+                <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                  {{turma.descricao}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="participante">Participante</label>
+              <select class="form-control" id="participante" [(ngModel)]="idUsuario" (change)="findByIdUser()">
+                <option *ngFor='let user of turma.users' value={{user.id}}>
+                  {{user.nome}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" [routerLink]="['/criar-curriculo','editar',idUsuario]"
+            (click)="titulo('Alterar', 'pencil-square-o')" data-dismiss="modal">Atualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Visualizar curriculo dos participantes</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row mt-3">
+          <div class="col">
+            <div class="form-group">
+              <label for="turma">Turma</label>
+              <select class="form-control" id="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()">
+                <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                  {{turma.descricao}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="participante">Participante</label>
+              <select class="form-control" id="participante" [(ngModel)]="idUsuario" (change)="findByIdUser()">
+                <option *ngFor='let user of turma.users' value={{user.id}}>
+                  {{user.nome}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" [routerLink]="['/visualizar-curriculo',idUsuario]"
+            (click)="titulo('Alterar', 'pencil-square-o')" data-dismiss="modal">Visualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="fab" ontouchstart="">
+  <a data-toggle="modal" data-target="#novaPostagem">
+      <button id="btn-bemestar" class="main d-flex align-items-center justify-content-center" >
+          <i class="fa fa-plus "></i>
+      </button>
+  </a>
+</div>
+
+
+<div class="modal " id="novaPostagem" tabindex="-1">
+ 
+      <div class="modal-content">
+
+          <div class="fab2" ontouchstart="">
+              <a href={{mensagem}} target="_blank" >
+                  <button id="btn-bemestar" class="main d-flex align-items-center justify-content-center" >
+                      <i class="fa fa-heartbeat"></i>
+                  </button>
+              </a>
+          </div>
+          <!-- todo -->
+          <div class="fab3" ontouchstart="">
+              <a>
+                  <button id="btn-bemestar" class="main d-flex align-items-center justify-content-center" data-toggle="modal" data-target="#empregabilidadeModal">
+                      <i class="fa fa-briefcase"></i>
+                  </button>
+              </a>
+          </div>
+          
+
+      </div>
+ 
+</div>
+
+
+<div class="modal fade" id="empregabilidadeModal" tabindex="-1" aria-labelledby="empregabilidadeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header button d-flex justify-content-center">
+          <i class="fa fa-briefcase fa-2x fac"></i> <h5 class="text-white m-sm-2">EMPREGABILIDADE</h5><i class="fa fa-briefcase fa-2x fac"></i>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label texts">Insira a sua duvida para o setor de empregabilidade!<br>Sua duvida será enviada por e-mail para o setor<br>de empregabilidade, logo retornaremos um e-mail de resposta.</label>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Menssagem:</label>
+            <textarea (input)='menssagemm($event)' class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+        <button type="button" class="btn btn-primary button" (click)="enviarDuvida()" data-dismiss="modal">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>

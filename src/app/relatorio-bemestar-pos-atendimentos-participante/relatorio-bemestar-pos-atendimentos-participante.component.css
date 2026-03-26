@@ -1,0 +1,14 @@
+.text{
+  font-size: 14pt !important;
+  text-decoration: none;
+}
+
+
+.card:hover .text{
+  color: #192a56 !important;
+
+}
+
+.card:hover{
+  border-color: #192a56 !important;
+}

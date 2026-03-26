@@ -1,0 +1,26 @@
+.w-icon{
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+}
+
+a{
+  cursor: pointer;
+
+}
+
+.listarTodos{
+  text-decoration: underline;
+}
+
+pagination-template.ul{
+  padding-left: 0px;
+}
+
+pagination-controls ::ng-deep ul.ngx-pagination {
+  padding: 0px 0px 0px 0px;
+}
+
+pagination-controls ::ng-deep ul li.current {
+  background: gray;
+}

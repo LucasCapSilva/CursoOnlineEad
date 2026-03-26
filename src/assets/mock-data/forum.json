@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "titulo": "Dúvida sobre Components",
+    "mensagem": "Como criar um componente com input properties?",
+    "autor": "João Silva",
+    "data": "2024-03-20T10:30:00",
+    "respostas": [
+      {
+        "id": 1,
+        "mensagem": "Use o decorator @Input() na propriedade do componente",
+        "autor": "Maria Santos",
+        "data": "2024-03-20T11:15:00"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "Problema com HTTP Client",
+    "mensagem": "Estou tendo erro CORS nas requisições HTTP",
+    "autor": "Pedro Oliveira",
+    "data": "2024-03-21T09:45:00",
+    "respostas": [
+      {
+        "id": 2,
+        "mensagem": "Verifique se o backend está configurado para CORS",
+        "autor": "Ana Costa",
+        "data": "2024-03-21T10:20:00"
+      },
+      {
+        "id": 3,
+        "mensagem": "Pode usar proxy no angular.json para desenvolvimento",
+        "autor": "Carlos Lima",
+        "data": "2024-03-21T11:30:00"
+      }
+    ]
+  }
+]

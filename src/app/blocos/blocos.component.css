@@ -1,0 +1,112 @@
+.fa{
+  font-size: 60pt;
+}
+
+.border-xmas{
+  background-image: url("../../assets/bordona.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.card{
+  background-color: #fff;
+  border: 0;
+  color: #4b4b4b;
+  box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 250px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#card-animation{
+  border:#3e64ff solid 5px;
+  animation: pisca 1s infinite;
+}
+
+#card-animation2{
+  border:#3e64ff solid 5px;
+  animation: pisca 1s infinite;
+}
+
+#card-animation2{
+  border:#3e64ff solid 5px;
+  animation: pisca 1s infinite;
+}
+
+#card-animation3{
+  border:#3e64ff solid 5px;
+  animation: pisca 1s infinite;
+}
+
+@keyframes pisca {
+  0%   {border-top-color: red;border-bottom-color: yellow; border-left-color: blue; border-right-color: green;}
+  25%   {border-top-color:yellow;border-bottom-color: blue; border-left-color: green; border-right-color: red;}
+  50%   {border-top-color:blue;border-bottom-color:green; border-left-color: red; border-right-color:yellow;}
+  100%  {border-top-color: green;border-bottom-color: red; border-left-color: yellow; border-right-color: blue;}
+
+}
+
+@keyframes pisca2 {
+  0%   {border-top-color: red;border-bottom: yellow; border-left-color: blue; border-right-color: green;}
+  25%   {border-top-color:yellow;border-bottom: blue; border-left-color: green; border-right-color: red;}
+  50%   {border-top-color:blue;border-bottom:green; border-left-color: red; border-right-color:yellow;}
+  100%  {border-top-color: green;border-bottom: red; border-left-color: yellow; border-right-color: blue;}
+}
+
+@keyframes pisca3 {
+  0%   {border-top-color: red;border-bottom: yellow; border-left-color: blue; border-right-color: green;}
+  25%   {border-top-color:yellow;border-bottom: blue; border-left-color: green; border-right-color: red;}
+  50%   {border-top-color:blue;border-bottom:green; border-left-color: red; border-right-color:yellow;}
+  100%  {border-top-color: green;border-bottom: red; border-left-color: yellow; border-right-color: blue;}
+}
+
+div.card p h3{
+ color: blue;
+}
+
+.card:hover{
+  /* color: #fff; */
+  height: 210px;
+  width: 210px;
+}
+
+#um:hover{
+  background-color: #ff5252;
+}
+
+#dois:hover{
+  background-color: #ffb142;
+}
+
+#tres:hover{
+  background-color: #227093;
+}
+
+#quatro:hover{
+  background-color: #218c74;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  word-break: break-word;
+}
+
+.card p.fa {
+  margin-bottom: 0;
+}

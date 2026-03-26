@@ -1,0 +1,39 @@
+.bg-darkblue{
+  background-color: #227093;
+}
+
+.bg-color{
+  background-color: 29FF14;
+}
+
+.color-y{
+  color:#ff9a0d;
+}
+
+.imagem:hover .texto {
+  display: block;
+}
+
+.texto{
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+.parallax {
+  /* The image used */
+  background-image: url("https://i.imgur.com/DsIdnMR.jpg");
+
+  /* Set a specific height */
+  min-min-height: 500px; height: auto;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

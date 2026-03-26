@@ -1,0 +1,54 @@
+
+<div class="form-group" *ngIf='questOk'>
+  <label class="mb-0" for="enunciado">Enunciado:</label>
+  <textarea type="text" class="form-control" id="enunciado"
+    placeholder="Digite aqui o enunciado" [(ngModel)]='questao.quastao'></textarea>
+</div>
+
+<div class="form-group" *ngIf='questOk'>
+  <label class="mb-0" for="aula">Aula:</label>
+  <select name="aula" [(ngModel)]="idVideo" (change)="findByIdAula()" class="form-control">
+    <option *ngFor="let aula of listaAulas" value={{aula.id}}>
+      {{aula.modulo.descricao}} | {{aula.titulo}}
+    </option>
+  </select>
+</div>
+
+<div class="row" *ngIf='questOk'>
+  <div class="col-md-12 d-flex justify-content-center mt-5" >
+    <button type="button" class="btn btn-outline-danger btn-responsive mr-4" routerLink='/admin'>Cancelar</button>
+    <button type="button" class="btn btn-outline-primary btn-responsive " (click)='atualizarQuest()'>Atualizar</button>
+
+  </div>
+</div>
+
+
+
+<div *ngIf='respOk'>
+  <label id="labelUm" for="primeira" class="w-100">
+    <p class="mb-0" id="txtUm">Primeira alternativa</p>
+    <div class="row">
+
+      <div class="col-md-11 pr-0">
+        <input type="text" class="form-control" name="inputUm" id="inputUm" [(ngModel)]='respostas.resp'>
+      </div>
+
+      <div class="col-md-1 d-flex align-items-center" id="areaUm">
+        <i class="fa fa-check-circle-o w-100 text-center" id="iconUm" aria-hidden="true"></i>
+      </div>
+
+    </div>
+  </label>
+  <input type="checkbox" id="primeira" [(ngModel)]='respostas.correta' (change)='correta($event)'>
+</div>
+
+<div class="row" *ngIf='respOk'>
+  <div class="col-md-12 d-flex justify-content-center mt-5" >
+    <button type="button" class="btn btn-outline-danger btn-responsive mr-4" routerLink='/admin'>Cancelar</button>
+    <button type="button" class="btn btn-outline-primary btn-responsive" (click)='atualizaResp()'>Atualizar</button>
+
+  </div>
+</div>
+
+
+

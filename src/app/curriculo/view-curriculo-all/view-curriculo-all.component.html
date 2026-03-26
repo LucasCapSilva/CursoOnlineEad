@@ -1,0 +1,593 @@
+<h1>Pesquisar Curriculo</h1>
+<div class="row d-flex justify-content-start">
+    <div class="col-md-2 border border-secondary rounded py-2">
+
+        <label for="turma">Turma:</label>
+        <div class="form-group w-100">
+            <select id="turma" name="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()"
+                class="form-control bg-black text-dark">
+                <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                    {{turma.descricao}}
+                </option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-outline-success w-100"
+            (click)="findCurriculoByIdTurma()">Pesquisar</button>
+    </div>
+
+
+    <!-- <div class="col-md-2 border border-secondary rounded py-2">
+        <label for="turma">Educação:</label>
+        <div class="form-group w-100">
+            <input type="text" aria-label="First name" class="form-control" placeholder="Curso" [(ngModel)]="curso">
+        </div>
+        <button type="button" class="btn btn-outline-success w-100"
+            (click)="findCurriculoByEducacao()">Pesquisar</button>
+    </div> -->
+
+    <!-- <div class="col-md-4 border border-secondary rounded py-2">
+        <div class="d-flex align-self-center">
+            <label for="turma">Idioma:</label>
+        </div>
+        <div class="form-group w-100 d-flex justify-content-center ">
+            <select class="form-control" name="tipo" id="tipo" [value]='idiomaSelect' (change)='tipoIdioma($event)'>
+                <option value="">Select idioma:</option>
+                <option value="Inglês">Inglês</option>
+                <option value="Espanhol">Espanhol</option>
+                <option value="Japones">Japones</option>
+                <option value="Chinês">Chinês</option>
+                <option value="Chinês">Francês </option>
+                <option value="Português">Português</option>
+                <option value="Italiano">Italiano</option>
+                <option value="Alemão">Alemão</option>
+            </select>
+            <select class="form-control" name="tipo" id="tipo" [value]='nivelSelect' (change)='tipoNivel($event)'>
+                <option value="">Selecione um Nivel de Aprendizado:</option>
+                <option value="iniciante">iniciante</option>
+                <option value="intermediario">Intermediario</option>
+                <option value="avançado">Avançado</option>
+                <option value="fluente">Fluente</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-outline-success btn-responsive-50" (click)="findCurriculoByIdioma()">Pesquisar</button>
+    </div> -->
+
+    <!-- <div class="col-md-4 border border-secondary rounded py-2">
+        <div class="d-flex align-self-center">
+            <label for="turma">Profissional:</label>
+        </div>
+        <div class="form-group w-100 d-flex justify-content-center ">
+            <input type="text" aria-label="First name" class="form-control mx-1" placeholder="cargo"
+                [(ngModel)]="cargo">
+            <input type="text" aria-label="First name" class="form-control mx-1" placeholder="principais atividades"
+                [(ngModel)]="principaisAtividades">
+        </div>
+        <button type="button" class="btn btn-outline-success btn-responsive-50"
+            (click)="findCurriculoByProfissional()">Pesquisar</button>
+    </div>
+    <div class="col-md-2 border border-secondary rounded py-2">
+        <label for="turma">Portifolio:</label>
+        <div class="form-group w-100">
+            <input type="text" aria-label="First name" class="form-control portifolio" placeholder="portifolio"
+                [(ngModel)]="portifolio">
+        </div>
+        <button type="button" class="btn btn-outline-success w-100"
+            (click)="findCurriculoByPortifolio()">Pesquisar</button>
+    </div> -->
+
+    <!-- <div class="col-md-2 border border-secondary rounded py-2">
+        <label for="turma">Tecnico:</label>
+        <div class="form-group w-100">
+            <input type="text" aria-label="First name" class="form-control" placeholder="descrição"
+                [(ngModel)]="descricaoTecnica">
+        </div>
+        <button type="button" class="btn btn-outline-success w-100"
+            (click)="findCurriculoByTecnico()">Pesquisar</button>
+    </div> -->
+
+    <div class="col-md-2 border border-secondary rounded py-2">
+        <label for="turma">Genero:</label>
+        <div class="form-group w-100">
+            <select class="form-control" name="genero" id="genero" [value]='genero' (change)='selectGenero($event)'>
+                <option value="">Selecione um Gênero </option>
+                <option value="Mulher Cisgênero">Mulher Cisgênero</option>
+                <option value="Mulher Transgênero">Mulher Transgênero</option>
+                <option value="Homem Cisgênero">Homem Cisgênero</option>
+                <option value="Pessoa não binária">Pessoa não binária</option>
+                <option value="Homem Transgênero">Homem Transgênero</option>
+                <option value="Transgênero">Transgênero</option>
+                <option value="Prefiro não responder">Prefiro não responder</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-outline-success w-100" (click)="findCurriculoByGenero()">Pesquisar</button>
+    </div>
+
+    <div class="col-md-2 border border-secondary rounded py-2">
+        <label for="turma">Raça:</label>
+        <div class="form-group w-100">
+            <select class="form-control" name="raca" id="raca" [value]='raca' (change)='selectRaca($event)'>
+                <option value="">Selecione Com Qual se identifica:</option>
+                <option value="Branco(a)">Branco(a)</option>
+                <option value="Negro(a)">Negro(a)</option>
+                <option value="Pardo(a)">Pardo(a)</option>
+                <option value="Amarelo(a)">Amarelo(a)</option>
+                <option value="Indígena">Indígena</option>
+                <option value="Não declarado">Não declarado</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-outline-success w-100" (click)="findCurriculoByRaca()">Pesquisar</button>
+    </div>
+
+    <div class="col-md-2 border border-secondary rounded py-2">
+        <label for="turma">Tipo de Deficiência:</label>
+        <div class="form-group w-100">
+            <select class="form-control" name="typePcd" id="typePcd" [value]='typePcd' (change)='selectTypePcd($event)'>
+                <option value="">Se sim, em qual cid você se enquadra </option>
+                <option value="Deficiência Visual">Deficiência Visual</option>
+                <option value="Deficiência Auditiva">Deficiência Auditiva</option>
+                <option value="Deficiência Física">Deficiência Física</option>
+                <option value="Deficiência Intelectual">Deficiência Intelectual</option>
+                <option value="Deficiências Multiplas">Deficiências Multiplas </option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-outline-success w-100"
+            (click)="findCurriculoBytypePcd()">Pesquisar</button>
+    </div>
+    <div class="col-md-2 border border-secondary rounded py-2">
+        <div class="d-flex align-self-center">
+            <label for="turma">Selecione se é PCD:</label>
+        </div>
+        <div class="form-group w-100 d-flex justify-content-center ">
+            <select class="form-control" name="tipo" id="tipo" [value]='isPcdSelect' (change)='tipoIsPcd($event)'>
+
+                <option value=true>É PCD</option>
+                <option value=false>Não é PCD</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-outline-success w-60" (click)="findCurriculoByIsPcd()">Pesquisar</button>
+    </div>
+
+
+    <div class="col-md-4 border border-secondary rounded py-2">
+        <label for="turma">Turma:</label>
+        <div class="form-group w-100">
+            <select id="turma" name="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()"
+                class="form-control bg-black text-dark">
+                <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                    {{turma.descricao}}
+                </option>
+            </select>
+        </div>
+        <div class="d-flex align-self-center">
+            <label for="turma">Selecione Grupo Projeto Integrador:</label>
+        </div>
+        <div class="form-group w-100 d-flex justify-content-center ">
+            <select class="form-control" name="numeroPi" id="numeroPi" [value]='portifolio'
+                (change)='selectNumeroPi($event)'>
+                <option value="0">Select GrupoPI:</option>
+                <option value="1">Grupo 1</option>
+                <option value="2">Grupo 2</option>
+                <option value="3">Grupo 3</option>
+                <option value="4">Grupo 4</option>
+                <option value="5">Grupo 5 </option>
+                <option value="6">Grupo 6</option>
+                <option value="7">Grupo 7</option>
+                <option value="8">Grupo 8</option>
+                <option value="9">Grupo 9</option>
+                <option value="10">Grupo 10</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-outline-success btn-responsive-50"
+            (click)="findCurriculoByPortifolio()">Pesquisar</button>
+    </div>
+
+</div>
+<div *ngIf='carregando;'>
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <div id="preloader_1">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<div class="row px-3 pt-2 py-2">
+    <div class="mx-1 mr-auto">
+
+    </div>
+    <div class="mx-1 ml-auto">
+        <button type="button" class="btn btn-outline-primary w-100" (click)="print()">Imprimir
+            curriculo</button>
+    </div>
+    <div class="mx-1 ">
+        <button type="button" class="btn btn-outline-primary  w-100"
+            (click)="printSemContatos()">printSemContatos</button>
+    </div>
+</div>
+
+
+
+<div class="container" id="print">
+    <div *ngFor="let curriculo of listaCurriculo margin-embaixo">
+        <div class="d-flex justify-content-start  align-items-center mb-2 mt-2 ">
+            <ng-container *ngIf="curriculo.foto == ''; else elseTemplate">
+                <div class="resume.pic justify-content-center align-items-center margin-direita">
+                    <img src="https://i.imgur.com/iPnUWdQ.png" alt="foto" class="img-fluid" style="max-width: 235px; height: auto;">
+                </div>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <div class="resume.pic justify-content-center align-items-center margin-direita">
+                    <img [src]="curriculo.foto" class="img-fluid" alt="" style="max-width: 235px; height: auto;">
+                </div>
+            </ng-template>
+            <section class="main ml-1 ml-md-3" style="width: 100%;">
+                <div class="resume-info mt-1" style="width: 100%;">
+                    <div class="d-flex justify-content-start">
+                        <h1 class="resume-title  ml-3 mr-1 " id='name'>{{curriculo.nome}}</h1>
+                        <h1 class="resume-title d-flex justify-content-center align-items-center ml-3 mr-1 " id='name'>
+                            {{curriculo.sobrenome}}</h1>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                        <div *ngIf="curriculo.curso != null">
+                            <p style="width: 100%; font-size: 30px;"
+                                class="resume-contact-subtitle d-flex justify-content-start ml-3 ">Pessoa Desenvolvedora {{curriculo.curso.descricao}}
+                            </p>
+                        </div>
+
+                        <div *ngIf="curriculo.curso == null">
+                            <p style="width: 100%; font-size: 30px;"
+                                class="resume-contact-subtitle d-flex justify-content-start ml-3 ">Pessoa Desenvolvedora
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-contact d-flex flex-wrap">
+                    <div>
+                        <p style="font-size: 16px; color: black;" class="resume-contact-text mr-4 mb-2 mt-1"
+                            id='telephone'>
+                            <img class="logo-img" src="https://i.imgur.com/1XUJOrg.jpg"
+                                alt="telefone">{{curriculo.celular |
+                            phone}}
+                        </p>
+                        <p style="font-size: 16px; color: black;" class="resume-contact-text mr-4 mb-2 mt-1" id='email'>
+                            <img class="logo-img" src="https://i.imgur.com/GZpKGtm.jpg" alt="email">{{curriculo.email}}
+                        </p>
+                        <ng-container *ngIf="curriculo.linkLinKedIn != '';">
+                            <a href="{{curriculo.linkLinKedIn}}">
+                                <p style="font-size: 16px; color:blue" class=" resume-contact-text mr-4 mb-2 mt-1"
+                                    id='linkedin'>
+                                    <img class="logo-img" src="https://i.imgur.com/vsfNw88.jpg" alt="linkedin">
+                                    Link do LinkedIn
+                                </p>
+                            </a>
+                        </ng-container>
+                    </div>
+                    <div>
+
+                        <p style="font-size: 16px; color: black;" class="resume-contact-text mr-4 mb-2 mt-1"
+                            id='location'>
+                            <img class="logo-img" src="https://i.imgur.com/U8TJqUS.jpg" alt="estado">
+                            {{curriculo.cidade}}, {{curriculo.estado}}
+                        </p>
+                        <ng-container *ngIf="curriculo.linkGitHub != '';">
+                            <a href="{{curriculo.linkGitHub}}">
+                                <p class="resume-contact-text mr-4 mb-2 mt-1" id='github'
+                                    style="font-size: 16px; color:blue">
+                                    <img class="logo-img" src="https://i.imgur.com/YQl6EvA.jpg" alt="github">
+                                    Link do github
+                                </p>
+                            </a>
+                        </ng-container>
+                        <ng-container *ngIf="curriculo.linkGitHub != '';">
+                            <a href="{{curriculo.linkGitHub}}">
+                                <p class="resume-contact-text  mr-4 mb-2 mt-1" id='portfolio'
+                                    style="font-size: 16px; color:blue">
+                                    <img class="logo-img" src="https://i.imgur.com/sPRobaH.jpg" alt="portfolio">
+                                    Link do portfolio/site
+                                </p>
+                            </a>
+                        </ng-container>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="row">
+                <hr class="separator">
+                <div class="col-md-12">
+                    <div class="about-me h-100">
+                        <div class="d-flex flex-wrap flex-column flex-md-row justify-content-between">
+                            <h1 class="about-title">
+                                <img class="logo-img" src="https://i.imgur.com/9ulzujK.png" alt="sobreMim">Resumo
+                                profissional:
+                            </h1>
+                            <h1 class="about-title mt-2 mt-md-0" *ngIf="curriculo.linkVideo != ''">
+                                <a href="{{curriculo.linkVideo}}" target="_blank" rel="noopener noreferrer"
+                                    class="d-flex justify-content-center justify-content-md-end align-items-center">
+                                    <p class="mt-2 mr-2" style="text-transform: initial;">Vídeo do Currículo</p>
+                                    <h3 class=" fa fa-video-camera"></h3>
+                                </a>
+                            </h1>
+
+                        </div>
+
+                        <p class="text-justify">{{curriculo.sobreMim}}</p>
+                    </div>
+                </div>
+
+                <hr class="separator" *ngIf="curriculo.temEduca">
+                <div class="col-md-12" *ngIf="curriculo.temEduca">
+                    <div class="about-education h-100">
+                        <h1 class="about-title">
+                            <p class="fa fa-graduation-cap mr-1"></p>Educação:
+                        </h1>
+                        <div class="d-flex flex-wrap  width-100">
+                            <div class="d-flex flex-wrap width-50" *ngFor="let item of curriculo.educacao">
+                                <div class=" " *ngIf="!item.extraCurricular">
+                                    <div class="d-flex  justify-content-start flex-column px-3">
+                                        <div class="ml-1 ">
+                                            <p class="font-weight-bold my-0">
+                                                Escola:
+                                            </p>
+                                            <p class="my-0">
+                                                {{item.nomeEscola}}
+                                            </p>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+
+                                            <div class="mx-1 ">
+                                                <p class="font-weight-bold  my-0 ">
+                                                    Curso:
+                                                </p>
+                                                <p class="my-0">
+                                                    {{item.curso}}
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+
+                                            <div class="mx-1 ">
+                                                <p class="font-weight-bold  my-0 mr-2">
+                                                    Status curso:
+                                                </p>
+                                                <p class="my-0">
+                                                    {{item.estadoCurso}}
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="mx-1 d-flex justify-content-start mr-3">
+                                                <p class="font-weight-bold my-0 mr-2">
+                                                    Inicio:
+                                                </p>
+                                                <p class="my-0">
+                                                    {{item.mesAnoIn | date : 'dd MMM yyyy'}}
+                                                </p>
+                                            </div>
+                                            <div class="mx-1 d-flex justify-content-start">
+                                                <p class="font-weight-bold my-0 mr-2">
+                                                    Término:
+                                                </p>
+                                                <p class="my-0">
+                                                    {{item.mesAnoFim | date : 'dd MMM yyyy'}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <hr class="separator-section" *ngIf="curriculo.profissionais.length > 0">
+                <div class="col-md-12" *ngIf="curriculo.profissionais.length > 0">
+                    <div class="about-xp h-100">
+                        <!--TODO adicionar ngFor para lista de Instituições-->
+                        <h1 class="about-title">
+                            <p class="fa fa-clipboard mr-1"></p>Experiência Profissional:
+                        </h1>
+                        <div class="d-flex flex-wrap width-100">
+                            <div class="width-50" *ngFor="let item of curriculo.profissionais">
+                                <div class=" d-flex justify-content-start flex-column px-3">
+                                   
+                                    <div class="mx-1 ">
+                                        <p class="font-weight-bold my-0 mr-2">
+                                            Empresa:
+                                        </p>
+                                        <p class="my-0">
+                                            {{item.nomeEmpresa}}
+                                        </p>
+                                    </div>
+                                    <div class="mx-1 ">
+                                        <p class="font-weight-bold my-0 mr-2">
+                                            Cargo:
+                                        </p>
+                                        <p class="my-0">
+                                            {{item.cargo}}
+                                        </p>
+                                    </div>
+                                    <div class="mx-1 ">
+                                        <p class="font-weight-bold my-0">
+                                            Atividades:
+                                        </p>
+                                        <p class="my-0 text-justify">
+                                            {{item.principaisAtividades}}
+                                        </p>
+                                    </div>
+                                    <div class="d-flex justify-content-start">
+                                        <div class="mx-1 d-flex justify-content-start mr-3">
+                                            <p class="font-weight-bold my-0 mr-2">
+                                                Inicio:
+                                            </p>
+                                            <p class="my-0">
+                                                {{item.mesAnoIn | date : 'dd MMM yyyy'}}
+                                            </p>
+                                        </div>
+                                        <div class="mx-1 d-flex justify-content-start">
+                                            <p class="font-weight-bold my-0 mr-2">
+                                                Término:
+                                            </p>
+                                            <p class="my-0">
+                                                {{item.mesAnoFim | date : 'dd MMM yyyy'}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="separator-section" *ngIf="curriculo.idiomas.length > 0">
+                <div class="col-md-12" *ngIf="curriculo.idiomas.length > 0">
+                    <div class="about-language h-100">
+                        <h1 class="about-title">
+                            <p class="fa fa-comments mr-0"></p>Idiomas:
+                        </h1>
+                        <div class="d-flex flex-wrap width-100">
+                            <div *ngFor="let item of curriculo.idiomas" class="width-50">
+                                <div class="d-flex justify-content-start flex-column px-3">
+                                    <div class="mr-1 d-flex justify-content-start">
+                                        <p class="font-weight-bold my-0 mr-2">
+                                            Idioma:
+                                        </p>
+                                        <p class="my-0">
+                                            {{item.idioma}}
+                                        </p>
+                                    </div>
+                                    <div class="my-0 mr-2 d-flex justify-content-start">
+                                        <p class="font-weight-bold my-0 mr-2">
+                                            Nivel:
+                                        </p>
+                                        <p class="mr-2">
+                                            {{item.nivel}}
+                                        </p>
+                                    </div><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="separator-section" *ngIf="curriculo.portifolios.length > 0">
+                <div class="col-md-12" *ngIf="curriculo.portifolios.length > 0">
+                    <div class="about-language h-100">
+                        <h1 class="about-title">
+                            <img class="logo-img" src="https://i.imgur.com/6aLvMrX.png" alt="Portfólio"> Portfólio:
+                        </h1>
+                        <div class="d-flex flex-wrap  width-100">
+                            <div class="width-50" *ngFor="let item of curriculo.portifolios">
+                                <div class="d-flex justify-content-start flex-column mx-1 px-3">
+                                    <div class="mr-1 ">
+                                        <p class="font-weight-bold my-0">
+                                            Nome do Projeto:
+                                        </p>
+                                        <p class="my-0">
+                                            {{item.nomeProjeto}}
+                                        </p>
+                                    </div>
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <div class="mr-1 ">
+                                            <p class="font-weight-bold my-0">
+                                                Descrição do projeto:
+                                            </p>
+                                            <p class="my-0 text-justify">
+                                                {{item.descricao}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="my-0 mr-2">
+                                        <!-- <p class="font-weight-bold my-0">
+                                            link do projeto: 
+                                        </p> -->
+                                        <a href="{{item.link}}" class="my-0 mr-2">
+                                            <p style="color:blue">
+                                                Link do projeto
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <hr class="separator" *ngIf="this.curriculo.temExtra">
+                <div class="col-md-12" *ngIf="this.curriculo.temExtra  ">
+                    <div class="about-education h-100">
+                        <h1 class="about-title ">
+                            <img class="logo-img" src="https://i.imgur.com/mpaoj6C.png"
+                                alt="Curso e atividades extra-curriculares"> Cursos E Atividades extra-curriculares
+                        </h1>
+                        <div class="d-flex flex-wrap  width-100">
+                            <div class="d-flex flex-wrap width-50" *ngFor="let item of curriculoAtividade">
+                                <div class=" " *ngIf="item.extraCurricular ">
+                                    <div class="d-flex justify-content-start flex-column px-3">
+                                        <div class="mx-1 d-flex justify-content-start mr-3">
+                                            <p class="font-weight-bold my-0 mr-2">
+                                                Instituição:
+                                            </p>
+                                            <p class="my-0">
+                                                {{item.nomeEscola}}
+                                            </p>
+                                        </div>
+                                        <div class="mx-1 d-flex justify-content-start">
+                                            <p class="font-weight-bold  my-0 mr-2">
+                                                Curso/Atividade:
+                                            </p>
+                                            <p class="my-0">
+                                                {{item.curso}}
+                                            </p>
+                                        </div>
+
+                                        <div class="d-flex justify-content-start">
+
+                                            <div class="mx-1 d-flex justify-content-start mr-3">
+                                                <p class="font-weight-bold my-0 mr-2">
+                                                    Inicio:
+                                                </p>
+                                                <p class="my-0">
+                                                    {{item.mesAnoIn | date : 'dd MMM yyyy'}}
+                                                </p>
+                                            </div>
+
+
+                                            <div class="mx-1 d-flex justify-content-start">
+                                                <p class="font-weight-bold my-0 mr-2">
+                                                    Término:
+                                                </p>
+                                                <p class="my-0">
+                                                    {{item.mesAnoFim | date : 'dd MMM yyyy'}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr class="separator">
+        <footer class="text-center pb-5">
+            <small>Copyright © Generation 2021</small>
+        </footer>
+    </div>
+
+</div>

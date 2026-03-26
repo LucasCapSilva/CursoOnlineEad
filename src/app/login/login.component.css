@@ -1,0 +1,20 @@
+.card{
+  background-color: #343334;
+  border-radius: 30px;
+  box-shadow: 0px 0px 33px 0px rgba(0,0,0,0.75);
+
+}
+
+.btn-outline-blue{
+  color: #3e64ff;
+  border-color: #3e64ff;
+}
+
+.btn-outline-blue:hover{
+  color: #fff;
+  background-color: #3e64ff;
+}
+
+input {
+  background-color: #343334;
+}

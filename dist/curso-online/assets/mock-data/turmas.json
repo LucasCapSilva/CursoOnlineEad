@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Turma A",
+    "curso": "Desenvolvimento Web",
+    "instrutor": "Maria Santos",
+    "quantidadeAlunos": 25,
+    "status": "ATIVA"
+  },
+  {
+    "id": 2,
+    "nome": "Turma B", 
+    "curso": "Mobile Development",
+    "instrutor": "Carlos Lima",
+    "quantidadeAlunos": 20,
+    "status": "ATIVA"
+  },
+  {
+    "id": 3,
+    "nome": "Turma C",
+    "curso": "Data Science",
+    "instrutor": "Ana Costa",
+    "quantidadeAlunos": 18,
+    "status": "INATIVA"
+  }
+]

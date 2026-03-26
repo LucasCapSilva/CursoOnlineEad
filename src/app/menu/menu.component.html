@@ -1,0 +1,178 @@
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+        <h1>
+            <a routerLink='/home' class="logo text-white d-flex align-items-center justify-content-center" (click)="titulos('Inicio', 'home')" style="height: 60px; font-weight: bold; font-size: 1.5rem; text-decoration: none;">
+                PORTFÓLIO
+            </a>
+        </h1>
+        <ul class="list-unstyled components mb-4">
+            <li class="active  " *ngIf="trilha">
+                <a  routerLink='/trilha-zero' (click)="titulos('Trilha', 'home')"><span class="fa fa-home"></span> Trilha</a>
+            </li>
+            <li class="active  " *ngIf="!trilha">
+                
+                <a  routerLink='/home' (click)="titulos('Inicio', 'home')"><span class="fa fa-home"></span> Inicio</a>
+            </li>
+            <li class="" *ngIf="!trilha">
+                <a routerLink='/blocos' (click)="titulos('Blocos', 'th-large')"><span class="fa fa-th-large"></span> Blocos</a>
+            </li>
+            <li *ngIf='(github.userGithub === "" || github.userGithub === null && !trilha )'>
+                <a routerLink="/github-participante" (click)="titulos('Github', 'Github')"><span class='fa fa-github'></span> Github</a>
+            </li>
+            <li class="" *ngIf="!trilha">
+                <a routerLink='/forum' (click)="titulos('Fórum', 'commenting')"><span class="fa fa-commenting"></span> Fórum</a>
+            </li>
+            <li class="" *ngIf="!trilha">
+                <a routerLink='/links-uteis' (click)="titulos('Links Úteis', 'link')"><span class="fa fa-link"></span> Links Úteis</a>
+            </li>
+            <li class="" *ngIf="!trilha">
+                <a routerLink='/sobre-nos' (click)="titulos('Sobre nós', 'users')"><span class="fa fa-users"></span> Sobre nós</a>
+            </li>
+
+            <li class="" *ngIf='auth.adm() && !trilha'>
+                <a routerLink='/admin' (click)="titulos('Administração', 'cog')"><span class="fa fa-cog"></span> Admin</a>
+            </li>
+
+            <li class="" *ngIf='auth.participante() == false && !trilha'>
+                <a routerLink='/form-bemestar-solicita' (click)="titulos('Solicitação de atendimento', 'file-o')"><span class="fa fa-file-o"></span> Bem Estar</a>
+            </li>
+
+            <li class="" *ngIf="!trilha">
+                <a (click)="findCurriculo(idUser,'Curriculo', 'suitcase')"><span class="fa fa-suitcase"></span> Curriculo</a>
+            </li>
+
+            <li class="">
+                <a (click)='sair()'><span class="fa fa-sign-out"></span> Sair</a>
+            </li>
+        </ul>
+
+        <div class="footer">
+
+            <div class="row mb-4">
+                <div class="col-md-4 p-0 d-flex justify-content-center">
+                    <a href="#" class="icoFacebook" target="_blanck" title="Facebook"><span class="fa fa-facebook"></span></a>
+                </div>
+                <div class="col-md-4 p-0 d-flex justify-content-center">
+                    <a href="#" class="icoInstagram" target="_blanck" title="Instagram">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="col-md-4 p-0 d-flex justify-content-center">
+                    <a href="#" class="icoLinkedin" title="Linkedin" target="_blanck">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <a class="text-white" target="_blanck" href="#">website.com</a>
+                </div>
+            </div>
+            <div class="footer-copyright text-center py-3 ">
+                <span class="text-white"> ©2021 All Rights Reserved</span>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="px-2 px-md-4 pt-3">
+
+        <nav class="navbar navbar-dark rounded d-flex flex-nowrap align-items-center justify-content-between p-2 mx-0" id="navbarcontent">
+
+            <div class="d-flex align-items-center flex-shrink-0">
+                <button type="button" id="sidebarCollapse" class="btn d-flex align-items-center justify-content-center mr-2" aria-label="Abrir menu de navegação">
+                  <span class="hamburger-lines" aria-hidden="true">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                  </span>
+                  <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            
+            <div class="d-flex align-items-center flex-grow-1 justify-content-start overflow-hidden mx-2">
+                <h3 class="text-white m-0 text-truncate" id="titulos"><i class="fa fa-{{auth.icones()}}"></i> {{auth.titulos()}}</h3>
+            </div>
+
+            <div class="d-flex justify-content-end align-items-center m-0 flex-shrink-0">
+                <h4 id='nome' class="mb-0 d-none d-sm-flex align-items-center text-white">Olá, {{nome}}</h4>
+                <div class="btn-group">
+                    <img class='ml-2 ml-md-3' id='colors' width='25px' src="https://i.imgur.com/5AMCtC5.png" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                    <div class="dropdown-menu dropdown-menu-right">
+
+                            <div class="row mb-2 mt-3">
+
+                                <div class="col d-flex justify-content-end p-0">
+                                    <img width='25px' src="https://i.imgur.com/l0fsE6X.png" alt="red" (click)='changeColor("#ee5253")'>
+                                </div>
+                                <div class="col d-flex justify-content-center p-0">
+                                    <img width='25px' src="https://i.imgur.com/CdW9fQB.png" alt="orange" (click)='changeColor("#ff9f43")'>
+                                </div>
+                                <div class="col d-flex justify-content-start p-0">
+                                    <img width='25px' src="https://i.imgur.com/xnoY02R.png" alt="yellow" (click)='changeColor("#feca57")'>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2">
+                                <div class="col d-flex justify-content-end p-0">
+                                    <img width='25px' src="https://i.imgur.com/onPEZxo.png" alt="green" (click)='changeColor("#10ac84")'>
+                                </div>
+                                <div class="col d-flex justify-content-center p-0">
+                                    <img width='25px' src="https://i.imgur.com/cOWO2Aj.png" alt="orange" (click)='changeColor("#01a3a4")'>
+                                </div>
+                                <div class="col d-flex justify-content-start p-0">
+                                    <img width='25px' src="https://i.imgur.com/6bDse7J.png" alt="red" (click)='changeColor("#2e86de")'>
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-2">
+                                <div class="col d-flex justify-content-end p-0">
+                                    <img width='25px' src="https://i.imgur.com/ia1LlIu.png" alt="darkpurple" (click)='changeColor("#341f97")'>
+                                </div>
+                                <div class="col d-flex justify-content-center p-0">
+                                    <img width='25px' src="https://i.imgur.com/rNo9DPT.png" alt="purple" (click)='changeColor("#5f27cd")'>
+                                </div>
+                                <div class="col d-flex justify-content-start p-0">
+                                    <img width='25px' src="https://i.imgur.com/x9F2wDT.png" alt="pink" (click)='changeColor("#f368e0")'>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col d-flex justify-content-end p-0">
+                                    <img width='25px' src="https://i.imgur.com/V9Cw5Ks.png" alt="black" (click)='changeColor("#000000")'>
+                                </div>
+
+                                <div class="col d-flex justify-content-center p-0">
+                                    <img width='25px' src="https://i.imgur.com/C9Odviw.png" alt="darkblue" (click)='changeColor("#222f3e")'>
+                                </div>
+
+                                <div class="col d-flex justify-content-start p-0">
+                                    <img width='25px' src="https://i.imgur.com/08kGZUK.png" alt="gray" (click)='changeColor("#576574")'>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
+
+        </nav>
+
+
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+        
+        <div *ngIf="!trilha">
+            <app-botao-bem-emp></app-botao-bem-emp>
+        </div>
+      
+
+
+
+       
+    </div>
+</div>

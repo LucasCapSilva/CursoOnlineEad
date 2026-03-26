@@ -1,0 +1,117 @@
+<div class="container">
+    <div class="text-center mt-4">
+        <h1>IDIOMAS </h1>
+        <p>Utilize as seguintes categorias:
+            básico, intermediário, avançado, fluente e nativo.
+            Se possível, mencione certificados de proficiência. </p>
+    </div>
+    <div class="row mt-3 mb-1 d-flex justify-content-center align-content-center"
+        *ngFor="let item of listCurriculoIdioma;let i = index">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="form-group mx-1">
+                    <label for="nome">Idioma</label>
+                    <input type="text" class="form-control" [value]="item.idioma" disabled />
+                </div>
+                <div class="form-group mx-1">
+                    <label for="sobrenome">Nivel</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.nivel" disabled />
+                </div>
+                <div class="form-group mx-1 d-flex align-items-end">
+                    <button type="button" class="btn btn-outline-danger button-style"
+                        (click)="onDelete(i)">Deletar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-3 mb-1 d-flex justify-content-center align-content-center">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="form-group  mx-1">
+                    <label for="tipo">Idioma</label>
+                    <select class="form-control" name="tipo" id="tipo" [value]='idiomaSelect'
+                        (change)='tipoIdioma($event)'>
+                        <option value="">Selecione um idioma:</option>
+                        <option value="Inglês">Inglês</option>
+                        <option value="Espanhol">Espanhol</option>
+                        <option value="Japones">Japones</option>
+                        <option value="Chinês">Chinês</option>
+                        <option value="Francês">Francês </option>
+                        <option value="Português">Português</option>
+                        <option value="Italiano">Italiano</option>
+                        <option value="Alemão">Alemão</option>
+                    </select>
+                </div>
+                <div class="form-group mx-1">
+                    <label for="tipo">Nivel de Aprendizado</label>
+                    <select class="form-control" name="tipo" id="tipo" [value]='nivelSelect'
+                        (change)='tipoNivel($event)'>
+                        <option value="">Selecione um Nivel de Aprendizado:</option>
+                        <option value="iniciante">iniciante</option>
+                        <option value="intermediario">Intermediario</option>
+                        <option value="avançado">Avançado</option>
+                        <option value="Nativo">Nativo</option>
+                    </select>
+                </div>
+                <div class="form-group mx-1 d-flex align-items-end">
+                    <button type="button" class="btn btn-outline-primary button-style" (click)="onInsert()">Inserir
+                        idioma</button>
+                </div>
+                <div class="d-flex justify-content-center mt-3 mb-3">
+                    <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-3 mb-3">
+        <input type="button" value="Avançar" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal2"/>
+    </div>
+
+</div>
+
+
+ <!-- Modal -->
+ <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bgm">
+            <div class="modal-header d-flex justify-content-center">
+                <h5 class="modal-title textm " id="exampleModalLabel">IDIOMAS</h5>
+            </div>
+            <div class="modal-body textm">
+                <div class=" ">OBRIGATÓRIO</div>
+                <div>Utilize as seguintes categorias: 
+                    básico, intermediário, avançado, fluente 
+                    e nativo.
+                </div>
+                <div>Se possível, mencione certificados de 
+                    proficiência</div>
+
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="Ok" data-dismiss="modal"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Modal 2-->
+    <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bgm">
+                <div class="modal-header d-flex justify-content-center">
+                    <h5 class="modal-title textm " id="exampleModalLabel">Tem certeza?</h5>
+                </div>
+                <div class="modal-footer  d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar a editar</button>
+                    <input type="button" class="btn btn-primary"  value="{{editarCadastrar}} Próximo" value="Próximo"
+                        (click)="saveEndNextStap()" data-dismiss="modal"/>
+                </div>
+            </div>
+        </div>
+    </div>

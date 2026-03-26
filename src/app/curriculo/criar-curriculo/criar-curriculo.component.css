@@ -1,0 +1,18 @@
+img {
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    
+   
+}
+.bgm{
+background-color:#db2828;
+}
+
+.textm{
+color: rgb(255, 255, 255);
+text-align: center;
+}
+.fa{
+    font-size: 40px;
+}

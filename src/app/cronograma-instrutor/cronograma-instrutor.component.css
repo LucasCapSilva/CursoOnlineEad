@@ -1,0 +1,36 @@
+::ng-deep .fc-toolbar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 1rem !important;
+}
+
+::ng-deep .fc-left, 
+::ng-deep .fc-center, 
+::ng-deep .fc-right {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 10px;
+  float: none !important;
+}
+
+::ng-deep .fc-toolbar h2 {
+  font-size: 1.5rem !important;
+  text-align: center;
+  margin: 0 !important;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  ::ng-deep .fc-toolbar {
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+  
+  ::ng-deep .fc-toolbar h2 {
+    font-size: 1.2rem !important;
+  }
+}

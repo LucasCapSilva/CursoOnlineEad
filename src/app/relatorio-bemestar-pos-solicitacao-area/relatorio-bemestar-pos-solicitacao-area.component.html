@@ -1,0 +1,65 @@
+<div class="row mt-5 d-flex justify-content-center">
+
+  <div class="col-md-4">
+    <div class="form-group w-100">
+      <label for="data-inicial" class="mb-0">Data Inicial</label>
+      <input type="date" class="form-control" name="data-inicial" id="data-inicial"
+        [(ngModel)]='dataIn'>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group w-100">
+      <label for="data-final" class="mb-0">Data Final</label>
+      <input type="date" class="form-control" name="data-final" id="data-final"
+        [(ngModel)]='dataEnd'>
+    </div>
+  </div>
+
+</div>
+
+<div class="row mb-5 d-flex justify-content-center">
+  <div class="col-md-8">
+    <button class='btn btn-outline-primary btn-block' (click)='findSolicitacaoByArea()'>Filtrar</button>
+  </div>
+</div>
+
+
+<div *ngIf='filtro'>
+
+  <div class="row mb-5">
+    <div class="col">
+
+      <h5 class='text-center'>Solicitações de {{dataIn | date: 'dd/MM/yyyy'}} até
+        {{dataEnd | date: 'dd/MM/yyyy'}}</h5>
+
+    </div>
+  </div>
+
+  <div class="row mb-3 ">
+    <div class="col-md-2 d-flex justify-content-center">
+      <h6>Área</h6>
+    </div>
+    <div class="col-md-1 d-flex justify-content-center">
+      <h6>Qtd</h6>
+    </div>
+    <div class="col-md-9">
+      <h6>Porcentagem</h6>
+    </div>
+  </div>
+
+  <div class="row mb-3 " *ngFor='let item of listaFormSolicitacao'>
+    <div class="col-md-2 d-flex align-items-center justify-content-center">
+      <p>{{item.descricao}}</p>
+    </div>
+    <div class="col-md-1 d-flex align-items-center justify-content-center">
+      <p>{{item.qtd}}</p>
+    </div>
+    <div class="col-md-9 ">
+      <div class="progress h-75 d-flex align-items-center">
+        <div class="progress-bar h-100" role="progressbar" style="width: {{item.percent}}%;"
+          aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{item.percent}}%</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+<div class="text-dark">
+
+  <div class="row mt-4 mb-4">
+    <div class="col-md-12">
+      <h4 class="text-center">Selecione uma turma e um módulo para liberar as aulas:</h4>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-3">
+      <label for="turma">Turma:</label>
+      <div class="form-group w-100">
+        <select id="turma" name="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()"
+          class="form-control bg-black text-dark">
+          <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+            {{turma.descricao}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-3 " >
+      <label for="modulo">Módulo:</label>
+      <div class="form-group w-100">
+        <select [ngClass]="{'modulo-on': habilitarModulo}" id="modulo" name="modulo" [(ngModel)]="idModulo" (change)="findByIdModulo()" class="form-control bg-black text-dark modulo-off">
+          <option *ngFor="let modulo of listaModulos" value={{modulo.id}}>
+            {{modulo.descricao}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-3">
+      <button class="btn btn-outline-primary w-100" (click)='listar()'>Listar aulas</button>
+    </div>
+  </div>
+
+  <hr class="mt-5 mb-5 w-50">
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-5 ">
+      <h4 class="text-center mb-3 d-flex justify-content-between">Aulas Bloqueadas
+        <button class="btn btn-outline-success btn-responsive" (click)='liberar()'>Liberar <i class="fa fa-angle-double-right"
+            aria-hidden="true"></i>
+        </button>
+      </h4>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+  <table class="table text-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Seq.</th>
+                <th scope="col">Titulo</th>
+
+              </tr>
+            </thead>
+            <tbody *ngFor='let bloq of listaAulasBloqueadas'>
+              <tr>
+                <td>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]='bloq.check' (change)='pushArrayBloq(bloq)' [attr.id]="'idCheck' + bloq.id">
+                  </div>
+                </td>
+                <td>{{bloq.aula.num_sequencia}}</td>
+                <td>{{bloq.aula.titulo}}</td>
+              </tr>
+            </tbody>
+          </table>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-5">
+      <h4 class="text-center mb-3 d-flex justify-content-between">
+        <button class="btn btn-outline-danger btn-responsive" (click)='bloquear()'><i class="fa fa-angle-double-left"
+            aria-hidden="true"></i> Bloquear
+        </button>
+        Aulas Liberadas</h4>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+  <table class="table text-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Seq.</th>
+                <th scope="col">Titulo</th>
+
+              </tr>
+            </thead>
+            <tbody *ngFor='let lib of listarAulasLiberadas'>
+              <tr>
+                <td>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]='lib.check' (change)='pushArrayLib(lib)' [attr.id]="'idCheck' + lib.id">
+                  </div>
+                </td>
+
+                <td>{{lib.aula.num_sequencia}}</td>
+                <td>{{lib.aula.titulo}}</td>
+              </tr>
+            </tbody>
+          </table>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

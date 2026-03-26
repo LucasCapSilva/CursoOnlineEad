@@ -1,0 +1,34 @@
+
+<div *ngIf='carregando; else upload'>
+  <div class="d-flex justify-content-center">
+    <div id="preloader_1">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<ng-template #upload>
+<div class="container d-flex justify-content-center">
+      <div class="row">
+        <div class="col-md-12">
+          <input type="file" id="customFile" class="mr-4" (change)="onFileSelectd($event)">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-outline-success" (click)="onUpload()">upload</button>
+        </div>
+      </div>
+</div>
+</ng-template>
+
+
+
+
+
+
+

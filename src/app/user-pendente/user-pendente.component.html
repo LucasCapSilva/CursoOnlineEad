@@ -1,0 +1,38 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-md-6 rounded py-2">
+        
+        <label for="turma">Turma:</label>
+        <div class="form-group w-100">
+            <select id="turma" name="turma" [(ngModel)]="idTurma" (change)="findAllTurma()"
+                class="form-control bg-black text-dark">
+                <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                    {{turma.descricao}}
+                </option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-outline-success w-100"
+            (click)="enviarEmail()">Enviar Email</button>  
+    </div>
+</div>
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-md-6 border border-secondary rounded py-2 align-items-center" *ngIf="listaUser.length > 0">
+<h5 class="text-dark">Email enviados para os seguintes participantes:</h5><br/>
+<div class="mb-4" *ngFor="let user of listaUser">
+    <h6>{{user.nome}}</h6>
+    <h6>{{user.email}}</h6>
+</div>
+    </div>
+   
+</div>
+<div *ngIf='carregando;'>
+    <div class="d-flex justify-content-center align-items-center mt-5">
+      <div id="preloader_1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>  
+    

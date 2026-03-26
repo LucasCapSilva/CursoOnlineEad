@@ -1,0 +1,212 @@
+<div class="row mt-5 d-flex justify-content-center">
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="turma">Turma</label>
+      <select class="form-control" id="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()">
+        <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+          {{turma.descricao}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="participante">Participante</label>
+      <select class="form-control" id="participante" [(ngModel)]="idUser" (change)="findByIdUser()">
+        <option *ngFor='let user of turma.users' value={{user.id}}>
+          {{user.nome}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-md-4">
+    <div class="form-group w-100">
+      <label for="data-inicial" class="mb-0">Data Inicial</label>
+      <input type="date" class="form-control" name="data-inicial" id="data-inicial" [(ngModel)]='dataIn'>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group w-100">
+      <label for="data-final" class="mb-0">Data Final</label>
+      <input type="date" class="form-control" name="data-final" id="data-final" [(ngModel)]='dataEnd'>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-5 d-flex justify-content-center">
+  <div class="col-md-8">
+    <button class='btn btn-outline-primary btn-block' data-toggle="collapse" data-target="#filtro"
+      (click)='findAtendimentoByTurmaEData()'>Filtrar</button>
+  </div>
+</div>
+
+<hr>
+
+<!--Com filtro-->
+<div *ngIf='filtro'>
+
+  <div class="table-responsive">
+    <table class="table table-bordered mt-5">
+      <thead>
+        <tr>
+          <th scope="col">Participante</th>
+          <th scope="col">Quantidade</th>
+          <th scope="col">Data inicial</th>
+          <th scope="col">Data final</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{formSolicitacao.descricao}}</th>
+          <td>{{formSolicitacao.qtd}}</td>
+          <td>{{dataIn | date: 'dd/MM/yyyy'}}</td>
+          <td>{{dataEnd | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 class='mt-5 mb-3'>Lista de formulários de atendimento:</h4>
+
+  <div *ngFor='let form of listaForms' class="accordion" [attr.id]="'coment' + form.id">
+    <div class="card border shadow-sm mb-5">
+
+      <div class="row d-flex align-items-center">
+        <div class="col-md-10">
+          <button class="btn btn-link text-primary text-left font-weight-bold text" type="button" data-toggle="collapse"
+            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+            [attr.data-target]="'#' + 'comentButton' + form.id" aria-expanded="false">
+            {{form.turma.descricao}} | {{form.user.nome}} | {{form.data | date: 'dd/MM/yyyy'}}
+          </button>
+        </div>
+      </div>
+
+      <div [attr.id]="'comentButton' + form.id" class="collapse" aria-labelledby="headingTwo"
+        [attr.data-parent]="'#' + 'coment' + form.id">
+        <hr>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8">
+
+            <div class="card-body ">
+              <h2 class="text-center">{{form.user.nome}}</h2>
+              <hr>
+
+              <h5>Dados do participante</h5>
+
+              <div class="table-responsive">
+              <table class="table table-hover table-primary">
+                <thead>
+                  <tr>
+                    <th scope="col">Turma</th>
+                    <th scope="col">Curso</th>
+                    <th scope="col">Vulnerabilidade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{{form.turma.descricao}}</th>
+                    <td>{{form.curso.descricao}}</td>
+                    <td>{{form.nivelUrgencia}}</td>
+
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+
+              <h5>Dados do atendimento</h5>
+
+              <div class="table-responsive">
+              <table class="table table-hover table-primary">
+                <thead>
+                  <tr>
+                    <th scope="col">Atendido(a) por</th>
+                    <th scope="col">Solicitante</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Duração</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{{form.assistenteSocial.nome}}</th>
+                    <td>{{form.solicitante}}</td>
+                    <td>{{form.data | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{form.duracao}} minutos</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+
+              <h5>Demandas apresentadas</h5>
+
+              <ul class="list-group mb-3">
+                <li *ngIf='form.demandas.administrativo'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Administrativo </li>
+                <li *ngIf='form.demandas.apoioInternetNotebook'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Apoio de Internet/Notebook
+                </li>
+                <li *ngIf='form.demandas.ausencias'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Ausências </li>
+                <li *ngIf='form.demandas.comportamental'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Comportamental </li>
+                <li *ngIf='form.demandas.beneficios'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Beneficios </li>
+                <li *ngIf='form.demandas.conflitoEntreParticipantes'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Conflito entre
+                  participantes </li>
+                <li *ngIf='form.demandas.desistencia'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Desistência </li>
+                <li *ngIf='form.demandas.emocional'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Emocional </li>
+                <li *ngIf='form.demandas.engajamento'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Engajamento </li>
+                <li *ngIf='form.demandas.epregabilidade'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Empregabilidade </li>
+                <li *ngIf='form.demandas.presenca'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Presença </li>
+                <li *ngIf='form.demandas.problemasEducacionais'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Problemas Educacionais
+                </li>
+                <li *ngIf='form.demandas.problemasTecnicos'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Problemas técnicos </li>
+                <li *ngIf='form.demandas.saude'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Saúde </li>
+                <li *ngIf='form.demandas.saudeMental'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Saúde Mental </li>
+                <li *ngIf='form.demandas.socioeconomico'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Socio Econômico </li>
+                <li *ngIf='form.demandas.sociofamiliar'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Socio Familiar </li>
+                <li *ngIf='form.demandas.violenciaDeGenero'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Violência de Gênero </li>
+                <li *ngIf='form.demandas.violenciaUrbana'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Violência Urbana </li>
+                <li *ngIf='form.demandas.mapeamentoVunerabilidade'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Mapeamento de
+                  Vulnerabilidade </li>
+                <li *ngIf='form.demandas.covid'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">Covid </li>
+                <li *ngIf='form.demandas.outros != null'
+                  class="list-group-item text-dark list-group-item-primary font-weight-bold">{{form.demandas.outros}}
+                </li>
+              </ul>
+
+              <h5>Descrição do atendimento</h5>
+
+              <p class="border p-4">{{form.descricao}}</p>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--/Com filtro-->

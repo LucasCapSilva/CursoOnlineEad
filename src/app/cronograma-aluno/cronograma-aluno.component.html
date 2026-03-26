@@ -1,0 +1,74 @@
+<div class="row mt-5">
+  <div class="col-12">
+    <full-calendar #fullcalendar [plugins]="calendarPlugins" [editable]="false" [events]="calendarEvents"
+      [defaultView]="'timeGridWeek'" [header]="{
+        right: 'timeGridWeek,timeGridDay,listWeek'
+      }" [locale]="'pt-br'" [minTime]="'08:00:00'" [maxTime]="'19:00:00'" [allDaySlot]='false' [weekends]="false"
+      [height]="'auto'" [dir]="'ltr'" [events]="calendarEvents" (eventClick)="onEventClick($event)"
+      (eventRender)="onEventRender($event)">
+    </full-calendar>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+
+    <div class="card-body">
+
+      <div class="row d-flex justify-content-center flex-wrap">
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-pink"></div>
+          <p class="text-center">BSM</p>
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-dark-blue"></div>
+          <p class="text-center">Teoria técnica</p>
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-blue"></div>
+          <p class="text-center">Prática técnica</p>
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-green"></div>
+          <p class="text-center">Aplicação de Hab.</p>
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-yellow"></div>
+          <p class="text-center">Empregabilidade</p>
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-red"></div>
+          <p class="text-center">Gerando comunidade</p>
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-purple"></div>
+          <p class="text-center">Suporte social</p>
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-orange"></div>
+          <p class="text-center">Reflexões</p>
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-dark-green"></div>
+          <p class="text-center">Projeto integrador</p>
+        </div>
+
+        <div class="col-4 col-sm-3 col-md-2 col-lg-1 p-2">
+          <div class="bg-gray"></div>
+          <p class="text-center">Tempo flexivel</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

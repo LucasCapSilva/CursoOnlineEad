@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-end" *ngIf='auth.adm()'>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="Angular" value="Angular" name="fav_language" (click)="changeCurso(1,2)">
+    <label>Angular</label>
+  </div>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="React" value="React" name="fav_language" (click)="changeCurso(2,2)">
+    <label>React</label>
+  </div>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="React" value="React" name="fav_language" (click)="changeCurso(3,2)">
+    <label>Android</label>
+  </div>
+</div>  
+  
+  <h4 class="text-dark">Nesse bloco você vai aprender tudo o que você precisa saber para construir uma estrutura de banco
+    de dados relacional, utilizando MySQL.</h4>
+  <p class="text-justify text-dark">Vocês irão conhecer o Spring Boot, um framework incrivel que nos ajuda a construir
+    back-ends para aplicações web. No final desse bloco você realizará um deploy do seu back-end, utilizando a tecnologia
+    Docker.
+  </p>
+  <div class="row mt-5 mb-5">
+      <div class="col-md-4" *ngFor="let item of listaResultModulo">
+        <a (click)='aulas(item.descricao, "danger", item.id)'>
+          <div class="card rounded border-0">
+            <div class="card-body">
+              <div class="row d-flex align-items-center">
+                <div class="col-md-4">
+                  <img class="card-img bg-color" src="{{item.linkImagem}}" alt="Imagem do card">
+                </div>
+                <div class="col-md-8">
+                  <h4>{{item.subdescricao}}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+  
+      </div>
+
+  </div>

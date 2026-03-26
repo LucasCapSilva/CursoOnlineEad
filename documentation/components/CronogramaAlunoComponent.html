@@ -1,0 +1,1503 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>curso-online documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">curso-online documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CronogramaAlunoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/cronograma-aluno/cronograma-aluno.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-cronograma-aluno</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./cronograma-aluno.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./cronograma-aluno.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#calendarApi">calendarApi</a>
+                            </li>
+                            <li>
+                                <a href="#calendarComponent">calendarComponent</a>
+                            </li>
+                            <li>
+                                <a href="#calendarEvents">calendarEvents</a>
+                            </li>
+                            <li>
+                                <a href="#calendarPlugins">calendarPlugins</a>
+                            </li>
+                            <li>
+                                <a href="#cor">cor</a>
+                            </li>
+                            <li>
+                                <a href="#cronograma">cronograma</a>
+                            </li>
+                            <li>
+                                <a href="#data">data</a>
+                            </li>
+                            <li>
+                                <a href="#descricao">descricao</a>
+                            </li>
+                            <li>
+                                <a href="#hFim">hFim</a>
+                            </li>
+                            <li>
+                                <a href="#hIn">hIn</a>
+                            </li>
+                            <li>
+                                <a href="#idTurma">idTurma</a>
+                            </li>
+                            <li>
+                                <a href="#initialized">initialized</a>
+                            </li>
+                            <li>
+                                <a href="#listaCronograma">listaCronograma</a>
+                            </li>
+                            <li>
+                                <a href="#listaTurma">listaTurma</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#findAllAgendaByTurma">findAllAgendaByTurma</a>
+                            </li>
+                            <li>
+                                <a href="#loadEvents">loadEvents</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewChecked">ngAfterViewChecked</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onEventClick">onEventClick</a>
+                            </li>
+                            <li>
+                                <a href="#onEventRender">onEventRender</a>
+                            </li>
+                            <li>
+                                <a href="#trazerMes">trazerMes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(relatorioService: <a href="../injectables/RelatoriosService.html">RelatoriosService</a>, cronogramaService: <a href="../injectables/CronogramaService.html">CronogramaService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, alertService: <a href="../injectables/AlertModelService.html">AlertModelService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>relatorioService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RelatoriosService.html" target="_self" >RelatoriosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cronogramaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CronogramaService.html" target="_self" >CronogramaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertModelService.html" target="_self" >AlertModelService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findAllAgendaByTurma"></a>
+                    <span class="name">
+                        <b>
+                            findAllAgendaByTurma
+                        </b>
+                        <a href="#findAllAgendaByTurma"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findAllAgendaByTurma()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadEvents"></a>
+                    <span class="name">
+                        <b>
+                            loadEvents
+                        </b>
+                        <a href="#loadEvents"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadEvents()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewChecked"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterViewChecked
+                        </b>
+                        <a href="#ngAfterViewChecked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewChecked()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEventClick"></a>
+                    <span class="name">
+                        <b>
+                            onEventClick
+                        </b>
+                        <a href="#onEventClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEventClick(clickedEvent: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>clickedEvent</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEventRender"></a>
+                    <span class="name">
+                        <b>
+                            onEventRender
+                        </b>
+                        <a href="#onEventRender"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEventRender(info: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>info</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trazerMes"></a>
+                    <span class="name">
+                        <b>
+                            trazerMes
+                        </b>
+                        <a href="#trazerMes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>trazerMes(mes: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>mes</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>&quot;01&quot; | &quot;02&quot; | &quot;03&quot; | &quot;04&quot; | &quot;05&quot; | &quot;06&quot; | &quot;07&quot; | &quot;08&quot; | &quot;09&quot; | &quot;10&quot; | &quot;11&quot; | &quot;12&quot;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="calendarApi"></a>
+                        <span class="name">
+                            <b>
+                            calendarApi</b>
+                            <a href="#calendarApi"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Calendar</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="calendarComponent"></a>
+                        <span class="name">
+                            <b>
+                            calendarComponent</b>
+                            <a href="#calendarComponent"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>FullCalendarComponent</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;fullcalendar&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="calendarEvents"></a>
+                        <span class="name">
+                            <b>
+                            calendarEvents</b>
+                            <a href="#calendarEvents"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>EventInput[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="calendarPlugins"></a>
+                        <span class="name">
+                            <b>
+                            calendarPlugins</b>
+                            <a href="#calendarPlugins"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[dayGridPlugin, timeGrigPlugin, interactionPlugin]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cor"></a>
+                        <span class="name">
+                            <b>
+                            cor</b>
+                            <a href="#cor"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cronograma"></a>
+                        <span class="name">
+                            <b>
+                            cronograma</b>
+                            <a href="#cronograma"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Cronograma.html" target="_self" >Cronograma</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Cronograma()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="data"></a>
+                        <span class="name">
+                            <b>
+                            data</b>
+                            <a href="#data"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="descricao"></a>
+                        <span class="name">
+                            <b>
+                            descricao</b>
+                            <a href="#descricao"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hFim"></a>
+                        <span class="name">
+                            <b>
+                            hFim</b>
+                            <a href="#hFim"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hIn"></a>
+                        <span class="name">
+                            <b>
+                            hIn</b>
+                            <a href="#hIn"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="idTurma"></a>
+                        <span class="name">
+                            <b>
+                            idTurma</b>
+                            <a href="#idTurma"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>environment.idTurma</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialized"></a>
+                        <span class="name">
+                            <b>
+                            initialized</b>
+                            <a href="#initialized"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listaCronograma"></a>
+                        <span class="name">
+                            <b>
+                            listaCronograma</b>
+                            <a href="#listaCronograma"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Cronograma.html" target="_self" >Cronograma[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listaTurma"></a>
+                        <span class="name">
+                            <b>
+                            listaTurma</b>
+                            <a href="#listaTurma"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Turma.html" target="_self" >Turma[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/cronograma-aluno/cronograma-aluno.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Turma } from &#x27;./../model/Tuma&#x27;;
+import { Cronograma } from &#x27;./../model/Cronograma&#x27;;
+import { RelatoriosService } from &#x27;./../service/relatorios.service&#x27;;
+import { CronogramaService } from &#x27;./../service/cronograma.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { AlertModelService } from &#x27;./../shared/alert-model.service&#x27;;
+import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { environment } from &#x27;./../../environments/environment.prod&#x27;;
+
+import { FullCalendarComponent } from &#x27;@fullcalendar/angular&#x27;;
+import { EventInput, Calendar } from &#x27;@fullcalendar/core&#x27;;
+import dayGridPlugin from &#x27;@fullcalendar/daygrid&#x27;;
+import timeGrigPlugin from &#x27;@fullcalendar/timegrid&#x27;;
+import interactionPlugin from &#x27;@fullcalendar/interaction&#x27;;
+
+import Tooltip from &#x27;tooltip.js&#x27;;
+
+@Component({
+  selector: &#x27;app-cronograma-aluno&#x27;,
+  templateUrl: &#x27;./cronograma-aluno.component.html&#x27;,
+  styleUrls: [&#x27;./cronograma-aluno.component.css&#x27;]
+})
+export class CronogramaAlunoComponent implements OnInit {
+
+  @ViewChild(&#x27;fullcalendar&#x27;) calendarComponent: FullCalendarComponent;
+
+  calendarEvents: EventInput[] &#x3D; [];
+
+  calendarPlugins &#x3D; [dayGridPlugin, timeGrigPlugin, interactionPlugin];
+
+  calendarApi: Calendar;
+  initialized &#x3D; false;
+
+  descricao: string;
+  cor: string;
+  data: string;
+  hIn: string;
+  hFim: string;
+  idTurma &#x3D; environment.idTurma;
+
+  cronograma: Cronograma &#x3D; new Cronograma();
+  listaCronograma: Cronograma[];
+  listaTurma: Turma[];
+  constructor(
+    private relatorioService: RelatoriosService,
+    private cronogramaService: CronogramaService,
+    private router: Router,
+    private alertService: AlertModelService
+  ) {}
+
+  ngOnInit() {
+
+    window.scroll(0, 0);
+
+    const token &#x3D; environment.token;
+
+    if (token &#x3D;&#x3D; &#x27;&#x27;) {
+      this.alertService.showAlertInfo(&#x27;Antes de começar, faça o login!&#x27;);
+      this.router.navigate([&#x27;/login&#x27;]);
+    }
+
+  }
+
+
+  findAllAgendaByTurma() {
+    this.cronogramaService.getByIdTurma(this.idTurma).subscribe((resp: Cronograma[]) &#x3D;&gt; {
+    this.listaCronograma &#x3D; resp;
+    const events &#x3D; [];
+    this.listaCronograma.forEach(item &#x3D;&gt; {
+      const event &#x3D; {
+        id: item.id,
+        title: item.descricao,
+        start: item.date + &#x27;T&#x27; + item.inicio,
+        end: item.date + &#x27;T&#x27; + item.fim,
+        color: item.corRGB.rgb,
+        textColor: &#x27;#000000&#x27;,
+        allDay: false
+      };
+      events.push(event);
+    });
+    this.calendarEvents &#x3D; events;
+    this.calendarApi.removeAllEventSources();
+    this.calendarApi.addEventSource(this.calendarEvents);
+    });
+  }
+
+  ngAfterViewChecked() {
+    this.calendarApi &#x3D; this.calendarComponent.getApi();
+
+    if (this.calendarApi &amp;&amp; !this.initialized) {
+      this.initialized &#x3D; true;
+      this.loadEvents();
+    }
+  }
+
+  loadEvents() {
+    this.findAllAgendaByTurma();
+  }
+
+
+  onEventClick(clickedEvent: any) {
+    let hInicio &#x3D; String(clickedEvent.event.start).split(&#x27; &#x27;);
+    let hFim &#x3D; String(clickedEvent.event.end).split(&#x27; &#x27;);
+    let data &#x3D; String(clickedEvent.event.end).split(&#x27; &#x27;);
+    let inicio &#x3D; hInicio[4];
+    let fim &#x3D; hFim[4];
+    let dataOk &#x3D; data[2] + &#x27;/&#x27; + this.trazerMes(data[1]) + &#x27;/&#x27; + data[3];
+    this.alertService.showConfirm(dataOk + &#x27; - Das &#x27; + inicio + &#x27; às &#x27; + fim, clickedEvent.event.title, null, &#x27;Fechar&#x27;);
+  }
+
+  onEventRender(info: any) {
+    const tooltip &#x3D; new Tooltip(info.el, {
+      title: info.event.title,
+      placement: &#x27;top-end&#x27;,
+      trigger: &#x27;hover&#x27;,
+      container: &#x27;body&#x27;
+    });
+  }
+
+  trazerMes(mes: string) {
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Jan&#x27;) {
+      return &#x27;01&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Feb&#x27;) {
+      return &#x27;02&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Mar&#x27;) {
+      return &#x27;03&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Apr&#x27;) {
+      return &#x27;04&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;May&#x27;) {
+      return &#x27;05&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Jun&#x27;) {
+      return &#x27;06&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Jul&#x27;) {
+      return &#x27;07&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Aug&#x27;) {
+      return &#x27;08&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Sep&#x27;) {
+      return &#x27;09&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Oct&#x27;) {
+      return &#x27;10&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Nov&#x27;) {
+      return &#x27;11&#x27;;
+    }
+    if (mes &#x3D;&#x3D;&#x3D; &#x27;Dec&#x27;) {
+      return &#x27;12&#x27;;
+    }
+
+}
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row mt-5&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+    &lt;full-calendar #fullcalendar [plugins]&#x3D;&quot;calendarPlugins&quot; [editable]&#x3D;&quot;false&quot; [events]&#x3D;&quot;calendarEvents&quot;
+      [defaultView]&#x3D;&quot;&#x27;timeGridWeek&#x27;&quot; [header]&#x3D;&quot;{
+        right: &#x27;timeGridWeek,timeGridDay,listWeek&#x27;
+      }&quot; [locale]&#x3D;&quot;&#x27;pt-br&#x27;&quot; [minTime]&#x3D;&quot;&#x27;08:00:00&#x27;&quot; [maxTime]&#x3D;&quot;&#x27;19:00:00&#x27;&quot; [allDaySlot]&#x3D;&#x27;false&#x27; [weekends]&#x3D;&quot;false&quot;
+      [height]&#x3D;&quot;&#x27;auto&#x27;&quot; [dir]&#x3D;&quot;&#x27;ltr&#x27;&quot; [events]&#x3D;&quot;calendarEvents&quot; (eventClick)&#x3D;&quot;onEventClick($event)&quot;
+      (eventRender)&#x3D;&quot;onEventRender($event)&quot;&gt;
+    &lt;/full-calendar&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;row&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+
+    &lt;div class&#x3D;&quot;card-body&quot;&gt;
+
+      &lt;div class&#x3D;&quot;row d-flex justify-content-center&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-pink&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;BSM&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-dark-blue&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;Teoria técnica&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-blue&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;Prática técnica&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-green&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;Aplicação de Habilidades&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-yellow&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;Empregabilidade&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-red&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;Gerando comunidade&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-purple&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;Suporte social&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-orange&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;Reflexões&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-dark-green&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;Projeto integrador&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-1 p-0&quot;&gt;
+          &lt;div class&#x3D;&quot;bg-gray&quot;&gt;&lt;/div&gt;
+          &lt;p class&#x3D;&quot;text-center&quot;&gt;Tempo flexivel&lt;/p&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./cronograma-aluno.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.w-5{
+  width: 50px;
+}
+
+p{
+  font-size: 8pt;
+  margin-top: 3px;
+}
+
+.bg-pink {
+  background-color: #ff00ff;
+  width: 100%;
+  height: 15px;
+}
+
+.bg-dark-blue {
+  background-color: #0000ff;
+  width: 100%;
+  height: 15px;
+}
+
+.bg-blue {
+  background-color: #9fc5e8;
+  width: 100%;
+  height: 15px;
+}
+
+.bg-green{
+  background-color: #92d050;
+  width: 100%;
+  height: 15px;
+}
+
+.bg-yellow{
+  background-color: #ffff00;
+  width: 100%;
+  height: 15px;
+}
+
+.bg-red{
+  background-color: #f00;
+  width: 100%;
+  height: 15px;
+}
+
+.bg-purple {
+  background-color: #9900ff;
+  width: 100%;
+  height: 15px;
+}
+
+.bg-orange{
+  background-color: #ffc000;
+  width: 100%;
+  height: 15px;
+}
+
+.bg-dark-green{
+  background-color: #10ac84;
+  width: 100%;
+  height: 15px;
+}
+
+.bg-gray{
+  background-color: gray;
+  width: 100%;
+  height: 15px;
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row mt-5">  <div class="col-md-12">    <full-calendar #fullcalendar [plugins]="calendarPlugins" [editable]="false" [events]="calendarEvents"      [defaultView]="\'timeGridWeek\'" [header]="{        right: \'timeGridWeek,timeGridDay,listWeek\'      }" [locale]="\'pt-br\'" [minTime]="\'08:00:00\'" [maxTime]="\'19:00:00\'" [allDaySlot]=\'false\' [weekends]="false"      [height]="\'auto\'" [dir]="\'ltr\'" [events]="calendarEvents" (eventClick)="onEventClick($event)"      (eventRender)="onEventRender($event)">    </full-calendar>  </div></div><div class="row">  <div class="col-md-12">    <div class="card-body">      <div class="row d-flex justify-content-center">        <div class="col-md-1 p-0">          <div class="bg-pink"></div>          <p class="text-center">BSM</p>        </div>        <div class="col-md-1 p-0">          <div class="bg-dark-blue"></div>          <p class="text-center">Teoria técnica</p>        </div>        <div class="col-md-1 p-0">          <div class="bg-blue"></div>          <p class="text-center">Prática técnica</p>        </div>        <div class="col-md-1 p-0">          <div class="bg-green"></div>          <p class="text-center">Aplicação de Habilidades</p>        </div>        <div class="col-md-1 p-0">          <div class="bg-yellow"></div>          <p class="text-center">Empregabilidade</p>        </div>        <div class="col-md-1 p-0">          <div class="bg-red"></div>          <p class="text-center">Gerando comunidade</p>        </div>        <div class="col-md-1 p-0">          <div class="bg-purple"></div>          <p class="text-center">Suporte social</p>        </div>        <div class="col-md-1 p-0">          <div class="bg-orange"></div>          <p class="text-center">Reflexões</p>        </div>        <div class="col-md-1 p-0">          <div class="bg-dark-green"></div>          <p class="text-center">Projeto integrador</p>        </div>        <div class="col-md-1 p-0">          <div class="bg-gray"></div>          <p class="text-center">Tempo flexivel</p>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AlertModalComponent', 'selector': 'app-alert-modal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreaBemestarComponent', 'selector': 'app-area-bemestar'},{'name': 'AreaFacilitadorComponent', 'selector': 'app-area-facilitador'},{'name': 'AreaParticipanteComponent', 'selector': 'app-area-participante'},{'name': 'AvisosAlunosComponent', 'selector': 'app-avisos-alunos'},{'name': 'AvisosInstrutorComponent', 'selector': 'app-avisos-instrutor'},{'name': 'BarometroComponent', 'selector': 'app-barometro'},{'name': 'BarometroDiarioComponent', 'selector': 'app-barometro-diario'},{'name': 'BlocosComponent', 'selector': 'app-blocos'},{'name': 'CadastroComponent', 'selector': 'app-cadastro'},{'name': 'CadastroCorComponent', 'selector': 'app-cadastro-cor'},{'name': 'CadastroVideoComponent', 'selector': 'app-cadastro-video'},{'name': 'ChamadaComponent', 'selector': 'app-chamada'},{'name': 'ConfirmModelComponent', 'selector': 'app-confirm-model'},{'name': 'ConteudoUmComponent', 'selector': 'app-conteudo-um'},{'name': 'CriarAtividadesRevisaoComponent', 'selector': 'app-criar-atividades-revisao'},{'name': 'CriarExercicioComponent', 'selector': 'app-criar-exercicio'},{'name': 'CriarExercicioObrigatorioComponent', 'selector': 'app-criar-exercicio-obrigatorio'},{'name': 'CronogramaAlunoComponent', 'selector': 'app-cronograma-aluno'},{'name': 'CronogramaInstrutorComponent', 'selector': 'app-cronograma-instrutor'},{'name': 'DeletarCronogramaComponent', 'selector': 'app-deletar-cronograma'},{'name': 'DeletarUsuarioComponent', 'selector': 'app-deletar-usuario'},{'name': 'EditarAtividadeObrigatoriaComponent', 'selector': 'app-editar-atividade-obrigatoria'},{'name': 'EditarAtividadesRevisaoComponent', 'selector': 'app-editar-atividades-revisao'},{'name': 'EditarAvisosComponent', 'selector': 'app-editar-avisos'},{'name': 'EditarComentarioForumComponent', 'selector': 'app-editar-comentario-forum'},{'name': 'EditarCriacaoAtividadeComponent', 'selector': 'app-editar-criacao-atividade'},{'name': 'EditarDuvidaForumComponent', 'selector': 'app-editar-duvida-forum'},{'name': 'EditarEntregaAtividadeComponent', 'selector': 'app-editar-entrega-atividade'},{'name': 'EditarEntregaAtividadeObrComponent', 'selector': 'app-editar-entrega-atividade-obr'},{'name': 'EditarFormBemestarPosComponent', 'selector': 'app-editar-form-bemestar-pos'},{'name': 'EditarLinkUtilComponent', 'selector': 'app-editar-link-util'},{'name': 'EditarLinkZoomComponent', 'selector': 'app-editar-link-zoom'},{'name': 'EditarPerfilComponent', 'selector': 'app-editar-perfil'},{'name': 'EntregarExercicioComponent', 'selector': 'app-entregar-exercicio'},{'name': 'FormBemestarPosComponent', 'selector': 'app-form-bemestar-pos'},{'name': 'FormBemestarSolicitaComponent', 'selector': 'app-form-bemestar-solicita'},{'name': 'ForumComponent', 'selector': 'app-forum'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LiberarAulasComponent', 'selector': 'app-liberar-aulas'},{'name': 'LinksUteisComponent', 'selector': 'app-links-uteis'},{'name': 'ListaFormBemestarPosComponent', 'selector': 'app-lista-form-bemestar-pos'},{'name': 'ListaFormBemestarSolicitaComponent', 'selector': 'app-lista-form-bemestar-solicita'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'ModuloDoisComponent', 'selector': 'app-modulo-dois'},{'name': 'ModuloSoftComponent', 'selector': 'app-modulo-soft'},{'name': 'ModuloTresComponent', 'selector': 'app-modulo-tres'},{'name': 'ModuloUmComponent', 'selector': 'app-modulo-um'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RelatorioBarometroComponent', 'selector': 'app-relatorio-barometro'},{'name': 'RelatorioBarometroDiaComponent', 'selector': 'app-relatorio-barometro-dia'},{'name': 'RelatorioBemestarComponent', 'selector': 'app-relatorio-bemestar'},{'name': 'RelatorioBemestarPosAtendimentosParticipanteComponent', 'selector': 'app-relatorio-bemestar-pos-atendimentos-participante'},{'name': 'RelatorioBemestarPosAtendimentosTecnicoComponent', 'selector': 'app-relatorio-bemestar-pos-atendimentos-tecnico'},{'name': 'RelatorioBemestarPosAtendimentoTotalminComponent', 'selector': 'app-relatorio-bemestar-pos-atendimento-totalmin'},{'name': 'RelatorioBemestarPosAtendimentoTurmaComponent', 'selector': 'app-relatorio-bemestar-pos-atendimento-turma'},{'name': 'RelatorioBemestarPosDemandaTurmaComponent', 'selector': 'app-relatorio-bemestar-pos-demanda-turma'},{'name': 'RelatorioBemestarPosSolicitacaoAreaComponent', 'selector': 'app-relatorio-bemestar-pos-solicitacao-area'},{'name': 'RelatorioBemestarPosVulnerabilidadeTurmaComponent', 'selector': 'app-relatorio-bemestar-pos-vulnerabilidade-turma'},{'name': 'RelatorioBemestarSolicitacaoParticipanteComponent', 'selector': 'app-relatorio-bemestar-solicitacao-participante'},{'name': 'RelatorioBemestarSolicitacaoTurmaComponent', 'selector': 'app-relatorio-bemestar-solicitacao-turma'},{'name': 'RelatorioBemestarUrgenciaTurmaComponent', 'selector': 'app-relatorio-bemestar-urgencia-turma'},{'name': 'RelatorioEntregaExercicioComponent', 'selector': 'app-relatorio-entrega-exercicio'},{'name': 'RelatorioEntregaExercicioOpcionalComponent', 'selector': 'app-relatorio-entrega-exercicio-opcional'},{'name': 'RelatoriosComponent', 'selector': 'app-relatorios'},{'name': 'RelatorioZoomComponent', 'selector': 'app-relatorio-zoom'},{'name': 'RodapeComponent', 'selector': 'app-rodape'},{'name': 'SobreNosComponent', 'selector': 'app-sobre-nos'},{'name': 'SoftComponent', 'selector': 'app-soft'},{'name': 'UploadComponent', 'selector': 'app-upload'},{'name': 'VideosComponent', 'selector': 'app-videos'},{'name': 'ZoomAlunoComponent', 'selector': 'app-zoom-aluno'},{'name': 'ZoomInstrutorComponent', 'selector': 'app-zoom-instrutor'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CronogramaAlunoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CronogramaAlunoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

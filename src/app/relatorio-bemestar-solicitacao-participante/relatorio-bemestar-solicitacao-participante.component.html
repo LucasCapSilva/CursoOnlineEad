@@ -1,0 +1,80 @@
+<div class="row mt-5 d-flex justify-content-center">
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="turma">Turma</label>
+      <select class="form-control" id="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()">
+        <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+          {{turma.descricao}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="participante">Participante</label>
+      <select class="form-control" id="participante" [(ngModel)]="idUser" (change)="findByIdUser()">
+        <option *ngFor='let user of turma.users' value={{user.id}}>
+          {{user.nome}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-md-4">
+    <div class="form-group w-100">
+      <label for="data-inicial" class="mb-0">Data Inicial</label>
+      <input type="date" class="form-control" name="data-inicial" id="data-inicial"
+        [(ngModel)]='dataIn'>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="form-group w-100">
+      <label for="data-final" class="mb-0">Data Final</label>
+      <input type="date" class="form-control" name="data-final" id="data-final"
+        [(ngModel)]='dataEnd'>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-5 d-flex justify-content-center">
+  <div class="col-md-8">
+    <button class='btn btn-outline-primary btn-block' (click)='findSolicitacaoByTurmaEData()'>Filtrar</button>
+  </div>
+</div>
+
+<hr>
+
+<!--Com filtro-->
+<div *ngIf='filtro'>
+
+
+  <div class="table-responsive">
+  <table class="table table-bordered mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Participante</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Data inicial</th>
+        <th scope="col">Data final</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{formSolicitacao.descricao}}</th>
+        <td>{{formSolicitacao.qtd}}</td>
+        <td>{{dataIn | date: 'dd/MM/yyyy'}}</td>
+        <td>{{dataEnd | date: 'dd/MM/yyyy'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<!--/Com filtro-->
+
+
+

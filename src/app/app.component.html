@@ -1,0 +1,11 @@
+
+
+<div *ngIf='authService.acessoMenu(token); else router'>
+  <app-menu></app-menu>
+</div>
+
+<ng-template #router>
+ 
+ <router-outlet></router-outlet> 
+</ng-template>
+

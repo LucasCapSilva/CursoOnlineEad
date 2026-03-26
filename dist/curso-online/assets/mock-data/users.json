@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nome": "João Silva",
+    "email": "joao@email.com",
+    "profile": "ROLE_ALUNO",
+    "turma": "Turma A",
+    "idTurma": 1,
+    "hasCurriculo": false
+  },
+  {
+    "id": 2,
+    "nome": "Maria Santos",
+    "email": "maria@email.com",
+    "profile": "ROLE_INSTRUTOR",
+    "turma": "Turma A",
+    "idTurma": 1,
+    "hasCurriculo": true
+  },
+  {
+    "id": 3,
+    "nome": "Pedro Oliveira",
+    "email": "pedro@email.com",
+    "profile": "ROLE_ALUNO",
+    "turma": "Turma B",
+    "idTurma": 2,
+    "hasCurriculo": false
+  },
+  {
+    "id": 4,
+    "nome": "Ana Costa",
+    "email": "ana@email.com",
+    "profile": "ROLE_ADMIN",
+    "turma": "Turma C",
+    "idTurma": 3,
+    "hasCurriculo": true
+  }
+]

@@ -1,0 +1,139 @@
+<div class="container">
+    <div class="text-center mt-4">
+        <h1>EXPERIÊNCIA PROFISSIONAL </h1>
+        <p>Selecionar as experiências mais relevantes;
+            Inserir da mais recente para a mais antiga sempre. Preenchimento obrigatório de datas de início e término e responsabilidades (até 170 caracteres com espaço). Limite de até três experiências profissionais.
+             </p>
+    </div>
+    <div class="row mt-3 mb-1 d-flex justify-content-center align-content-center"
+        *ngFor="let item of listCurriculoProfissional;let i = index">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="form-group mx-1">
+                    <label for="nome">Nome da Empresa</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.nomeEmpresa" disabled />
+
+                </div>
+                <div class="form-group mx-1">
+                    <label for="sobrenome">Cargo</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.cargo" disabled />
+
+                </div>
+                <div class="form-group mx-1">
+                    <label for="sobrenome">Principais Atividades</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.principaisAtividades" disabled />
+
+                </div>
+                <div class="form-group mx-1">
+                    <label for="tipo">Data inicio</label>
+                    <input class="form-control" name="tipo" type="date" id="tipo" [(ngModel)]="item.mesAnoIn" disabled>
+
+                </div>
+                <div class="form-group mx-1">
+                    <label for="tipo">Data fim</label>
+                    <input class="form-control" name="tipo" type="date" id="tipo" [(ngModel)]="item.mesAnoFim" disabled>
+
+                </div>
+                <div class="form-group mx-1 d-flex align-items-end">
+                    <button type="button" class="btn btn-outline-danger button-style"
+                        (click)="onDelete(i)">Deletar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-3 mb-1 d-flex justify-content-center align-content-center" >
+       
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="form-group  mx-1">
+                    <label for="tipo">Nome da Empresa</label>
+                    <input class="form-control" name="tipo" id="tipo" placeholder="insira o nome da Empresa" rows='2'
+                        maxlength="60" [(ngModel)]="curriculoProfissional.nomeEmpresa">
+                    <div class="d-flex justify-content-end">
+                        <span class="text-bold">{{60 - curriculoProfissional.nomeEmpresa?.length}}</span>
+                    </div>
+                </div>
+
+                <div class="form-group mx-1">
+                    <label for="tipo">Cargo</label>
+                    <input class="form-control" name="tipo" id="tipo" placeholder="insira qual o seu Cargo" rows='2'
+                        maxlength="50" [(ngModel)]="curriculoProfissional.cargo">
+                    <div class="d-flex justify-content-end">
+                        <span class="text-bold">{{50 - curriculoProfissional.cargo?.length}}</span>
+                    </div>
+                </div>
+                <div class="form-group mx-1">
+                    <label for="tipo">Principais Atividades</label>
+                    <input class="form-control" name="tipo" id="tipo" placeholder="Principais Atividades" rows='2'
+                        maxlength="250" [(ngModel)]="curriculoProfissional.principaisAtividades">
+                    <div class="d-flex justify-content-end">
+                        <span class="text-bold">{{250 - curriculoProfissional.principaisAtividades?.length}}</span>
+                    </div>
+                </div>    
+                    <div class="form-group mx-1">
+                        <label for="tipo">Data inicio</label>
+                        <input class="form-control" name="tipo" type="date" id="tipo"
+                            [(ngModel)]="curriculoProfissional.mesAnoIn">
+                        </div>
+                        <div class="form-group mx-1">
+                        <label for="tipo">Data fim</label>
+                        <input class="form-control" name="tipo" type="date" id="tipo"
+                            [(ngModel)]="curriculoProfissional.mesAnoFim">
+                        </div>
+                <div class="form-group mx-1 d-flex align-items-center">
+                    <button type="button" class="btn btn-outline-primary button-style" (click)="onInsert()">Inserir
+                    Profissão</button>
+                </div>
+                <div class="d-flex justify-content-center mt-3 mb-3">
+                    <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> 
+        
+    <div class="d-flex justify-content-center mt-3 mb-3">
+        <input type="button" value="Avançar" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal2"/>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bgm">
+            <div class="modal-header d-flex justify-content-center">
+                <h5 class="modal-title textm " id="exampleModalLabel">EXPERIÊNCIA PROFISSIONAL</h5>
+            </div>
+            <div class="modal-body textm">
+                <div>Selecionar as experiências mais relevantes;
+                    Inserir da mais recente para a mais antiga 
+                    sempre.
+                </div>
+                <div>Insira até 4 experiências profissionais</div>
+
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="Ok" data-dismiss="modal"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Modal 2-->
+    <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bgm">
+                <div class="modal-header d-flex justify-content-center">
+                    <h5 class="modal-title textm " id="exampleModalLabel">Tem certeza?</h5>
+                </div>
+                <div class="modal-footer  d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar a editar</button>
+                    <input type="button" class="btn btn-primary"  value="Finalizar o {{editarCadastrar}}" value="Próximo"
+                        (click)="saveEndNextStap()" data-dismiss="modal"/>
+                </div>
+            </div>
+        </div>
+    </div>

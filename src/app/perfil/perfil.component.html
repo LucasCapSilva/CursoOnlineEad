@@ -1,0 +1,32 @@
+<!--
+<div class="container mt-5 mb-5">
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-9">
+      <div class="card shadow bg-white rounded border-0">
+        <div class="row mb-3 mt-3">
+          <div class="col-md-3 d-flex justify-content-center">
+            <span *ngIf='userFoto.foto != null; else semFoto' class="d-flex justify-content-center">
+              <img src="data:image/jpeg;base64,{{ userFoto.foto }}" class=" img-fluid w-75 rounded-circle" alt="">
+            </span>
+            <ng-template #semFoto>
+              <img src="https://i.imgur.com/iPnUWdQ.png" class="img-fluid w-75 rounded-circle" alt="">
+            </ng-template>
+          </div>
+          <div class="col-md-7 mt-4">
+            <h1>{{user.nome}}</h1>
+            <h5>{{user.turma.descricao}} </h5>
+          </div>
+          <div class="col-md-2">
+            <a [routerLink]="['/editar-perfil', user.id]">Editar perfil</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+-->
+
+

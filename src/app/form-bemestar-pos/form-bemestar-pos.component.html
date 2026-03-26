@@ -1,0 +1,292 @@
+<div class="container">
+
+  <div class="row mt-3 mb-5 d-flex justify-content-center">
+    <div class="col-md-8 shadow ">
+
+      <!-- <div class="form-group mt-3">
+        <label for="assistenteSocial">Técnico de bem estar social</label>
+        <select class="form-control" id="assistenteSocial" [(ngModel)]='idUserAssistente' (change)='findByIdUserAssistente()'>
+          <option *ngFor='let user of listaUserByProfile' value={{user.id}}>
+            {{user.nome}}
+          </option>
+        </select>
+      </div> -->
+
+      <div class="row mt-3">
+        <div class="col">
+          <div class="form-group">
+            <label for="curso">Curso</label>
+            <select class="form-control" id="curso" [(ngModel)]="idCurso" (change)="findByIdCurso()">
+              <option *ngFor='let curso of listaCurso' value={{curso.id}}>
+                {{curso.descricao}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="turma">Turma</label>
+            <select class="form-control" id="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()">
+              <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                {{turma.descricao}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="participante">Participante</label>
+        <select class="form-control" id="participante" [(ngModel)]="idUser" (change)="findByIdUser()">
+          <option *ngFor='let user of turma.users' value={{user.id}}>
+            {{user.nome}}
+          </option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="data">Data do atendimento</label>
+            <input type="date" class="form-control" id="data" [(ngModel)]='form.data'>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="solicitante">Solicitante</label>
+            <select class="form-control" id="solicitante" (change)='profileEscolhido($event)'>
+             <option disabled selected hidden>Selecione um solicitante</option>
+              <option *ngFor='let profile of listaProfile' value={{profile}}>
+                {{profile}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group m-0">
+        <label for="demanda">Demanda apresentada:</label>
+      </div>
+
+      <div class="ml-4 mt-0">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="administrativo" [(ngModel)]='demanda.administrativo'>
+          <label class="form-check-label" for="administrativo">
+            Administrativo
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="apoioInternet" [(ngModel)]='demanda.apoioInternetNotebook'>
+          <label class="form-check-label" for="apoioInternet">
+            Apoio internet/notebook
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="ausencias" [(ngModel)]='demanda.ausencias'>
+          <label class="form-check-label" for="ausencias">
+            Ausências
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="comportamental" [(ngModel)]='demanda.comportamental'>
+          <label class="form-check-label" for="comportamental">
+            Comportamental
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="beneficios" [(ngModel)]='demanda.beneficios'>
+          <label class="form-check-label" for="beneficios">
+            Benefícios
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="conflito" [(ngModel)]='demanda.conflitoEntreParticipantes'>
+          <label class="form-check-label" for="beneficios">
+            Conflito entre participantes
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="desistencia" [(ngModel)]='demanda.desistencia'>
+          <label class="form-check-label" for="desistencia">
+            Desistência
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="emocional" [(ngModel)]='demanda.emocional'>
+          <label class="form-check-label" for="emocional">
+            Emocional
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="engajamento" [(ngModel)]='demanda.engajamento'>
+          <label class="form-check-label" for="engajamento">
+            Engajamento
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="empregabilidade" [(ngModel)]='demanda.empregabilidade'>
+          <label class="form-check-label" for="empregabilidade">
+            Empregabilidade
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="presença" [(ngModel)]='demanda.presenca'>
+          <label class="form-check-label" for="presença">
+            Presença
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="problemasEducacionais" [(ngModel)]='demanda.problemasEducacionais'>
+          <label class="form-check-label" for="problemasEducacionais">
+            Problemas Educacionais
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="problemasTecnicos" [(ngModel)]='demanda.problemasTecnicos'>
+          <label class="form-check-label" for="problemasTecnicos">
+            Problemas Técnicos
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="saude" [(ngModel)]='demanda.saude'>
+          <label class="form-check-label" for="saude">
+            Saúde
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="saudeMental" [(ngModel)]='demanda.saudeMental'>
+          <label class="form-check-label" for="saudeMental">
+            Saúde Mental
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="socioeconomico" [(ngModel)]='demanda.socioeconomico'>
+          <label class="form-check-label" for="socioeconomico">
+            Socioeconômico
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="sociofamiliar" [(ngModel)]='demanda.sociofamiliar'>
+          <label class="form-check-label" for="sociofamiliar">
+            Sociofamiliar
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="violenciaDeGenero" [(ngModel)]='demanda.violenciaDeGenero'>
+          <label class="form-check-label" for="violenciaDeGenero">
+            Violência de Gênero
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="violenciaUrbana" [(ngModel)]='demanda.violenciaUrbana'>
+          <label class="form-check-label" for="violenciaUrbana">
+            Violência Urbana
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="mapeamentoVulnerabilidade" [(ngModel)]='demanda.mapeamentoVunerabilidade'>
+          <label class="form-check-label" for="mapeamentoVulnerabilidade">
+            Mapeamento de Vulnerabilidade
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="covid" [(ngModel)]='demanda.covid'>
+          <label class="form-check-label" for="covid">
+            Covid
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="outros">
+          <label class="form-check-label" for="outros">
+            Outros:
+          </label>
+          <input type="text" class="form-control" id="outrosInput" [(ngModel)]='demanda.outros'>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group mt-3">
+            <label for="vulnerabilidade ">Duração do atendimento</label>
+            <select class="form-control" id="vulnerabilidade" (change)='tempo($event)'>
+              <option disabled selected hidden>Selecione uma duração</option>
+              <option value='5'>5 min</option>
+              <option value='10'>10 min</option>
+              <option value='15'>15 min</option>
+              <option value='20'>20 min</option>
+              <option value='25'>25 min</option>
+              <option value='30'>30 min</option>
+              <option value='35'>35 min</option>
+              <option value='40'>40 min</option>
+              <option value='45'>45 min</option>
+              <option value='50'>50 min</option>
+              <option value='55'>55 min</option>
+              <option value='60'>60 min</option>
+              <option value='65'>65 min</option>
+              <option value='70'>70 min</option>
+              <option value='75'>75 min</option>
+              <option value='80'>80 min</option>
+              <option value='85'>85 min</option>
+              <option value='90'>90 min</option>
+              <option value='95'>95 min</option>
+              <option value='100'>100 min</option>
+              <option value='105'>105 min</option>
+              <option value='110'>110 min</option>
+              <option value='115'>115 min</option>
+              <option value='120'>120 min</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group mt-3">
+            <label for="vulnerabilidade ">Vulnerabilidade do Participante</label>
+            <select class="form-control" id="vulnerabilidade" (change)='vulnerabilidade($event)'>
+              <option disabled selected hidden>Selecione a vulnerabilidade</option>
+              <option *ngFor='let prioridade of listaPrioridade' value={{prioridade}}>
+                {{prioridade}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição do atendimento</label>
+        <textarea type="text" class="form-control" id="descricao" placeholder="Descreva aqui o atendimento" rows='7' maxlength="63000" [(ngModel)]='form.descricao'></textarea>
+        <div class="d-flex justify-content-end">
+          <span class="text-danger">{{63000 - form.descricao?.length}} caracteres restantes</span>
+        </div>
+
+      </div>
+
+      <div class="d-flex justify-content-center mt-3 mb-3">
+        <button type="submit" class="btn btn-outline-success" (click)='finalizar()'>Finalizar</button>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

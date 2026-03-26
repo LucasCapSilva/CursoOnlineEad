@@ -1,0 +1,153 @@
+a{
+  cursor: pointer;
+
+}
+
+.iconVideoWhite{
+  width: 20px;
+  height: 20px;
+}
+
+.iconVideoBlack{
+  width: 40px;
+  height: 40px;
+}
+
+.avaliacao{
+  font-size: 28px;
+}
+
+
+
+.bg-danger{
+  background-color: #ff5252;
+  width: 100%;
+  height:3px;
+}
+
+.btn-outline-danger:hover{
+  background-color: #ff5252;
+  color: white;
+
+}
+
+.btn-outline-danger{
+  color: #ff5252;
+  border-color: #ff5252;
+}
+
+.text-danger{
+  color: #ff5252;
+}
+
+
+.bg-warning{
+  background-color: #ffb142;
+  width: 100%;
+  height:3px;
+}
+
+.btn-outline-warning:hover{
+  background-color: #ffb142;
+  color: white;
+
+}
+
+.btn-outline-warning{
+  color: #ffb142;
+  border-color: #ffb142;
+}
+
+.text-warning{
+  color: #ffb142;
+}
+
+.bg-info{
+  background-color: #227093;
+  width: 100%;
+  height:3px;
+}
+
+.btn-outline-info:hover{
+  background-color: #227093;
+  color: white;
+
+}
+
+.btn-outline-info{
+  color: #227093;
+  border-color: #227093;
+}
+
+.text-info{
+  color: #227093;
+}
+
+.w-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.menu-lateral {
+  overflow: auto;
+  right:0;
+  min-height: 390px; height: auto;
+  border-bottom: #555 solid 3px;
+}
+
+#myVideo{
+  width: 100%;
+}
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #fff;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 9px;
+	background-color: #fff;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.bg-black{
+  background-color: rgba(0,0,0,0.7);
+}
+
+.dropdown-item:hover{
+  background-color: #555;
+}
+
+.dropdown-item{
+  width: 100%;
+}
+
+button{
+  cursor: pointer;
+}
+
+.proxima-aula:hover{
+  color: #000 !important;
+  text-decoration: none;
+}
+
+.icon-size{
+  font-size: 18pt;
+}
+
+.icon-size:hover{
+  color: #000 !important;
+}
+
+.velocidade:hover{
+  text-decoration: none;
+  color: #979797 !important;
+}
+

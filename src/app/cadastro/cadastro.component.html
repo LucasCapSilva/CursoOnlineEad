@@ -1,0 +1,166 @@
+
+    <div class="row d-flex justify-content-center mt-5 mb-5" *ngIf='aguarde'>
+      <div class="col-md-6">
+        <div class="accordion" id="cadastroMass">
+          <div class="card border-0">
+            <button
+              class="btn btn-link btn-inserir border-0 p-0 collapsed rounded text-uppercase text-center font-weight-bold"
+              type="button" data-toggle="collapse" data-target="#cadastroMassa" aria-expanded="false"
+              aria-controls="collapseTwo">
+              <div class="card-header inserir border-0" id="cadMa">
+                <h5 class="mb-0">
+                  Cadastro em massa
+                </h5>
+              </div>
+            </button>
+            <div id="cadastroMassa" class="collapse" aria-labelledby="cadMa" data-parent="#cadastroMass">
+              <div class="card-body">
+
+                <div class="form-group">
+                  <label class="" for="titulo">Selecione uma turma ou <a class="text-primary" data-toggle="modal"
+                      data-target="#modalCadastroTurma">Cadastre uma nova</a>:</label>
+                  <select name="nome" [(ngModel)]="idTurma" (change)="findByIdTurma()" class="form-control">
+                    <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                      {{turma.descricao}}
+                    </option>
+                  </select>
+                </div>
+
+                <label for="customFile" class="text-center">Selecione o arquivo EXCEL:</label>
+
+                <div class="custom-file w-100">
+                  <input type="file" class="custom-file-input" id="customFile" (change)="onFileChange($event)">
+                  <label id="output" class="custom-file-label" for="customFile">Escolher arquivo</label>
+                </div>
+
+                <div class="d-flex justify-content-center mt-5">
+                  <button type="button" class="btn btn-outline-primary btn-responsive" (click)='cadastroMassa()'>Cadastrar</button>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="accordion" id="cadastroInd">
+          <div class="card border-0">
+            <button
+              class="btn btn-link btn-inserir border-0 p-0 collapsed rounded text-uppercase text-center font-weight-bold"
+              type="button" data-toggle="collapse" data-target="#cadastroIndividual" aria-expanded="false"
+              aria-controls="collapseTwo">
+              <div class="card-header inserir border-0" id="cadInd">
+                <h5 class="mb-0">
+                  Cadastro individual
+                </h5>
+              </div>
+            </button>
+            <div id="cadastroIndividual" class="collapse" aria-labelledby="cadInd" data-parent="#cadastroInd">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input type="text" class="form-control" id="nome" placeholder="Nome" [(ngModel)]='user.nome'>
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input type="email" class="form-control" id="email" placeholder="E-mail" [(ngModel)]='user.usuario'>
+                </div>
+
+                <div class="form-group">
+                  <label for="senha">Senha</label>
+                  <input type="password" class="form-control" id="senha" placeholder="Senha" [(ngModel)]='user.password'>
+                </div>
+
+                <div class="form-group">
+                  <label class="" for="titulo">Tipo:</label>
+                  <select name="nome" (change)="profileUser($event)" class="form-control">
+                    <option>Selecione um tipo de user:</option>
+                    <option value='ROLE_PARTICIPANTE'>Participante</option>
+                    <option value='ROLE_INSTRUTOR'>Facilitador(a)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="" for="titulo">Selecione uma turma ou <a class="text-primary" data-toggle="modal"
+                      data-target="#modalCadastroTurma">Cadastre uma nova</a>:</label>
+                  <select name="nome" [(ngModel)]="idTurma" (change)="findByIdTurma()" class="form-control">
+                    <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                      {{turma.descricao}}
+                    </option>
+                  </select>
+                </div>
+
+
+                <div class="d-flex justify-content-center mt-5">
+                  <button type="button" class="btn btn-outline-primary btn-responsive" (click)="cadastrar()">Cadastrar</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3 id='carregando' class="text-primary text-center mt-5 mb-5"></h3>
+      </div>
+    </div>
+
+
+
+
+<!--Modal Cadastro Turma-->
+
+<div class="modal fade" id="modalCadastroTurma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Cadastro de nova turma</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" class="form-control" id="descricao" placeholder="Descrição da Turma. Exemplo: Turma 14"
+          [(ngModel)]='turma.descricao'>
+      </div>
+
+      <div class="form-group">
+        <label class="" for="titulo">Tipo do Curso:</label>
+        <select name="nome" [(ngModel)]="idCurso" (change)="findByIdCurso()" class="form-control">
+          <option *ngFor="let curso of listCurso" value={{curso.id}}>
+            {{curso.descricao}}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="" for="titulo">Tipo da Turma:</label>
+        <select name="nome" [(ngModel)]="idTipoTurma" (change)="findByIdTipoTurma()" class="form-control">
+          <option *ngFor="let tipo of listaTipoTuma" value={{tipo.id}}>
+            {{tipo.descricao}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+      <button type="button" class="btn btn-outline-primary" data-dismiss="modal" (click)='cadastrarTurma()'>Cadastrar
+        Turma</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!--/Modal Cadastro Turma-->
+

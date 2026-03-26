@@ -1,0 +1,230 @@
+<div class="container">
+    <div class="row mt-3 mb-5 d-flex justify-content-center">
+        <div class="col-md-8 shadow">
+            <div class="row mt-3 flex-column justify-content-center align-items-center">
+                <div class="col col-md-6">
+                    <div class="form-group">
+                        <img [src]="imagem" class="w-60 img-fluid ml-4" alt="">
+                    </div>
+                </div>
+                <div class="col col-md-4">
+                    <div class="form-group">
+                        <input (click)="showAlert()" type="file" id="customFile" class="mr-4 custom-file-input"
+                            (change)="changeCarregarFoto($event)">
+                        <label class="custom-file-label" for="customFile">Carregar a Foto</label>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3 mb-3">
+                <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-question-circle " aria-hidden="true"></i></a>
+            </div>
+            <div class="row mt-3">
+                <div class="col col-md-4">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input [(ngModel)]='curriculo.nome' type="text" class="form-control" id="nome"
+                            placeholder="Escreva seu primeiro nome" maxlength="20" />
+                        <div class="d-flex justify-content-end">
+                            <span class="text-bold">{{20 - curriculo.nome?.length}}
+                                caracteres restantes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-8">
+                    <div class="form-group">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input [(ngModel)]='curriculo.sobrenome' type="text" class="form-control" id="sobrenomeme"
+                            placeholder="Escreva seu sobrenome" maxlength="15" />
+                        <div class="d-flex justify-content-end">
+                            <span class="text-bold">{{15 - curriculo.sobrenome.length}}
+                                caracteres restantes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-md-4">
+                    <div class="form-group">
+                        <label for="celular">Celular</label>
+                        <input [(ngModel)]='curriculo.celular' type="text" class="form-control" id="celular"
+                            placeholder="Numero do Celular" />
+                    </div>
+                </div>
+                <div class="col col-md-4">
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <!-- <input type="text" class="form-control" id="estado" placeholder="Escreva seu estado" /> -->
+                        <select id="estado" class="form-control" (change)="changeEstado()" name="estados"
+                            [(ngModel)]="Cidade.nome">
+                            <option value=""></option>
+                            <option *ngFor="let e of estados" value="{{e.nome}}">{{e.nome}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col col-md-4">
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <!-- <input type="text" class="form-control" id="cidade" placeholder="Escreva sua cidade" /> -->
+                        <select id="cidade" class="form-control" [(ngModel)]="curriculo.cidade">
+                            <option value=""></option>
+                            <option *ngFor="let c of Municipios" value="{{c}}">{{c}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-12">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input [(ngModel)]='curriculo.email' type="text" class="form-control" id="email"
+                            placeholder="Digite seu email" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-12">
+                    <div class="form-group">
+                        <label for="sobrenome">Git hub</label>
+                        <input [(ngModel)]='curriculo.linkGitHub' type="text" class="form-control" id="nsobrenomeme"
+                            placeholder="Insira o link do seu perfil no git hub" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-12">
+                    <div class="form-group">
+                        <label for="sobrenome">Linked in</label>
+                        <input [(ngModel)]='curriculo.linkLinKedIn' type="text" class="form-control" id="nsobrenomeme"
+                            placeholder="Insira o link do seu perfil no linked in" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-md-12">
+                    <div class="form-group">
+                        <label for="sobrenome">Link do video do pitch</label>
+                        <input [(ngModel)]='curriculo.linkVideo' type="text" class="form-control" id="nsobrenomeme"
+                            placeholder="Insira o link do video do youtube do seu pitch " />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Sobre mim</label>
+                <textarea type="text" class="form-control" id="descricao"
+                    placeholder="Oportunidade de se vender em poucas frases: Fale resumidamente sobre  seu perfil profissional, conquistas, objetivos de carreira e situação atual (se está em transição de carreira ou não); Insira informações que despertem o interesse  do empregador em te conhecer melhor;"
+                    rows='7' maxlength="600" [(ngModel)]='curriculo.sobreMim'></textarea>
+                <div class="d-flex justify-content-end">
+                    <span class="text-bold">{{600 - curriculo.sobreMim?.length}}
+                        caracteres restantes</span>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>Esta parte <span class="text-uppercase font-weight-bold">não</span> irá aparecer para o empregador,
+                    sendo apenas para um senso demografico pra propria Generation Brasil</p>
+            </div>
+            <div class="form-group">
+                <label for="genero ">Genero</label>
+                <div class="form-group  mx-1">
+                    <select class="form-control" name="genero" id="genero" [value]='genero'
+                        (change)='selectGenero($event)'>
+                        <option value="">Selecione um Gênero </option>
+                        <option value="Mulher Cisgênero">Mulher Cisgênero</option>
+                        <option value="Mulher Transgênero">Mulher Transgênero</option>
+                        <option value="Homem Cisgênero">Homem Cisgênero</option>
+                        <option value="Pessoa não binária">Pessoa não binária</option>
+                        <option value="Homem Transgênero">Homem Transgênero</option>
+                        <option value="Transgênero">Transgênero</option>
+                        <option value="Prefiro não responder">Prefiro não responder</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="raca ">Raça</label>
+                <div class="form-group  mx-1">
+                    <select class="form-control" name="raca" id="raca" [value]='raca' (change)='selectRaca($event)'>
+                        <option value="">Selecione Com Qual se identifica:</option>
+                        <option value="Branco(a)">Branco(a)</option>
+                        <option value="Negro(a)">Negro(a)</option>
+                        <option value="Pardo(a)">Pardo(a)</option>
+                        <option value="Amarelo(a)">Amarelo(a)</option>
+                        <option value="Indígena">Indígena</option>
+                        <option value="Não declarado">Não declarado</option>
+                    </select>
+                </div>
+
+                <div class="form-group mx-1">
+                    <label for="pcd">Pcd</label>
+                    <select class="form-control" name="pdc" id="pdc" [value]='pcdSelect' (change)='tipoPcd($event)'>
+                        <option value="">Você é PCD ? </option>
+                        <option value="true">Sim</option>
+                        <option value="false">Não</option>
+                    </select>
+                </div>
+                <div *ngIf="pcdSelect" class="form-group mx-1">
+                    <label for="typePcd">Tipo Pcd</label>
+                    <select class="form-control" name="typePcd" id="typePcd" [value]='typePcd'
+                        (change)='selectPcd($event)'>
+                        <option value="">Se sim, em qual cid você se enquadra </option>
+                        <option value="Deficiência Visual">Deficiência Visual</option>
+                        <option value="Deficiência Auditiva">Deficiência Auditiva</option>
+                        <option value="Deficiência Física">Deficiência Física</option>
+                        <option value="Deficiência Intelectual">Deficiência Intelectual</option>
+                        <option value="Deficiências Multiplas">Deficiências Multiplas </option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-center mt-3 mb-3">
+                    <input type="button" value="Avançar" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal2"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bgm">
+                <div class="modal-header d-flex justify-content-center">
+                    <h5 class="modal-title textm " id="exampleModalLabel">RESUMO PROFISSIONAL</h5>
+                </div>
+                <div class="modal-body textm">
+                    <div class=" ">OBRIGATÓRIO</div>
+                    <div>Fale resumidamente sobre seu perfil
+                        profissional, conquistas, objetivos de
+                        carreira e situação atual (se está em
+                        transição de carreira ou não);
+                        Insira informações que despertem o
+                        interesse do empregador em te conhecer
+                        melhor;
+                    </div>
+                    <div>NÃO mencione hobbies ou interesses sem
+                        ligação com o contexto profissional.</div>
+
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-primary" value="Ok" data-dismiss="modal"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2-->
+<div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bgm">
+            <div class="modal-header d-flex justify-content-center">
+                <h5 class="modal-title textm " id="exampleModalLabel">Tem certeza?</h5>
+            </div>
+            <div class="modal-footer  d-flex justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar a editar</button>
+                <input type="button" class="btn btn-primary"  value="{{editarCadastrar}} Próximo" value="Próximo"
+                    (click)="saveEndNextStap()" data-dismiss="modal"/>
+            </div>
+        </div>
+    </div>
+</div>

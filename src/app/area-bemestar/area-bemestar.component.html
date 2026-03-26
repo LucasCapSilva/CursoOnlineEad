@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-3 mb-4 mb-md-0 d-flex justify-content-center">
+    <a routerLink='/form-bemestar-pos' (click)="titulo('Formulário de pós atendimento', 'file-o')">
+      <div class="card" >
+        <p class="fa fa-file-o"></p>
+        <h3>Formulário pós atendimento</h3>
+      </div>
+    </a>
+    </div>
+
+    <div class="col-md-3 mb-4 mb-md-0 d-flex justify-content-center">
+      <a routerLink='/lista-form-bemestar-pos' (click)="titulo('Formulários preenchidos', 'file-text-o')">
+        <div class="card" >
+          <span *ngIf='pendentes != 0' id="entregasPendentes" class="p-1 m-0 font-weight-bold">
+            {{pendentes}}
+          </span>
+          <p class="fa fa-file-text-o"></p>
+          <h3>Formulários preenchidos</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3 mb-4 mb-md-0 d-flex justify-content-center">
+      <a routerLink='/relatorio-bemestar' (click)="titulo('Relatórios', 'file')">
+        <div class="card" >
+          <p class="fa fa-file"></p>
+          <h3>Relatórios</h3>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+

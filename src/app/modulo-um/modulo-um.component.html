@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-end" *ngIf='auth.adm()'>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="Angular" value="Angular" name="fav_language" (click)="changeCurso(1,1)">
+    <label>Angular</label>
+  </div>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="React" value="React" name="fav_language" (click)="changeCurso(2,1)">
+    <label>React</label>
+  </div>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="React" value="React" name="fav_language" (click)="changeCurso(3,1)">
+    <label>Android</label>
+  </div>
+</div>
+  <h4 class="text-dark">Nesse bloco você vai aprender tudo o que você precisa para iniciar sua carreira como dev:</h4>
+  <p class="text-justify text-dark">Começaremos com a metodologia ágil SCRUM, para que você consiga trabalhar em equipe de forma ágil. O próximo passo será aprender tudo sobre lógica de programação, utilizando a linguagem Portugol para criar pequenos projetos e entender todo o universo da programação. Por fim aplicaremos os conhecimentos adquiridos em uma nova linguagem de programação: a linguagem JAVA, que norteará toda a sua caminhada dentro do nosso curso!
+  </p>
+
+  <div class="row mt-5 mb-5" >
+    <div class="col-md-4" *ngFor="let item of listaResultModulo">
+      <a (click)='aulas(item.descricao, "danger", item.id)'>
+        <div class="card rounded border-0">
+          <div class="card-body">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-4">
+                <img class="card-img bg-color" src="{{item.linkImagem}}" alt="Imagem do card">
+              </div>
+              <div class="col-md-8">
+                <h4>{{item.subdescricao}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- <div class="col-md-4">
+      <a (click)='aulas("Lógica", "danger", 2)'>
+        <div class="card rounded border-0">
+          <div class="card-body">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-4">
+                <img class="card-img bg-color" src="https://i.imgur.com/C7j5Ypn.png" alt="Imagem do card">
+              </div>
+              <div class="col-md-8">
+                <h4>Lógica de programação</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="col-md-4">
+      <a (click)='aulas("Java", "danger", 3)'>
+        <div class="card rounded border-0">
+          <div class="card-body">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-4">
+                <img class="card-img bg-color" src="https://i.imgur.com/0LClwtA.png" alt="Imagem do card">
+              </div>
+              <div class="col-md-8">
+                <h4>Linguagem de programação JAVA</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div> -->
+
+  </div>
+
+
+

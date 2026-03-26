@@ -1,0 +1,144 @@
+<div class="container">
+    <div class="text-center mt-4">
+        <h1>PORTFOLIO</h1>
+        <p>Incluir Projeto Integrador da Generation.</p>
+    </div>
+    <div class="row mt-3 mb-1 d-flex justify-content-center align-content-center"
+        *ngFor="let item of listCurriculoPortifolio;let i = index">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="form-group mx-1">
+                    <label for="nome">Nome Projeto</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.nomeProjeto" disabled />
+                </div>
+                <div class="form-group mx-1">
+                    <label for="sobrenome">Link</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.link" disabled />
+                </div>
+                <div class="form-group mx-1">
+                    <label for="nome">Descrição</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.descricao" disabled />
+                </div>
+                <div class="form-group mx-1">
+                    <label for="sobrenome">numeroPi</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.numeroPi" disabled />
+                </div>
+                <div class="form-group mx-1 d-flex align-items-end">
+                    <button type="button" class="btn btn-outline-danger button-style"
+                        (click)="onDelete(i)">Deletar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-1 mb-1 d-flex justify-content-center align-content-center">
+       
+        <div class="row mb-1 d-flex justify-content-start align-content-center">
+            <div class="row">
+                <div class="col-md-12 ml-2 d-flex justify-content-center">
+                    <div class="form-group  mx-1">
+                        <label for="tipo">Nome Projeto</label>
+                        <input class="form-control" name="tipo" id="tipo" placeholder="insira o nome do Projeto"
+                            rows="2" maxlength="40" [(ngModel)]="curriculoPortifolio.nomeProjeto">
+                        <div class="d-flex justify-content-end">
+                            <span class="text-bold">{{40 - curriculoPortifolio.nomeProjeto?.length}}</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group mx-1 ">
+                        <label for="tipo">link</label>
+                        <input class="form-control" name="tipo" id="tipo" placeholder="link do projeto"
+                            [(ngModel)]="curriculoPortifolio.link">
+                    </div>
+                    <div class="form-group mx-1">
+                        <label for="descricao">Descrição</label>
+                        <textarea type="text" class="form-control" id="descricao"
+                            placeholder="Descreva o projeto intergador" rows='2' maxlength="350"
+                            [(ngModel)]='curriculoPortifolio.descricao'></textarea>
+                        <div class="d-flex justify-content-end">
+                        <span class="text-bold">{{350 - curriculoPortifolio.descricao?.length}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <div class="form-group  mx-1">
+                                <label for="tipo">Selecione o Numero do PI</label>
+                                <select class="form-control" name="numeroPi" id="numeroPi"
+                                    [value]='numeroPi' (change)='selectNumeroPi($event)'>
+                                    <option value="">Selecione o Grupo:</option>
+                                    <option value="1">Grupo 1</option>
+                                    <option value="2">Grupo 2</option>
+                                    <option value="3">Grupo 3</option>
+                                    <option value="4">Grupo 4</option>
+                                    <option value="5">Grupo 5</option>
+                                    <option value="6">Grupo 6</option>
+                                    <option value="7">Grupo 7</option>
+                                    <option value="8">Grupo 8</option>
+                                    <option value="9">Grupo 9</option>
+                                    <option value="10">Grupo 10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="form-group mx-1 d-flex align-items-center">
+                        <button type="button" class="btn btn-outline-primary button-style" (click)="onInsert()">Inserir
+                            Portifolio
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3 mb-3">
+                        <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-3 mb-3">
+        <input type="button" value="Avançar" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal2"/>
+    </div>
+
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bgm">
+            <div class="modal-header d-flex justify-content-center">
+                <h5 class="modal-title textm " id="exampleModalLabel">PORTFOLIO</h5>
+            </div>
+            <div class="modal-body textm">
+                <div class=" ">OBRIGATÓRIO</div>
+                <div>Insira as informações do seu projeto 
+                    integrador: <br> Nome, descrição e Link
+                </div>
+                <div>Nesse campo você também pode 
+                    inserir o link <br> do seu blog pessoal
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="Ok" data-dismiss="modal"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Modal 2-->
+    <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bgm">
+                <div class="modal-header d-flex justify-content-center">
+                    <h5 class="modal-title textm " id="exampleModalLabel">Tem certeza?</h5>
+                </div>
+                <div class="modal-footer  d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar a editar</button>
+                    <input type="button" class="btn btn-primary"  value="{{editarCadastrar}} Próximo" value="Próximo"
+                        (click)="saveEndNextStap()" data-dismiss="modal"/>
+                </div>
+            </div>
+        </div>
+    </div>

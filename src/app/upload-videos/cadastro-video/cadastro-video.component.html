@@ -1,0 +1,70 @@
+<div class="row d-flex justify-content-center mt-5 mb-5">
+    <div class="col-md-8 ">
+
+      <div class="form-group">
+        <label for="titulo">Titulo do video</label>
+        <input class="form-control" type="text" name="titulo" id="titulo" placeholder="Titulo da Aula" [(ngModel)]='uploadVideo.titulo'>
+      </div>
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="" for="titulo">Tipo do Curso:</label>
+            <select name="nome" [(ngModel)]="idCurso" (change)="findByIdCurso()" class="form-control">
+              <option *ngFor="let curso of listCurso" value={{curso.id}}>
+                {{curso.descricao}}
+              </option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="sequencia">Número da Sequência</label>
+            <input class="form-control" type="number" name="sequencia" id="titulo" placeholder="Numero da sequencia" [(ngModel)]='uploadVideo.num_sequencia'>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="modulo">Módulo da aula</label>
+            <select [ngClass]="{'modulo-on': habilitarModulo}" class="form-control modulo-off" id="modulo"
+            [(ngModel)]="idModulo" (change)="getIdModulos()">
+              <option *ngFor="let item of listaModulos" value={{item.id}}>
+                {{item.descricao}}
+            </option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="github">Link do GitHub</label>
+            <input class="form-control" type="text" name="github" id="github" placeholder="Link do GitHub" [(ngModel)]='uploadVideo.linkGitHub'>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="drive">Link do Drive</label>
+            <input class="form-control" type="text" name="drive" id="drive" placeholder="Link do Drive" [(ngModel)]='uploadVideo.linkDrive' >
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-3 mb-5">
+        <button class="btn btn-outline-success" (click)='showUpload()'>Fazer upload do video</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf='showUp'>
+      <app-upload></app-upload>
+  </div>
+
+
+
+

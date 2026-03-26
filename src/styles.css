@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+h1, h2, h3, h4, h5, p, a, label
+{
+  font-family: 'Roboto', sans-serif;
+}
+
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}
+body{
+  overflow-Y: hidden;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* Responsive button widths */
+.btn-responsive {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .btn-responsive {
+    width: 25%;
+  }
+}
+
+.btn-responsive-50 {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .btn-responsive-50 {
+    width: 50%;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}

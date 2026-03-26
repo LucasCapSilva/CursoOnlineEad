@@ -1,0 +1,550 @@
+<nav>
+    <div class="nav nav-tabs d-flex flex-nowrap" style="overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; border-bottom: none;" id="nav-tab" role="tablist">
+
+        <a class="nav-item flex-shrink-0 nav-link active text-primary font-weight-bold" id="nav-padrao-tab" data-toggle="tab"
+            href="#padrao" role="tab" aria-controls="nav-padrao" aria-selected="true">Exercícios prioritários</a>
+
+        <a class="nav-item flex-shrink-0 nav-link text-primary font-weight-bold" id="nav-extra-tab" data-toggle="tab" href="#extra"
+            role="tab" aria-controls="nav-extra" aria-selected="false">Exercícios extras</a>
+
+    </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+
+    <div class="tab-pane fade show active" id="padrao" role="tabpanel" aria-labelledby="nav-padrao-tab">
+
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-md-12">
+                <div class="accordion" id="accordionExample">
+                    <div class="card border-0">
+                        <button
+                            class="btn btn-link btn-inserir border-0 p-0 collapsed rounded text-uppercase text-center font-weight-bold"
+                            type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            <div class="card-header inserir border-0" id="headingTwo">
+                                <h5 class="mb-0">
+                                    Régua de avaliações e Atividades Entregues
+                                </h5>
+                            </div>
+                        </button>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+
+                            <div class="row mt-4 d-flex align-items-center">
+                                <div class="col-md-12">
+
+                                    <h6>Régua de avaliação de atividades:</h6>
+
+                                    <div class="card-group d-flex align-items-center shadow">
+
+                                        <div class="card text-white bg-danger">
+                                            <div class="card-header font-weight-bold">Principiante</div>
+                                            <div class="card-body">
+                                                <p class="card-text">Atende a apenas um requisito da atividade, valendo
+                                                    1 ponto.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="card text-white bg-warning">
+                                            <div class="card-header font-weight-bold">Em desenvolvimento</div>
+                                            <div class="card-body">
+                                                <p class="card-text">Atende a dois requisitos da atividade, valendo 2
+                                                    pontos.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="card text-white bg-success">
+                                            <div class="card-header font-weight-bold">Proeficiente</div>
+                                            <div class="card-body">
+                                                <p class="card-text">Atende a três requisitos da atividade, valendo 3
+                                                    pontos.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="card text-white bg-primary">
+                                            <div class="card-header font-weight-bold">Avançado</div>
+                                            <div class="card-body">
+                                                <p class="card-text">Atende aos quatro requisitos da atividade, valendo
+                                                    4 pontos.</p>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <small class="text-danger">*Essa régua só é utilizada para atividades do projeto
+                                        integrador, entrega final do projeto do módulo, auto-avaliações e
+                                        feedbacks.</small>
+
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+
+                                    <div class="row w-100 d-flex justify-content-end m-0">
+                                        <div class="col-md-12 p-0">
+                                            <h6>Minhas entregas</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class="card p-3 shadow">
+                                        <div class="row w-100 m-0 d-flex align-items-center mb-2"
+                                            *ngFor='let item of listaEntregasRelatorioObr'>
+                                            <div class="col-md-1 pl-0">
+                                                <p class="m-0 pr-1 text-center text-info font-weight-bold">Hoje: </p>
+                                            </div>
+                                            <div class="col-md-11 p-0">
+                                                <div class="progress bg-secondary" style="height: 20px;">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: {{item.percent}}%" aria-valuenow="25"
+                                                        aria-valuemin="0" aria-valuemax="100">
+                                                        <p class="m-0 pl-2 pr-2">{{item.entregas}} de
+                                                            {{item.atividades}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row w-100 m-0 d-flex align-items-center">
+                                            <div class="col-md-1 pl-0">
+                                                <p class="m-0 pr-1 text-success font-weight-bold text-center">Total:
+                                                </p>
+                                            </div>
+                                            <div class="col-md-11 p-0">
+                                                <div class="progress bg-secondary" style="height: 20px;">
+                                                    <div class="progress-bar bg-success" role="progressbar"
+                                                        style="width: {{entregasTotalObr.percentEntregas}}%"
+                                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                        <p class="m-0 pl-2 pr-2">{{entregasTotalObr.qtdEntregas}} de
+                                                            {{entregasTotalObr.qtdAtividades}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row mt-5" id="loading">
+            <div class="col d-flex justify-content-center">
+                <div class="lds-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="mb-5">
+
+        <h3 class="text-center mb-5">Lista de atividades</h3>
+
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div *ngFor='let item of listaAtividadeOb | orderBy : key : true '>
+                    <div class="card border border-secondary shadow">
+                        <div class="card-header bg-white border-0">
+
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-10 ">
+                                    <span class="font-weight-bold titulo">{{item.titulo}}</span>
+                                </div>
+                            </div>
+                            <hr class="pb-0 mb-0">
+                        </div>
+
+                        <div class="card-body pt-0">
+                            <p class="">Descrição: {{item.atividade}} </p>
+                            <p *ngIf='item.linkUtil != null'>Link auxiliar: <a [href]="item.linkUtil" target='_blanck'>
+                                    {{item.linkUtil}}</a></p>
+                            <p id="texto" class="">
+                                A data limite de entrega é a mesma do dia de liberação da atividade até às 00:00 horas
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="accordion mb-5" [attr.id]="'entregaObr' + item.id">
+
+                            <div class="d-flex justify-content-start mt-3" id="headingTwo">
+
+                                <div *ngIf='item.entregaOk; else entregaOff'>
+                                    <button class="btn btn-outline-success collapsed font-weight-bold" type="button"
+                                        data-toggle="collapse" [attr.data-target]="'#' + 'entregaOb' + item.id"
+                                        aria-expanded="false" aria-controls="collapseTwo" disabled>
+                                        Atividade entregue com sucesso e validada
+                                    </button>
+                                </div>
+                                <ng-template #entregaOff>
+                                    <button class="btn btn-outline-primary collapsed font-weight-bold" type="button"
+                                        data-toggle="collapse" [attr.data-target]="'#' + 'entregaOb' + item.id"
+                                        aria-expanded="false" aria-controls="collapseTwo" (click)='getCamadas(item.id)'>
+                                        Entregar
+                                    </button>
+                                </ng-template>
+
+                            </div>
+                            <div [attr.id]="'entregaOb' + item.id" class="collapse" aria-labelledby="headingTwo"
+                                [attr.data-parent]="'#' + 'entregaObr' + item.id">
+                                <div *ngIf='item.entregaOk; else entregaOffForm'>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+  <table class="table table-hover mt-3">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Link da Atividade</th>
+                                                        <th scope="col">Observações</th>
+                                                        <th scope="col">Data de entrega</th>
+                                                        <th scope="col">Modificar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody *ngFor='let entre of item.entrega | orderBy : key : true'>
+                                                    <tr *ngIf='idUser == entre.usuario.id'>
+                                                        <td> <a href="{{entre.linkEntrega}}"
+                                                                target="_blanck">{{entre.linkEntrega}}</a> </td>
+                                                        <td>{{entre.observacoes}}</td>
+                                                        <td>{{entre.dataEntrega | date: "dd/MM/yyyy"}}</td>
+                                                        <td>
+                                                            <button class="btn btn-outline-info mr-3"
+                                                                [routerLink]="['/editar-entrega-atividade-obr', entre.id]"
+                                                                (click)="titulo('Editar Entrega', 'pencil')">Editar</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <ng-template #entregaOffForm>
+                                    <div class="row mt-5">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="titulo"
+                                                    aria-describedby="emailHelp"
+                                                    placeholder="Insira o link do seu repositório principal aqui (obrigatório)"
+                                                    [(ngModel)]='entregaOb.linkEntrega'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="texto" rows="3"
+                                                placeholder="Insira uma observação (opcional)"
+                                                [(ngModel)]='entregaOb.observacoes'></textarea>
+                                        </div>
+                                    </div>
+                                    <div *ngFor="let item of link; let i=index">
+                                        <div class="form-group row mt-5">
+                                            <div class="col-md-12">
+                                                <input type="text" rows='2' class="form-control" [(ngModel)]="item.link"
+                                                    disabled />
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" rows='2' class="form-control"
+                                                    [(ngModel)]="item.camada" disabled />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngIf="camadas.length != 0; ">
+                                        <div class="col-md-12 d-flex justify-content-center mt-4">
+                                            <div
+                                                class="form-group box-entrega mr-2 d-flex justify-content-center align-items-center">
+                                                <textarea type="text" class="form-control" id="descricao"
+                                                    placeholder="Adicione links da sua entrega" rows='1'
+                                                    [(ngModel)]='texto' ></textarea>
+                                            </div>
+                                            <div class="form-group d-flex align-items-center">
+
+                                                <label for="">Selecione a camada correspondente</label>
+                                                <select class="form-control" id="camada" name="camada" [value]='camada'
+                                                    (change)="selectCamada($event)"
+                                                    placeholder="Selecione a camada correspondente">
+                                                    <option> </option>
+                                                    <option *ngFor="let item of camadas" [value]="item.camada">
+                                                        {{item.camada}}</option>
+
+                                                </select>
+
+
+
+                                            </div>
+                                            <div class="form-group mx-1 d-flex align-items-center">
+                                                <ng-container *ngIf="camada != ''; then thenInserir; else elseInserir">
+                                                </ng-container>
+                                                <ng-template #thenInserir>
+                                                    <button type="button" class="btn btn-outline-primary   button-style"
+                                                        (click)="onInsert()">Inserir</button>
+                                                </ng-template>
+                                                <ng-template #elseInserir>
+                                                    <button type="button" class="btn btn-outline-danger   button-style"
+                                                        disabled>Inserir</button>
+                                                </ng-template>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="row mt-4">
+                                        <div class="col-md-12 d-flex justify-content-center">
+                                            <button type="button" class="btn btn-outline-primary btn-responsive-50"
+                                                (click)='entregarOb(item.id)' data-toggle="modal"
+                                                data-target="#exampleModal">Entregar </button>
+
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <pagination-controls (click)='scroll()' class="p-zero" (pageChange)="page = $event"
+                    previousLabel="Anterior" nextLabel="Próximo" responsive="true">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="extra" role="tabpanel" aria-labelledby="nav-extra-tab">
+        <div class="row w-100 d-flex justify-content-end m-0 mt-5">
+            <div class="col-md-2 p-0">
+                <h6 class="text-muted text-center">Entregas</h6>
+            </div>
+        </div>
+
+        <div class="row w-100 m-0 d-flex justify-content-end align-items-center mb-2"
+            *ngFor='let item of listaEntregasRelatorio'>
+            <div class="col-md-1 pl-0 d-flex justify-content-end">
+                <p class="m-0 pr-1 text-info font-weight-bold">Hoje: </p>
+            </div>
+            <div class="col-md-2 p-0">
+                <div class="progress bg-secondary" style="height: 20px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: {{item.percent}}%"
+                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <p class="m-0 pl-2 pr-2">{{item.entregas}} de {{item.atividades}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row w-100 m-0 d-flex justify-content-end align-items-center">
+            <div class="col-md-1 d-flex justify-content-end pl-0">
+                <p class="m-0 pr-1 text-success font-weight-bold">Total: </p>
+            </div>
+            <div class="col-md-2 p-0">
+                <div class="progress bg-secondary" style="height: 20px;">
+                    <div class="progress-bar bg-success" role="progressbar"
+                        style="width: {{entregasTotal.percentEntregas}}%" aria-valuenow="25" aria-valuemin="0"
+                        aria-valuemax="100">
+                        <p class="m-0 pl-2 pr-2">{{entregasTotal.qtdEntregas}} de {{entregasTotal.qtdAtividades}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5" id="loading2">
+            <div class="col d-flex justify-content-center">
+                <div class="lds-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5 mt-5">
+            <div class="col-md-12">
+                <div *ngFor='let item of listaAtividade | orderBy : key : true'>
+                    <div class="card border border-secondary shadow">
+                        <div class="card-header bg-white border-0">
+
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-10 ">
+                                    <span class="font-weight-bold titulo">{{item.titulo}}</span>
+                                </div>
+                            </div>
+                            <hr class="pb-0 mb-0">
+                        </div>
+
+                        <div class="card-body pt-0">
+                            <p class="">Descrição: {{item.atividade}} </p>
+                            <p>Link auxiliar: <a [href]="item.linkUtil" target='_blanck'> {{item.linkUtil}}</a></p>
+                            <p id="texto" class="">
+                                Data limite de entrega: {{ item.dataEntrega | date:'dd/MM/yyyy'}} até às
+                                {{item.dataEntrega | date:'HH:mm'}} horas
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="accordion mb-5" [attr.id]="'coment' + item.id">
+
+                            <div class="d-flex justify-content-start mt-3" id="headingTwo">
+
+                                <div *ngIf='item.entregaOk; else entregaOff'>
+                                    <button class="btn btn-outline-danger collapsed font-weight-bold" type="button"
+                                        data-toggle="collapse" [attr.data-target]="'#' + 'comentButton' + item.id"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        Editar entrega
+                                    </button>
+                                </div>
+                                <ng-template #entregaOff>
+                                    <button class="btn btn-outline-primary collapsed font-weight-bold" type="button"
+                                        data-toggle="collapse" [attr.data-target]="'#' + 'comentButton' + item.id"
+                                        aria-expanded="false" aria-controls="collapseTwo" (click)='clearModel()'>
+                                        Entregar
+                                    </button>
+                                </ng-template>
+
+                            </div>
+                            <div [attr.id]="'comentButton' + item.id" class="collapse" aria-labelledby="headingTwo"
+                                [attr.data-parent]="'#' + 'coment' + item.id">
+                                <div *ngIf='item.entregaOk; else entregaOffForm'>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+  <table class="table table-hover mt-3">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Link da Atividade</th>
+                                                        <th scope="col">Observações</th>
+                                                        <th scope="col">Data de entrega</th>
+                                                        <th scope="col">Modificar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody *ngFor='let entre of item.entrega | orderBy : key : true'>
+                                                    <tr *ngIf='idUser == entre.usuario.id'>
+                                                        <td> <a href="{{entre.linkEntrega}}"
+                                                                target="_blanck">{{entre.linkEntrega}}</a> </td>
+                                                        <td>{{entre.observacoes}}</td>
+                                                        <td>{{entre.dataEntrega | date: "dd/MM/yyyy"}}</td>
+                                                        <td>
+                                                            <button class="btn btn-outline-info mr-3"
+                                                                [routerLink]="['/editar-entrega-atividade', entre.id]"
+                                                                (click)="titulo('Editar Entrega', 'pencil')">Editar</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <ng-template #entregaOffForm>
+                                    <div class="row mt-5">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="titulo"
+                                                    aria-describedby="emailHelp"
+                                                    placeholder="Insira o link da sua entrega aqui (obrigatório)"
+                                                    [(ngModel)]='entregas.linkEntrega'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="texto" rows="3"
+                                                placeholder="Insira uma observação (opcional)"
+                                                [(ngModel)]='entregas.observacoes'></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-4">
+                                        <div class="col-md-12 d-flex justify-content-center">
+                                            <button class="btn btn-outline-primary btn-responsive-50" [disabled]='btnEntregar'
+                                                (click)='entregar(item.id)'>Entregar </button>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <pagination-controls (click)='scroll()' class="p-zero" (pageChange)="page = $event"
+                    previousLabel="Anterior" nextLabel="Próximo" responsive="true">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div *ngIf="camadas.length != 0;" class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h3 class="modal-title text-center" id="exampleModalLabel">FeedBack das camadas da atividade</h3>
+            </div>
+            <div class="modal-body ">
+                <div class="d-flex justify-content-center" *ngIf="atividadeCerta == true">
+                    <div>
+                        <h2 class="text-success text-center">Parabéns!</h2>
+                        <h3 class="text-success">Exercício entregue com sucesso! </h3>
+                        <h3 class="text-success">Todas as camadas estão corretas!</h3>
+                    </div>
+                    
+                </div>
+                <h4 *ngIf="atividadeCerta == false" class="text-danger mb-2">Sua atividade possui alguns problemas revise as
+                    camadas abaixo: </h4>
+                <div *ngFor="let item of feedBacksResp">
+                    <h5 class="text-danger">Camada: {{item.camada}}</h5>
+                    <h5 class="text-danger">FeedBack: {{item.feedback}}</h5>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="validado()" type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>

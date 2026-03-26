@@ -1,0 +1,477 @@
+<nav>
+  <div class="nav nav-tabs d-flex flex-nowrap" style="overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; border-bottom: none;" id="nav-tab" role="tablist">
+
+    <a class="nav-item flex-shrink-0 nav-link active text-primary font-weight-bold" id="nav-padrao-tab" data-toggle="tab" href="#padrao" role="tab"
+      aria-controls="nav-padrao" aria-selected="true">Exercícios obrigatórios</a>
+
+    <a class="nav-item flex-shrink-0 nav-link text-primary font-weight-bold" id="nav-extra-tab" data-toggle="tab" href="#extra" role="tab"
+      aria-controls="nav-extra" aria-selected="false">Exercícios opcionais</a>
+
+  </div>
+</nav>
+
+
+<div class="tab-content" id="nav-tabContent">
+
+  <!-- Liberar exercicios -->
+
+  <div class="tab-pane fade show active" id="padrao" role="tabpanel" aria-labelledby="nav-padrao-tab">
+
+
+    <div class="row mt-5 mb-5">
+      <div class="col-2">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Liberar Exercícios</a>
+          <a class="nav-link" id="verificar-entregas-tab" data-toggle="pill" href="#verificar-entregas" role="tab" aria-controls="verificar-entregas" aria-selected="false">Verificar Entregas</a>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="tab-content" id="v-pills-tabContent">
+
+          <div class="tab-pane fade show active border-left" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <div class="text-dark">
+
+              <div class="row d-flex justify-content-center mb-5">
+                <div class="col-md-5">
+                  <label for="turma">Turma:</label>
+                  <div class="form-group w-100">
+                    <select id="turma" name="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()"
+                      class="form-control bg-black text-dark">
+                      <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                        {{turma.descricao}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <label for="modulo">Módulo:</label>
+                  <div class="form-group w-100">
+                    <select [ngClass]="{'modulo-on': habilitarModulo}" id="modulo" name="modulo" [(ngModel)]="idModulo" (change)="findByIdModulo()" class="form-control bg-black text-dark modulo-off">
+                      <option *ngFor="let modulo of listaModulos" value={{modulo.id}}>
+                        {{modulo.descricao}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-3">
+                  <button class="btn btn-outline-primary w-100" (click)='listar()'>Listar exercícios</button>
+                </div>
+              </div>
+
+              <hr class="mt-5 mb-5 w-50">
+
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-5 ">
+                  <h4 class="text-center text-danger mb-5 d-flex justify-content-between">Exercícios Bloqueados
+                    <button class="btn btn-outline-success" (click)='liberar()'>Liberar <i class="fa fa-angle-double-right"
+                        aria-hidden="true"></i>
+                    </button>
+                  </h4>
+
+                  <div class="row" *ngFor="let bloq of listaAtividadeObrigatoriaBloq | orderBy: 'data': false">
+                    <div class="col-md-12">
+
+
+                          <div class="card border border-danger shadow mb-5" id="cardBloq">
+                            <div class="card-header bg-white border-0">
+
+                              <div class="row d-flex align-items-center">
+                                <div class="col-md-10 ">
+                                  <p class="font-weight-bold titulo m-0 text-danger">{{bloq.atividade.titulo}}</p>
+                                </div>
+                                <div class="col-md-2 d-flex align-items-center justify-content-center">
+                                  <input id="atividadeCheck" class="customize" type="checkbox" [(ngModel)]='bloq.check' (change)='pushArrayBloq(bloq)' [attr.id]="'idCheck' + bloq.id">
+                                </div>
+                              </div>
+                              <hr class="pb-0 mb-0 bg-danger">
+                            </div>
+
+                            <div class="card-body pt-0">
+                              <p class="">Descrição: {{bloq.atividade.atividade}} </p>
+                              <p *ngIf='bloq.atividade.linkUtil != null'>Link auxiliar: <a [href]="bloq.atividade.linkUtil" target='_blanck'> {{bloq.atividade.linkUtil}}</a></p>
+                              <p>Data de entrega definida quando a atividade é liberada.</p>
+                            </div>
+                          </div>
+
+
+
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-5">
+                  <h4 class="text-center text-success mb-5 d-flex justify-content-between">
+                    <button class="btn btn-outline-danger" (click)='bloquear()'><i class="fa fa-angle-double-left"
+                        aria-hidden="true"></i> Bloquear
+                    </button>
+                    Exercícios Liberados</h4>
+
+                    <div class="row" *ngFor='let lib of listaAtividadeObrigatoriaLib'>
+                      <div class="col-md-12">
+                            <div class="card border border-success shadow mb-5" id="cardBloq">
+                              <div class="card-header bg-white border-0">
+
+                                <div class="row d-flex align-items-center">
+
+                                  <div class="col-md-2 d-flex align-items-center justify-content-center">
+                                    <input class="customize" type="checkbox" [(ngModel)]='lib.check' (change)='pushArrayLib(lib)'
+                                  [attr.id]="'idCheck' + lib.id">
+                                  </div>
+
+                                  <div class="col-md-10 ">
+                                    <p class="font-weight-bold titulo text-right m-0 text-success">{{lib.atividade.titulo}}</p>
+                                  </div>
+                                </div>
+                                <hr class="pb-0 mb-0 bg-success">
+                              </div>
+
+                              <div class="card-body pt-0">
+                                <p class="text-right">Descrição: {{lib.atividade.atividade}} </p>
+                                <p class="text-right" *ngIf='lib.atividade.linkUtil != null'>Link auxiliar: <a [href]="lib.atividade.linkUtil" target='_blanck'> {{lib.atividade.linkUtil}}</a></p>
+                                <p class="text-right">Data de entrega definida quando a atividade é liberada.</p>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="tab-pane fade border-left" id="verificar-entregas" role="tabpanel" aria-labelledby="verificar-entregas-tab">
+
+            <div class="row d-flex justify-content-center mb-5">
+              <div class="col-md-5">
+                <label for="turma">Turma:</label>
+                <div class="form-group w-100">
+                  <select id="turma" name="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()"
+                    class="form-control bg-black text-dark">
+                    <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                      {{turma.descricao}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <label for="modulo">Módulo:</label>
+                <div class="form-group w-100">
+                  <select id="modulo" name="modulo" [(ngModel)]="idModulo" (change)="findByIdModulo()" class="form-control bg-black text-dark">
+                    <option *ngFor="let modulo of listaModulos" value={{modulo.id}}>
+                      {{modulo.descricao}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-3">
+                <button class="btn btn-outline-primary w-100" (click)='findAllByIdTurmaLiberadoLista()'>Listar exercícios</button>
+              </div>
+            </div>
+
+            <hr class="mt-5 mb-5 w-50">
+
+            <div class="row d-flex justify-content-center" *ngFor="let lib of listaAtividadeObLib | orderBy: 'date' : true">
+              <div class="col-md-10">
+                    <div class="card border border-success shadow" id="cardBloq">
+                      <div class="card-header bg-white border-0">
+
+                        <div class="row d-flex align-items-center">
+
+                          <div class="col-md-10 ">
+                            <p class="font-weight-bold titulo m-0 text-success">{{lib.titulo}}</p>
+                          </div>
+                        </div>
+                        <hr class="pb-0 mb-0 bg-success">
+                      </div>
+
+                      <div class="card-body pt-0">
+                        <p class="">Descrição: {{lib.atividade}} </p>
+                        <p class="" *ngIf='lib.linkUtil != null'>Link auxiliar: <a [href]="lib.linkUtil" target='_blanck'> {{lib.linkUtil}}</a></p>
+                        <p class="">Data de entrega definida quando a atividade é liberada.</p>
+                      </div>
+                    </div>
+
+                    <div class="accordion mb-5" [attr.id]="'coment' + lib.id">
+
+                      <div class="mt-2" id="headingTwo">
+                        <h5 class="mb-0">
+                          <button *ngIf='lib.entrega.length != 0' class="btn btn-link collapsed text-success font-weight-bold" type="button" data-toggle="collapse" [attr.data-target]="'#' + 'comentButton' + lib.id" aria-expanded="false" aria-controls="collapseTwo">
+                            Entregas
+                          </button>
+
+                          <button disabled *ngIf='lib.entrega.length == 0' class="btn btn-link collapsed font-weight-bold muted">
+                            Entregas
+                          </button>
+                        </h5>
+                      </div>
+                      <div [attr.id]="'comentButton' + lib.id" class="collapse" aria-labelledby="headingTwo" [attr.data-parent]="'#' + 'coment' + lib.id">
+
+                        <div class="row d-flex justify-content-center" >
+                          <div class="col-md-11">
+
+                            <div class="table-responsive">
+  <table class="table table-hover mt-3">
+                              <thead >
+                                <tr>
+                                  <th scope="col">Participante</th>
+                                  <th scope="col">Link da Atividade</th>
+                                  <th scope="col">Observações</th>
+                                  <th scope="col">Data de entrega</th>
+                                  <th scope="col">Apagar entrega</th>
+                                </tr>
+                              </thead>
+                              <tbody *ngFor='let entre of lib.entrega | orderBy : key : reverse'>
+
+                                <tr>
+                                  <th scope="row">{{entre.usuario.nome}}</th>
+                                  <td> <a href="{{entre.linkEntrega}}" target="_blanck">{{entre.linkEntrega}}</a> </td>
+                                  <td>{{entre.observacoes}}</td>
+                                  <td>{{entre.dataEntrega | date: "dd/MM/yyyy"}}</td>
+                                  <td><button class="btn btn-danger" type="button" (click)="pegarIdEntrega(entre.id)" data-toggle="modal" data-target="#exampleModal">Apagar entrega</button></td>
+                                </tr>
+                              </tbody>
+                            </table>
+</div>
+
+                          </div>
+                        </div>
+                        <div class="row mt-5 mb-5">
+                          <div class="col-md-12 d-flex justify-content-center">
+                            <button class="btn btn-outline-success" (click)='exportarExcel(lib.id)'>Exportar para excel</button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <!-- /Liberar exercicios -->
+
+
+  <!--Criar exercícios extras-->
+  <div class="tab-pane fade" id="extra" role="tabpanel" aria-labelledby="nav-extra-tab">
+    <div class="row d-flex justify-content-center mt-5">
+      <div class="col-md-10">
+        <div class="accordion" id="accordionExample">
+          <div class="card border-0">
+            <button class="btn btn-link btn-inserir border-0 p-0 collapsed rounded text-uppercase text-center font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <div class="card-header inserir border-0" id="headingTwo">
+                <h5 class="mb-0">
+                    Inserir exercício
+                </h5>
+              </div>
+            </button>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <div>
+                  <div class="form-group">
+                    <label class="" for="titulo">Titulo:</label>
+                    <input type="text" class="form-control" id="titulo" aria-describedby="emailHelp" placeholder="Digite aqui o titulo" [(ngModel)]='atividade.titulo'>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="" for="texto">Descrição:</label>
+                      <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui a descrição" [(ngModel)]='atividade.atividade'></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="" for="titulo">Link:</label>
+                    <input type="text" class="form-control" id="titulo" aria-describedby="emailHelp" placeholder="Insira aqui o link" [(ngModel)]='atividade.linkUtil'>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="" for="titulo">Turma:</label>
+                        <select name="nome" [(ngModel)]="idTurma" (change)="findByIdTurma()" class="form-control">
+                          <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                              {{turma.descricao}}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="data">Data de entrega:</label>
+                        <input type="date" class="form-control" id="data" [(ngModel)]='atividade.dataEntrega'>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="d-flex justify-content-center mt-5">
+                      <button type="button" class="btn btn-outline-secondary btn-responsive" (click)="publicar()">Publicar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mt-5 mb-5 w-50">
+
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h5 class="text-center">
+          Selecione uma turma para listar os exercícios e as entregas:
+        </h5>
+      </div>
+    </div>
+
+    <div class="row mt-3 d-flex justify-content-center">
+      <div class="col-md-6">
+        <div class="form-group">
+          <select name="nome" [(ngModel)]="idTurmaListar" (change)="findAllAtividadesByTurma()" class="form-control">
+            <option *ngFor="let listaTurma of listaTurma" value={{listaTurma.id}}>
+                {{listaTurma.descricao}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <h2 id='carregando' class="text-primary text-center mt-5 mb-5"></h2>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="mt-5 mb-5">
+        <div *ngFor='let item of listaAtividade | orderBy : key : reverse | paginate: { itemsPerPage: 5, currentPage: page } '>
+          <div class="card shadow mt-5 border border-secondary" >
+            <div class="card-header bg-white border-0">
+
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-10 ">
+                      <span class="font-weight-bold titulo">{{item.id}}</span>
+                      <span class="font-weight-bold titulo">{{item.titulo}}</span>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-end">
+                      <a class="text-secondary mr-2" (click)="titulos('Editar Exercício', 'pencil')" [routerLink]="['/editar-criacao-atividade', item.id]">Editar</a>
+                      <a class="text-secondary" (click)='onDeleteAtividade(item)' data-toggle="modal"
+                      data-target="#exampleModal">Apagar</a>
+                    </div>
+                </div>
+                <hr class="pb-0 mb-0">
+            </div>
+
+            <div class="card-body pt-0" >
+              <p class="">Descrição: {{item.atividade}} </p>
+              <p>Link auxiliar: <a [href]="item.linkUtil" target='_blanck'> {{item.linkUtil}}</a></p>
+              <p id="texto" class="">
+                Data de entrega: {{ item.dataEntrega | date:'dd/MM/yyyy'}} até às {{item.dataEntrega | date:'HH:mm'}} horas
+              </p>
+            </div>
+          </div>
+
+              <div class="accordion" [attr.id]="'coment' + item.id">
+
+                  <div class="mt-2" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed text-secondary font-weight-bold" type="button" data-toggle="collapse" [attr.data-target]="'#' + 'comentButton' + item.id" aria-expanded="false" aria-controls="collapseTwo">
+                        Entregas
+                      </button>
+                    </h5>
+                  </div>
+                  <div [attr.id]="'comentButton' + item.id" class="collapse" aria-labelledby="headingTwo" [attr.data-parent]="'#' + 'coment' + item.id">
+
+                    <div class="row d-flex justify-content-center" >
+                      <div class="col-md-11">
+
+                        <div class="table-responsive">
+  <table class="table table-hover mt-3">
+                          <thead >
+                            <tr>
+                              <th scope="col">Participante</th>
+                              <th scope="col">Link da Atividade</th>
+                              <th scope="col">Observações</th>
+                              <th scope="col">Data de entrega</th>
+                              <th scope="col">Atraso</th>
+                        
+                            </tr>
+                          </thead>
+                          <tbody *ngFor='let entre of item.entrega | orderBy : key : reverse'>
+                            <tr>
+                              <th scope="row">{{entre.usuario.nome}}</th>
+                              <td> <a href="{{entre.linkEntrega}}" target="_blanck">{{entre.linkEntrega}}</a> </td>
+                              <td>{{entre.observacoes}}</td>
+                              <td>{{entre.dataEntrega | date: "dd/MM/yyyy"}}</td>
+                              <td>{{entre.atraso == true ? 'Sim':'Não'}}</td>
+                            
+                          
+                            </tr>
+                          </tbody>
+                        </table>
+</div>
+
+                      </div>
+                    </div>
+                    <div class="row mt-5 mb-5">
+                      <div class="col-md-12 d-flex justify-content-center">
+                       
+                    </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <pagination-controls
+        (click)='scroll()'
+        class="p-zero"
+        (pageChange)="page = $event"
+        previousLabel="Anterior"
+        nextLabel="Próximo"
+        responsive="true"
+        >
+      </pagination-controls>
+      </div>
+    </div>
+  </div>
+<!--/Criar exercícios extras-->
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Deletar entrega </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>Deseja deletar esta entrega?</h4>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+        <button type="button" class="btn btn-danger" (click)="deletarEntrega()" data-dismiss="modal">Deletar</button>
+      </div>
+    </div>
+  </div>
+</div>

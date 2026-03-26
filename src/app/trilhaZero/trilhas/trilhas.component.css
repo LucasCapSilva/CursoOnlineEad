@@ -1,0 +1,41 @@
+.bg{
+    background-color: #227093;
+  }
+  
+  .btn-outline-info:hover{
+    background-color: #227093;
+    color: white;
+  
+  }
+  
+  .btn-outline-info{
+    color: #227093;
+    border-color: #227093;
+  }
+  
+  .w-5{
+    width: 50px;
+  }
+  .card{
+    background-color: #fff;
+    border: 0;
+    color: #227093;
+    box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+    transition: 0.5s;
+    cursor: pointer;
+    height: 100%;
+    width: 90%;
+  }
+  
+  .card:hover{
+    color: #000;
+    background-color: #227093;
+    height: 105%;
+    width: 95%;
+  
+  }
+  
+  .fa{
+    font-size: 10pt;
+  }
+  

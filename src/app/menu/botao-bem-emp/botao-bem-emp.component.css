@@ -1,0 +1,161 @@
+.fab button{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2e86de;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,.4);
+    font-size: 24px;
+    color: white;
+  
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+  }
+
+
+.fab button.main{
+    position: fixed;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    right: 5px;
+    bottom: 5px;
+    z-index: 20;
+  }
+
+  .fab button:hover{
+
+    color: rgb(19, 92, 248);
+  }
+  .fab.fa-plus{
+    size: 3x;
+}
+
+
+
+
+
+  .fab2 button{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2e86de;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,.4);
+    font-size: 24px;
+    color: white;
+  
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+  }
+  
+  .fab2 button.main{
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    right: 12px;
+    bottom: 14%;
+    z-index: 20;
+  }
+
+  .fab2 button:hover{
+
+    color: red;
+  }
+  .fab.fa-plus{
+    size: 3x;
+}
+
+
+
+
+
+
+.fab3 button{
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2e86de;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,.4);
+    font-size: 24px;
+    color: white;
+  
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+  }
+  
+  .fab3 button.main{
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    right: 12px;
+    bottom: 26%;
+    z-index: 20;
+  }
+
+  .fab3 button:hover{
+
+    color: rgb(255, 218, 9);
+  }
+
+  .fab.fa-plus{
+    size: 3x;
+}
+
+.fab4 button{
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #2e86de;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  font-size: 24px;
+  color: white;
+
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab4 button.main{
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  right: 12px;
+  bottom: 38%;
+  z-index: 20;
+}
+
+.fab4 button:hover{
+
+  color: rgb(255, 218, 9);
+}
+
+.fab.fa-plus{
+  size: 3x;
+}
+
+
+.button{
+  background-color: #2e86de;
+}
+
+.fac{
+  color: aliceblue;
+  size: 40px;
+ 
+}
+.texts{
+ text-align: center;
+}

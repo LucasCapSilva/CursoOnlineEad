@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "titulo": "Introdução ao Angular",
+    "modulo": "Módulo 1",
+    "descricao": "Conceitos básicos do framework Angular",
+    "duracao": "02:00:00",
+    "liberada": true,
+    "idModulo": 1
+  },
+  {
+    "id": 2,
+    "titulo": "Componentes e Templates",
+    "modulo": "Módulo 1", 
+    "descricao": "Criação de componentes e templates Angular",
+    "duracao": "01:30:00",
+    "liberada": true,
+    "idModulo": 1
+  },
+  {
+    "id": 3,
+    "titulo": "Services e Dependency Injection",
+    "modulo": "Módulo 2",
+    "descricao": "Implementação de services e injeção de dependência",
+    "duracao": "02:15:00",
+    "liberada": false,
+    "idModulo": 2
+  }
+]

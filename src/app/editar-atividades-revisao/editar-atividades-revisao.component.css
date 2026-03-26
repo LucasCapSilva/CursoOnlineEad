@@ -1,0 +1,19 @@
+#primeira{
+  display: none;
+}
+
+.fa-check-circle-o{
+  font-size: 24pt;
+  color:#A9A9A9;
+  transition: 0.5s;
+}
+
+.fa-check-circle-o:hover{
+  color: '#fff';
+  background-color: '#228B22';
+  cursor: pointer;
+}
+
+#inputUm, #txtUm{
+  transition: 0.5s;
+}

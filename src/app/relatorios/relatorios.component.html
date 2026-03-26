@@ -1,0 +1,106 @@
+<nav>
+  <div class="nav nav-tabs d-flex flex-nowrap" style="overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; border-bottom: none;" id="nav-tab" role="tablist">
+
+    <a class="nav-item nav-link active text-primary font-weight-bold flex-shrink-0" id="nav-home-tab" data-toggle="tab"
+      href="#barometro" role="tab" aria-controls="nav-home" aria-selected="true">Barômetro Diário</a>
+
+    <a class="nav-item nav-link text-primary font-weight-bold flex-shrink-0" id="nav-profile-tab" data-toggle="tab" href="#presenca"
+      role="tab" aria-controls="nav-profile" aria-selected="false">Presença</a>
+
+    <a class="nav-item nav-link text-primary font-weight-bold flex-shrink-0" id="nav-contact-tab" data-toggle="tab" href="#zoom"
+      role="tab" aria-controls="nav-contact" aria-selected="false">Clicks Zoom</a>
+
+    <a class="nav-item nav-link text-primary font-weight-bold flex-shrink-0" id="nav-contact-tab" data-toggle="tab" href="#entrega"
+      role="tab" aria-controls="nav-contact" aria-selected="false">Entrega de Atividades Obrigatórias</a>
+
+    <a class="nav-item nav-link text-primary font-weight-bold flex-shrink-0" id="nav-contact-tab" data-toggle="tab" href="#entregaOp"
+      role="tab" aria-controls="nav-contact" aria-selected="false">Entrega de Atividades Opcionais</a>
+
+    <a class="nav-item nav-link text-primary font-weight-bold flex-shrink-0" id="nav-bemestar-tab" data-toggle="tab" href="#bemestar"
+      role="tab" aria-controls="nav-bemestar" aria-selected="false">Bem Estar</a>
+
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="barometro" role="tabpanel" aria-labelledby="nav-barometro-tab">
+    <app-relatorio-barometro-dia></app-relatorio-barometro-dia>
+  </div>
+
+  <div class="tab-pane fade" id="presenca" role="tabpanel" aria-labelledby="nav-presenca-tab">
+    <app-chamada></app-chamada>
+  </div>
+
+  <div class="tab-pane fade" id="zoom" role="tabpanel" aria-labelledby="nav-zoom-tab">
+    <app-relatorio-zoom></app-relatorio-zoom>
+  </div>
+
+  <div class="tab-pane fade" id="entrega" role="tabpanel" aria-labelledby="nav-entrega-tab">
+    <app-relatorio-entrega-exercicio></app-relatorio-entrega-exercicio>
+  </div>
+
+  <div class="tab-pane fade" id="entregaOp" role="tabpanel" aria-labelledby="nav-entrega-tab">
+    <app-relatorio-entrega-exercicio-opcional></app-relatorio-entrega-exercicio-opcional>
+  </div>
+
+  <div class="tab-pane fade" id="bemestar" role="tabpanel" aria-labelledby="nav-bemestar-tab">
+
+    <div class="row">
+      <div class="col-md-3 col-12 border-right mb-4 mb-md-0">
+        <div class="nav flex-column nav-pills mt-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+          <a class="nav-link active" id="v-pills-turma-tab" data-toggle="pill" href="#turma" role="tab"
+            aria-controls="v-pills-turma" aria-selected="true">Atendimentos por turma</a>
+
+          <a class="nav-link" id="v-pills-demandas-tab" data-toggle="pill" href="#demandas" role="tab"
+            aria-controls="v-pills-demandas" aria-selected="false">Demandas por turma</a>
+
+          <a class="nav-link" id="v-pills-tempototal-tab" data-toggle="pill" href="#tempototal" role="tab"
+            aria-controls="v-pills-tempototal" aria-selected="false">Tempo total dos atendimentos</a>
+
+          <a class="nav-link" id="v-pills-vulnerabilidade-tab" data-toggle="pill" href="#vulnerabilidade" role="tab"
+            aria-controls="v-pills-vulnerabilidade" aria-selected="false">Vulnerabilidade por turma</a>
+
+        </div>
+      </div>
+      <div class="col-md-9 col-12">
+        <div class="tab-content" id="v-pills-tabContent">
+
+          <!--Atendimentos por turma-->
+          <div class="tab-pane fade show active mt-5" id="turma" role="tabpanel" aria-labelledby="v-pills-turma-tab">
+            <app-relatorio-bemestar-pos-atendimento-turma></app-relatorio-bemestar-pos-atendimento-turma>
+          </div>
+          <!--/Atendimentos por turma-->
+
+
+          <!--Demandas por turma-->
+          <div class="tab-pane fade" id="demandas" role="tabpanel" aria-labelledby="v-pills-demandas-tab">
+
+            <app-relatorio-bemestar-pos-demanda-turma></app-relatorio-bemestar-pos-demanda-turma>
+
+          </div>
+          <!--/Demandas por turma-->
+
+          <!--Tempo total dos atendimentos-->
+          <div class="tab-pane fade" id="tempototal" role="tabpanel" aria-labelledby="v-pills-tempototal-tab">
+
+            <app-relatorio-bemestar-pos-atendimento-totalmin></app-relatorio-bemestar-pos-atendimento-totalmin>
+
+          </div>
+          <!--/Tempo total dos atendimentos-->
+
+          <!--Vulnerabilidade por turma-->
+          <div class="tab-pane fade" id="vulnerabilidade" role="tabpanel" aria-labelledby="v-pills-vulnerabilidade-tab">
+
+            <app-relatorio-bemestar-pos-vulnerabilidade-turma></app-relatorio-bemestar-pos-vulnerabilidade-turma>
+
+          </div>
+          <!--/Vulnerabilidade por turma-->
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

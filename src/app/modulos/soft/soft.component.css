@@ -1,0 +1,19 @@
+.bg{
+  background-color: #218c74;
+  width: 100%;
+  height:3px;
+}
+
+.btn-outline-success{
+  border-color: #218c74;
+  color: #218c74;
+}
+
+.btn-outline-success:hover {
+  background-color: #218c74;
+  color: white;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}

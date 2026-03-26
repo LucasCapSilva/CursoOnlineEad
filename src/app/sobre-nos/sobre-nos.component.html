@@ -1,0 +1,92 @@
+<div class="container mt-5 mb-5">
+    <div class="row mb-5">
+        <div class="col-md-12 text-center">
+            <h1 class="display-4 font-weight-bold mb-4">Sobre o Projeto</h1>
+            <p class="lead text-secondary">
+                Plataforma educacional desenvolvida como Single Page Application (SPA) para gerenciamento completo de cursos online, engajamento de alunos e acompanhamento de trilhas de aprendizado.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="card-title font-weight-bold text-primary mb-3">
+                        <i class="fa fa-bullseye mr-2"></i> Propósito
+                    </h3>
+                    <p class="card-text text-justify">
+                        O objetivo principal desta aplicação é centralizar a experiência de aprendizado, oferecendo um ambiente integrado onde instrutores e alunos podem interagir, gerenciar entregas, acessar conteúdos multimídia e monitorar o desempenho acadêmico e de bem-estar. O sistema foi projetado para suportar trilhas de ensino de ponta a ponta.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="card-title font-weight-bold text-success mb-3">
+                        <i class="fa fa-cogs mr-2"></i> Funcionalidades Principais
+                    </h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fa fa-check text-success mr-2"></i> Gestão de usuários e perfis com controle de acesso (RBAC).</li>
+                        <li class="mb-2"><i class="fa fa-check text-success mr-2"></i> Criação, edição e acompanhamento de atividades e exercícios.</li>
+                        <li class="mb-2"><i class="fa fa-check text-success mr-2"></i> Fórum de discussões integrado para suporte e interação.</li>
+                        <li class="mb-2"><i class="fa fa-check text-success mr-2"></i> Controle de presenças e integração com salas virtuais (Zoom).</li>
+                        <li class="mb-2"><i class="fa fa-check text-success mr-2"></i> Monitoramento contínuo do bem-estar dos participantes.</li>
+                        <li><i class="fa fa-check text-success mr-2"></i> Ferramenta de geração e visualização de currículos profissionais.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-5">
+                    <h3 class="card-title font-weight-bold text-info mb-4 text-center">
+                        <i class="fa fa-sitemap mr-2"></i> Arquitetura e Tecnologias
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="font-weight-bold">Arquitetura de Software</h5>
+                            <p class="text-justify">
+                                A aplicação segue uma arquitetura baseada em componentes utilizando o framework Angular. A estrutura é altamente modular, dividida em features específicas (módulos de alunos, instrutores, administradores). A comunicação com o back-end é realizada de forma assíncrona através de serviços injetáveis que consomem APIs RESTful, garantindo escalabilidade e separação de responsabilidades. O estado da aplicação é gerenciado com técnicas reativas (RxJS).
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="font-weight-bold">Stack Tecnológico</h5>
+                            <div class="d-flex flex-wrap mt-3">
+                                <span class="badge badge-primary p-2 mr-2 mb-2" style="font-size: 14px;">Angular</span>
+                                <span class="badge badge-secondary p-2 mr-2 mb-2" style="font-size: 14px;">TypeScript</span>
+                                <span class="badge badge-info p-2 mr-2 mb-2" style="font-size: 14px;">Bootstrap 4</span>
+                                <span class="badge badge-danger p-2 mr-2 mb-2" style="font-size: 14px;">HTML5</span>
+                                <span class="badge badge-warning text-white p-2 mr-2 mb-2" style="font-size: 14px;">CSS3</span>
+                                <span class="badge badge-dark p-2 mr-2 mb-2" style="font-size: 14px;">RxJS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron bg-light border">
+                <h3 class="font-weight-bold text-dark mb-4">
+                    <i class="fa fa-map-signs mr-2"></i> Fluxo de Navegação e Uso
+                </h3>
+                <p>
+                    O acesso à plataforma é protegido por autenticação via token JWT. Após o login, o usuário é redirecionado para a <strong>Home/Dashboard</strong> baseada em seu nível de acesso:
+                </p>
+                <ol>
+                    <li class="mb-2"><strong>Acesso a Conteúdos:</strong> Navegação pelas trilhas de módulos, onde vídeos, PDFs e materiais de leitura estão organizados sequencialmente.</li>
+                    <li class="mb-2"><strong>Atividades:</strong> Acesso à área de exercícios para submissão de respostas e visualização de feedback dos instrutores.</li>
+                    <li class="mb-2"><strong>Interação:</strong> Utilização do Fórum para tirar dúvidas e da área de Links Úteis para acessar salas ao vivo.</li>
+                    <li><strong>Perfil:</strong> Atualização de informações cadastrais e construção do currículo profissional para exportação.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

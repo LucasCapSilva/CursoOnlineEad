@@ -1,0 +1,115 @@
+img {
+    border-radius: 50%;
+    width: 13rem;
+    height: 13rem;
+}
+p{
+    font-size: 1.063rem;
+}
+
+
+.margin-direita{
+    margin-right: 2.5rem!important;
+}
+
+.logo-img {
+    width: 30px;
+    height: 30px;  
+    margin-bottom: 4px;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-100 {
+    width: 100%;
+}
+.resume-title{
+    font-size:32px;
+    text-transform: uppercase;
+}
+
+.resume-info{
+    border-left: 26px solid #E36F68;
+    min-height: 115px; height: auto;
+    padding-top: 3px;
+}
+
+.resume-contact-subtitle{
+    color: #7F7F7F;
+    font-size: 30px;
+}
+
+.resume-contact-text{
+    color: #7F7F7F;
+    font-size: 16px;
+}
+
+.separator{
+    width: 104%;
+    border: 3px solid #E36F68;
+    margin-bottom: 0px;
+}
+
+.separator-section{
+    width: 104%;
+    border: 3px solid #E36F68;
+    margin-bottom: 0px;
+}
+
+
+/*ABOUT */
+
+.about-title{
+    font-size: 1.5rem;
+    padding-top: 16px;
+    color: #7F7F7F;
+    text-transform: uppercase;
+}
+
+.about-title p{
+    color:#E36F68
+}
+
+.about-institution-title{
+    font-size: 1.5rem;
+    color: #7F7F7F;
+    margin: 0;
+}
+
+.about-me, .about-xp{
+    width: 100%;
+    min-height: 180px; height: auto;
+    
+}
+
+.about-xp p{
+    margin: 0;
+}
+
+.about-education{
+    width: 100%;
+    min-height: 204px; height: auto;
+}
+
+.about-skills-tec, .about-skiils-behavior, .about-projects, .about-language{
+    width: 100%;
+    min-height: 207px; height: auto;
+}
+
+.about-description-title{
+    text-transform: uppercase;
+    color: black;
+    margin: 0;
+}
+
+.about-description{
+    color: #7F7F7F;
+}
+
+@media (max-width: 767px) {
+  .width-50 {
+    width: 100%;
+  }
+}

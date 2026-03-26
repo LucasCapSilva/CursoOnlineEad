@@ -1,0 +1,75 @@
+<div class="container mb-5">
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-8">
+      <hr class="bg-{{cor}}">
+      <h2 class="text-center text-{{cor}}">Lembrando o que foi dito na aula: {{aula.titulo}}, responda:</h2>
+      <hr class="mb-5 bg-{{cor}}">
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center" *ngFor='let quest of aula.questao'>
+    <div class="col-md-8">
+
+
+
+      <h4 class="text-center mb-5">{{quest.quastao}}</h4>
+
+      <div class="row mt-1 ">
+        <div class="col-md-12">
+          <label for="primeira" class="w-100" >
+            <div class="card border-0" id="cardUm">
+              <ul class="list-group list-group-flush">
+
+                <li class="list-group-item d-flex align-items-center border shadow-sm rounded" id="txtUm">
+                  <i *ngIf='resultVazioUm' class="fa fa-square-o tm-icon mr-3" aria-hidden="true"></i>
+                  <i *ngIf='resultUm' class="fa fa-check text-success tm-icon mr-3" aria-hidden="true"></i>
+                  <i *ngIf='resultUm == false' id="resultUm" class="fa fa-times text-danger tm-icon mr-3" aria-hidden="true"></i>
+                  <p class="m-0 tm">{{respUm.resp}}</p>
+                </li>
+              </ul>
+            </div>
+          </label>
+          <input [disabled]='opcaoDesabled' type="radio" name="opcao" id="primeira" (change)='opUm(respUm.correta)'>
+        </div>
+      </div>
+
+      <div class="row mt-1 " >
+        <div class="col-md-12">
+          <label for="segunda" class="w-100" >
+            <div class="card border-0" id="cardDois">
+              <ul class="list-group list-group-flush">
+                <li  class="list-group-item d-flex align-items-center border shadow-sm rounded" id="txtDois">
+                  <i *ngIf='resultVazioDois' class="fa fa-square-o tm-icon mr-3" aria-hidden="true"></i>
+                  <i *ngIf='resultDois' class="fa fa-check text-success tm-icon mr-3" aria-hidden="true"></i>
+                  <i *ngIf='resultDois == false' id="resultUm" class="fa fa-times text-danger tm-icon mr-3"  aria-hidden="true"></i>
+                  <p class="m-0 tm">{{respDois.resp}}</p>
+                </li>
+              </ul>
+            </div>
+          </label>
+          <input [disabled]='opcaoDesabled' type="radio" name="opcao" id="segunda" (change)='opDois(respDois.correta)'>
+        </div>
+      </div>
+
+      <div class="row mt-1 " >
+        <div class="col-md-12">
+          <label for="terceira" class="w-100" >
+            <div class="card border-0" id="cardTres">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex align-items-center border shadow-sm rounded" id="txtTres">
+                  <i *ngIf='resultVazioTres' class="fa fa-square-o tm-icon mr-3" aria-hidden="true"></i>
+                  <i *ngIf='resultTres' class="fa fa-check text-success tm-icon mr-3" aria-hidden="true"></i>
+                  <i *ngIf='resultTres == false' id="resultUm" class="fa fa-times text-danger tm-icon mr-3" aria-hidden="true"></i>
+                  <p class="m-0 tm">{{respTres.resp}}</p>
+                </li>
+              </ul>
+            </div>
+          </label>
+          <input [disabled]='opcaoDesabled' type="radio" name="opcao" id="terceira" (change)='opTres(respTres.correta)'>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

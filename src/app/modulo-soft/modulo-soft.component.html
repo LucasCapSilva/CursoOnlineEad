@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-end" *ngIf='auth.adm()'>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="Angular" value="Angular" name="fav_language" (click)="changeCurso(1,4)">
+    <label>Angular</label>
+  </div>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="React" value="React" name="fav_language" (click)="changeCurso(2,4)">
+    <label>React</label>
+  </div>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="React" value="React" name="fav_language" (click)="changeCurso(3,4)">
+    <label>Android</label>
+  </div>
+</div>
+
+
+<h4 class="text-dark">Boas vindas!:</h4>
+<h4 class="text-dark">Olá! Seja muito bem-vinde à nossa Trilha Zero!:</h4>
+<p class="text-justify text-dark">Primeiramente, queremos te parabenizar por ter chegado até aqui e ter se tornado oficialmente participante da Generation. Estamos ansioses para te receber em nosso bootcamp.
+</p>
+<p class="text-justify text-dark">Enquanto nosso programa não começa, preparamos uma jornada de aprendizado que vai colaborar na sua preparação para o nosso bootcamp.
+</p>
+<p class="text-justify text-dark">A nossa trilha zero está dividida em 4 semanas, com um mix conteúdo técnico, comportamental (soft skills) e oportunidades de conexão com a comunidade Generation.
+</p>
+<p class="text-justify text-dark">- Alguns conteúdos estarão disponíveis diretamente aqui na plataforma e para outros você será direcionado à sites de nossas organizações parceiras (como o Linkedin Learning, por exemplo) - Faça o conteúdo com calma e no seu ritmo, mas não deixe acumular muito conteúdo para a semana seguinte. Aproveite esse momento para ir se ambientando com a nossa plataforma de ensino e metodologia e sentindo o clima do bootcamp. - Não esqueça de interagir e comentar o que tem aprendido na nossa comunidade no Discord.
+</p>
+<p class="text-justify text-dark">Bons estudos!
+</p>
+<div class="row mt-5 mb-5">
+  <div class="col-md-4" *ngFor="let item of listaResultModulo">
+    <a (click)='aulas(item.descricao, "danger", item.id)'>
+      <div class="card rounded border-0">
+        <div class="card-body">
+          <div class="row d-flex align-items-center">
+            <div class="col-md-4">
+              <img class="card-img bg-color" src="{{item.linkImagem}}" alt="Imagem do card">
+            </div>
+            <div class="col-md-8">
+              <h4>{{item.subdescricao}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+<!--disabled="disabled"-->

@@ -1,0 +1,192 @@
+<nav>
+  <div class="nav nav-tabs d-flex flex-nowrap" style="overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; border-bottom: none;" id="nav-tab" role="tablist">
+
+    <a class="nav-item flex-shrink-0 nav-link active text-primary font-weight-bold" id="nav-cadastrarUm-tab" data-toggle="tab"
+      href="#cadastrarUm" role="tab" aria-controls="nav-cadastrarUm" aria-selected="true">Cadastrar uma sessão</a>
+
+    <a class="nav-item flex-shrink-0 nav-link text-primary font-weight-bold" id="nav-cadastrarVarios-tab" data-toggle="tab"
+      href="#cadastrarVarios" role="tab" aria-controls="nav-cadastrarVarios" aria-selected="false">Cadastrar várias
+      sessões</a>
+
+  </div>
+</nav>
+
+
+
+<div class="tab-content" id="nav-tabContent">
+
+  <!--Cadastrar uma sessão-->
+
+  <div class="tab-pane fade show active" id="cadastrarUm" role="tabpanel" aria-labelledby="nav-cadastrarUm-tab">
+    <div class="row mb-3 mt-5">
+      <div class="col-12">
+        <div *ngIf='novo; else atualizar'>
+          <h1 class="text-center">Cadastrar uma Sessão</h1>
+        </div>
+        <ng-template #atualizar>
+          <h1 class="text-center">Editar Sessão</h1>
+        </ng-template>
+
+      </div>
+    </div>
+
+
+    <div class="row mb-5 d-flex justify-content-center">
+      <div class="col-12 col-md-9">
+        <div>
+          <div class="row mt-3">
+            <div class="col-12 col-md-10 p-1">
+              <div class="form-group">
+                <label for="descricao">Descrição da sessão</label>
+                <input type="text" class="form-control" id="descricao" placeholder="Digite a descrição"
+                  [(ngModel)]="cronograma.descricao">
+              </div>
+            </div>
+            <div class="col-12 col-md-2 p-1">
+              <div class="form-group">
+                <label for="turma">Cor</label>
+                <select name="turma" id='turma' [(ngModel)]="idCor" (change)="findByIdCor()" class="form-control">
+                  <option *ngFor="let item of listaCor" value={{item.id}}>
+                    {{item.nome}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 p-1">
+              <div class="form-group">
+                <label for="data">Data</label>
+                <input type="date" class="form-control" id="data" [(ngModel)]='cronograma.date'>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 p-1">
+              <div class="form-group">
+                <label for="hIn">Hora inicial</label>
+                <input type="time" class="form-control" id="hIn" [(ngModel)]='cronograma.inicio'>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 p-1">
+              <div class="form-group">
+                <label for="hFim">Hora final</label>
+                <input type="time" class="form-control" id="hFim" [(ngModel)]='cronograma.fim'>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 p-1">
+              <div class="form-group">
+                <label for="turma">Turma</label>
+                <select name="turma" id='turma' [(ngModel)]="idTurma" (change)="findByIdTurma()" class="form-control">
+                  <option *ngFor="let item of listaTurma" value={{item.id}}>
+                    {{item.descricao}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div *ngIf='novo; else editar'>
+            <div class="d-flex justify-content-center ">
+              <button type="submit" (click)='cadastrar()' class="btn btn-outline-primary btn-responsive">Cadastrar</button>
+            </div>
+          </div>
+
+          <ng-template #editar>
+            <div class="d-flex justify-content-center ">
+              <button type="submit" (click)='cadastrar()' class="btn btn-outline-success btn-responsive mr-3">Atualizar</button>
+
+              <button type="submit" routerLink='/cronograma-instrutor'
+                class="btn btn-outline-danger btn-responsive">Cancelar</button>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--/Cadastrar uma sessão-->
+
+  <!--Cadastrar varias sessões-->
+
+  <div class="tab-pane fade" id="cadastrarVarios" role="tabpanel" aria-labelledby="nav-cadastrarVarios-tab">
+
+    <h1 class="text-center mb-5 mt-5">Cadastrar várias Sessões</h1>
+
+    <div class="row d-flex justify-content-center mt-3">
+      <div class="col-12 col-md-6">
+        <div class="form-group">
+          <label for="turma">Escolha uma Turma</label>
+          <select name="turma" id='turma' [(ngModel)]="idTurma" (change)="findByIdTurma()" class="form-control">
+            <option *ngFor="let item of listaTurma" value={{item.id}}>
+              {{item.descricao}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3 mb-5">
+      <div class="col-12 col-md-6">
+        <div class="form-group">
+          <label for="customFile" class="text-center">Selecione o arquivo EXCEL:</label>
+
+          <div class="custom-file w-100">
+            <input type="file" class="custom-file-input" id="customFile" (change)="onFileChange($event)">
+            <label id="output" class="custom-file-label" for="customFile">Escolher arquivo</label>
+          </div>
+
+          <div class="d-flex justify-content-center mt-5">
+            <button type="button" class="btn btn-outline-primary btn-responsive" (click)='cadastroMassa()'>Cadastrar</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--/Cadastrar varias sessões-->
+
+</div>
+
+
+
+
+<div class="row d-flex justify-content-center">
+  <div class="col-12 col-md-9">
+    <hr>
+  </div>
+</div>
+
+<div class="row mt-5 d-flex justify-content-center">
+  <div class="col-12 col-md-8">
+    <h4 class="text-center">Escolha uma turma para listar o cronograma</h4>
+  </div>
+</div>
+
+<div class="row mt-2 d-flex justify-content-center">
+  <div class="col-12 col-md-5 d-flex justify-content-center">
+    <div class="form-group w-100 p-2">
+      <select name="turmaAgenda" id='turmaAgenda' [(ngModel)]="idTurmaAgenda" (change)="findAllAgendaByTurma()"
+        class="form-control">
+        <option *ngFor="let item of listaTurma" value={{item.id}}>
+          {{item.descricao}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mb-5 mt-5">
+  <div class="col-12">
+    <full-calendar #fullcalendar [plugins]="calendarPlugins" [editable]="false" [events]="calendarEvents"
+      [defaultView]="'timeGridWeek'" [header]="{
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      }" [locale]="'pt-br'" [minTime]="'08:00:00'" [maxTime]="'19:00:00'" [weekends]="false" [allDaySlot]='false'
+      [height]="'auto'" [dir]="'ltr'" [events]="calendarEvents" (eventClick)="onEventClick($event)"
+      (eventRender)="onEventRender($event)" (eventDrop)="onEventDrop($event) ">
+    </full-calendar>
+  </div>
+</div>

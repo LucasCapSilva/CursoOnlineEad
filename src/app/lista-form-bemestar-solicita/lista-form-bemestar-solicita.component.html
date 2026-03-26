@@ -1,0 +1,136 @@
+<div class="container-fluid mb-5">
+
+  <div class="row mt-5" id="loading2">
+    <div class="col d-flex justify-content-center">
+      <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  </div>
+
+  <div class="mb-5" *ngFor='let form of listaFormsSolicita' class="accordion" [attr.id]="'coment' + form.id">
+    <div *ngIf='form.atendido == null' class="card border mt-3 shadow-sm card-nulo">
+
+
+          <button class="btn btn-link text-danger text-left font-weight-bold text-nulo" type="button" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne" [attr.data-target]="'#' + 'comentButton' + form.id" aria-expanded="false"> {{form.turma.descricao}} | {{form.usuario.nome}} | {{form.data | date: 'dd/MM/yyyy'}}
+          </button>
+
+
+      <div [attr.id]="'comentButton' + form.id" class="collapse" aria-labelledby="headingTwo"
+        [attr.data-parent]="'#' + 'coment' + form.id">
+        <hr>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-8">
+
+            <div class="card-body ">
+              <h2 class="text-center">{{form.usuario.nome}}</h2>
+              <hr>
+
+              <h5>Dados da solicitação</h5>
+
+              <div class="table-responsive">
+  <table class="table table-hover table-primary">
+                <thead>
+                  <tr>
+                    <th scope="col">Turma</th>
+                    <th scope="col">Nivel de Urgência</th>
+                    <th scope="col">Data da solicitação</th>
+                    <th scope="col">Solicitante</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr >
+                    <th scope="row">{{form.turma.descricao}}</th>
+                    <td>{{form.nivelUrgencia}}</td>
+                    <td>{{form.data | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{form.solicitante.nome}}</td>
+                  </tr>
+                </tbody>
+              </table>
+</div>
+
+              <h5>Descrição do atendimento</h5>
+
+              <p class="border p-4">{{form.descricao}}</p>
+
+              <div class='d-flex justify-content-center mt-5 mb-3'>
+                <button *ngIf='form.atendido == null' class='btn btn-outline-primary' (click)='getFormById(form.id)'>Atender Solicitação</button>
+                <button *ngIf='form.atendido != null'  class='btn btn-outline-success' disabled>Solicitação atendida por: {{form.atendido.nome}}</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div *ngIf='form.atendido != null' class="card border mt-3 shadow-sm card-ok">
+
+
+      <button class="btn btn-link text-primary text-left font-weight-bold text" type="button" data-toggle="collapse" data-target="#collapseOne"
+        aria-expanded="true" aria-controls="collapseOne" [attr.data-target]="'#' + 'comentButton' + form.id" aria-expanded="false">
+        {{form.turma.descricao}} | {{form.usuario.nome}} | {{form.data | date: 'dd/MM/yyyy'}}
+      </button>
+
+
+  <div [attr.id]="'comentButton' + form.id" class="collapse" aria-labelledby="headingTwo"
+    [attr.data-parent]="'#' + 'coment' + form.id">
+    <hr>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+
+        <div class="card-body ">
+          <h2 class="text-center">{{form.usuario.nome}}</h2>
+          <hr>
+
+          <h5>Dados da solicitação</h5>
+
+          <div class="table-responsive">
+  <table class="table table-hover table-primary">
+            <thead>
+              <tr>
+                <th scope="col">Turma</th>
+                <th scope="col">Vulnerabilidade</th>
+                <th scope="col">Data da solicitação</th>
+                <th scope="col">Solicitante</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <th scope="row">{{form.turma.descricao}}</th>
+                <td>{{form.nivelUrgencia}}</td>
+                <td>{{form.data | date: 'dd/MM/yyyy'}}</td>
+                <td>{{form.solicitante.nome}}</td>
+              </tr>
+            </tbody>
+          </table>
+</div>
+
+          <h5>Descrição do atendimento</h5>
+
+          <p class="border p-4">{{form.descricao}}</p>
+
+          <div class='d-flex justify-content-center mt-5 mb-3'>
+            <button *ngIf='form.atendido == null' class='btn btn-outline-primary' (click)='getFormById(form.id)'>Atender Solicitação</button>
+            <button *ngIf='form.atendido != null'  class='btn btn-outline-success' disabled>Solicitação atendida por: {{form.atendido.nome}}</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+

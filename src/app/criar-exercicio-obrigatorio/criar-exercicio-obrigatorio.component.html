@@ -1,0 +1,105 @@
+
+<div class="row d-flex justify-content-center mt-5">
+  <div class="col-md-10">
+    <div class="accordion" id="revisao">
+      <div class="card border-0">
+        <button
+          class="btn btn-link btn-inserir border-0 p-0 collapsed rounded text-uppercase text-center font-weight-bold"
+          type="button" data-toggle="collapse" data-target="#revisaoAtiv" aria-expanded="false"
+          aria-controls="revisaoAtiv">
+          <div class="card-header inserir border-0" id="rev">
+            <h5 class="mb-0">
+              Inserir exercício obrigatório
+            </h5>
+          </div>
+        </button>
+        <div id="revisaoAtiv" class="collapse" aria-labelledby="rev" data-parent="#revisao">
+          <div class="card-body">
+            <div>
+              <div class="form-group">
+                <label class="" for="titulo">Titulo:</label>
+                <input type="text" class="form-control" id="titulo" aria-describedby="emailHelp" placeholder="Digite aqui o titulo" [(ngModel)]='atividade.titulo'>
+              </div>
+
+              <div class="form-group">
+                  <label class="" for="texto">Descrição:</label>
+                  <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui a descrição" [(ngModel)]='atividade.atividade'></textarea>
+              </div>
+
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="" for="titulo">Link:</label>
+                    <input type="text" class="form-control" id="titulo" aria-describedby="emailHelp" placeholder="Insira aqui o link" [(ngModel)]='atividade.linkUtil'>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="" for="titulo">Módulo:</label>
+                    <select name="nome" [(ngModel)]="idModulo" (change)="findByIdModulo()" class="form-control">
+                      <option *ngFor="let modulo of listaModulos" value={{modulo.id}}>
+                          {{modulo.descricao}}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="d-flex justify-content-center mt-3 mb-5">
+                  <button type="button" class="btn btn-outline-primary btn-responsive" (click)="publicar()">Publicar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-5 mb-3">
+  <div class="col-md-12">
+    <h2 class="text-center">Escolha um módulo para listar as atividades: </h2>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label class="" for="titulo">Módulo:</label>
+      <select name="nome" [(ngModel)]="idModuloSelect" (change)="findAtividadesByModulos()" class="form-control">
+        <option *ngFor="let modulo of listaModulos" value={{modulo.id}}>
+            {{modulo.descricao}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-md-12">
+    <div class="card border border-secondary shadow mb-5" *ngFor='let item of listaAtividades'>
+      <div class="card-header bg-white border-0">
+
+        <div class="row d-flex align-items-center">
+          <div class="col-md-10 ">
+            <span class="font-weight-bold titulo">{{item.titulo}}</span>
+          </div>
+          <div class="col-md-2 d-flex justify-content-end">
+            <a class="text-secondary mr-2" (click)="titulos('Editar Exercício', 'pencil')" [routerLink]="['/editar-atividade-obrigatoria', item.id]">Editar</a>
+          </div>
+        </div>
+        <hr class="pb-0 mb-0">
+      </div>
+
+      <div class="card-body pt-0">
+        <p class="">Descrição: {{item.atividade}} </p>
+        <p *ngIf='item.linkUtil != null'>Link auxiliar: <a [href]="item.linkUtil" target='_blanck'> {{item.linkUtil}}</a></p>
+        <p>Data de entrega definida quando a atividade é liberada.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="container mb-5 mt-5">
+
+  <div class="row mb-5">
+    <div class="col-md-12 d-flex justify-content-center">
+      <h1>Como está o seu dia hoje?</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-center">
+      <h5 class="">Zona de Conforto</h5>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center">
+      <h5 class="">Zona de Aprendizagem</h5>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center">
+      <h5 class="">Zona de Pânico</h5>
+    </div>
+  </div>
+
+<div class="card bg-dark text-white border-0">
+  <div class="row">
+    <div class="col-md-4 tm bg-success d-flex justify-content-center rounded-left">
+    </div>
+
+    <div class="col-md-4 tm bg-warning d-flex justify-content-center">
+    </div>
+
+    <div class="col-md-4 tm bg-danger d-flex justify-content-center rounded-right">
+    </div>
+  </div>
+  <div class="card-img-overlay ">
+    <div class="row mt-5">
+      <div class="col-md-12 p-0 ">
+        <input class="w-100 form-control-range"
+        type="range" name="vol" value="0" min="0" max="100"
+        (change)='pegarBarometro()'
+        [(ngModel)]='barometro'>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col">
+    <p class='text-center text-danger font-weight-bold m-0'>
+      Se você precisar de um apoio psicosocial entre em contato com nossa equipe de bem estar, é só clicar no botão de coração no canto inferior direito.
+    </p>
+  </div>
+</div>
+
+<div class="row mt-5 mb-5">
+  <div class="col-md-12 d-flex justify-content-center">
+    <button class="btn btn-outline-primary btn-responsive" (click)='enviarBarometro()'>
+      Enviar barômetro
+    </button>
+  </div>
+</div>
+
+</div>
+

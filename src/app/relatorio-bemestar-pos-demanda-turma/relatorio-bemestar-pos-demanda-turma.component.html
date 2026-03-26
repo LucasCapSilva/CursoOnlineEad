@@ -1,0 +1,153 @@
+<div class="row mt-5 d-flex justify-content-center">
+  <div class="col-md-3">
+    <div class="form-group w-100">
+      <label for="inputState" class="mb-0">Turma</label>
+      <select name="nome" [(ngModel)]="idTurma" (change)="findByIdTurma()" class="form-control">
+        <option *ngFor="let item of listaTurma" value={{item.id}}>
+          {{item.descricao}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="form-group w-100">
+      <label for="data-inicial" class="mb-0">Data Inicial</label>
+      <input type="date" class="form-control" name="data-inicial" id="data-inicial" [(ngModel)]='dataIn'>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="form-group w-100">
+      <label for="data-final" class="mb-0">Data Final</label>
+      <input type="date" class="form-control" name="data-final" id="data-final" [(ngModel)]='dataEnd'>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-5 d-flex justify-content-center">
+  <div class="col-md-9">
+    <button class='btn btn-outline-primary btn-block' (click)='findDemandasByTurmaEData()'>Filtrar</button>
+  </div>
+</div>
+
+<!--Com filtro-->
+<div *ngIf='filtro'>
+
+  <div class="row mb-5">
+    <div class="col">
+
+      <h5 class='text-center'>Demandas da {{demandas.descricao}} de {{dataIn | date:
+        'dd/MM/yyyy'}} até
+        {{dataEnd | date: 'dd/MM/yyyy'}}</h5>
+
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-9">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Demandas</th>
+            <th scope="col">Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngIf='demandas.administrativo != 0'>
+            <th>Administrativo</th>
+            <td>{{demandas.administrativo}}</td>
+          </tr>
+          <tr *ngIf='demandas.apoioInternetNotebook != 0'>
+            <th>Apoio de Internet/Notebook</th>
+            <td>{{demandas.apoioInternetNotebook}}</td>
+          </tr>
+          <tr *ngIf='demandas.ausencias != 0'>
+            <th>Ausências</th>
+            <td>{{demandas.ausencias}}</td>
+          </tr>
+          <tr *ngIf='demandas.comportamental != 0'>
+            <th>Comportamental</th>
+            <td>{{demandas.comportamental}}</td>
+          </tr>
+          <tr *ngIf='demandas.beneficios != 0'>
+            <th>Beneficios</th>
+            <td>{{demandas.beneficios}}</td>
+          </tr>
+          <tr *ngIf='demandas.conflitoEntreParticipantes != 0'>
+            <th>Conflito entre participantes</th>
+            <td>{{demandas.conflitoEntreParticipantes}}</td>
+          </tr>
+          <tr *ngIf='demandas.desistencia != 0'>
+            <th>Desistência</th>
+            <td>{{demandas.desistencia}}</td>
+          </tr>
+          <tr *ngIf='demandas.emocional != 0'>
+            <th>Emocional</th>
+            <td>{{demandas.emocional}}</td>
+          </tr>
+          <tr *ngIf='demandas.engajamento != 0'>
+            <th>Engajamento</th>
+            <td>{{demandas.engajamento}}</td>
+          </tr>
+          <tr *ngIf='demandas.empregabilidade != 0'>
+            <th>Empregabilidade</th>
+            <td>{{demandas.empregabilidade}}</td>
+          </tr>
+          <tr *ngIf='demandas.presenca != 0'>
+            <th>Presença</th>
+            <td>{{demandas.presenca}}</td>
+          </tr>
+          <tr *ngIf='demandas.problemasEducacionais != 0'>
+            <th>Problemas Educacionais</th>
+            <td>{{demandas.problemasEducacionais}}</td>
+          </tr>
+          <tr *ngIf='demandas.problemasTecnicos != 0'>
+            <th>Problemas técnicos</th>
+            <td>{{demandas.problemasTecnicos}}</td>
+          </tr>
+          <tr *ngIf='demandas.saude != 0'>
+            <th>Saúde</th>
+            <td>{{demandas.saude}}</td>
+          </tr>
+          <tr *ngIf='demandas.saudeMental != 0'>
+            <th>Saúde Mental</th>
+            <td>{{demandas.saudeMental}}</td>
+          </tr>
+          <tr *ngIf='demandas.socioeconomico != 0'>
+            <th>Sócio Econômico</th>
+            <td>{{demandas.socioeconomico}}</td>
+          </tr>
+          <tr *ngIf='demandas.sociofamiliar != 0'>
+            <th>Sócio Familiar</th>
+            <td>{{demandas.sociofamiliar}}</td>
+          </tr>
+          <tr *ngIf='demandas.violenciaDeGenero != 0'>
+            <th>Violência de Gênero</th>
+            <td>{{demandas.violenciaDeGenero}}</td>
+          </tr>
+          <tr *ngIf='demandas.violenciaUrbana != 0'>
+            <th>Violência Urbana</th>
+            <td>{{demandas.violenciaUrbana}}</td>
+          </tr>
+          <tr *ngIf='demandas.covid != 0'>
+            <th>Covid</th>
+            <td>{{demandas.covid}}</td>
+          </tr>
+          <tr *ngIf='demandas.mapeamentoVunerabilidade != 0'>
+            <th>Mapeamento de Vulnerabilidade</th>
+            <td>{{demandas.mapeamentoVunerabilidade}}</td>
+          </tr>
+          <tr *ngIf='demandas.outros != 0'>
+            <th>Outros</th>
+            <td>{{demandas.outros}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+<!--/Com filtro-->

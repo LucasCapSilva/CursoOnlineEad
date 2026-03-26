@@ -1,0 +1,99 @@
+<h4 class="text-dark">Boas vindas!</h4>
+<h4 class="text-dark">Olá! Seja muito bem-vinde à nossa Trilha Zero!</h4>
+<p class="text-justify text-dark">Primeiramente, queremos te parabenizar por ter chegado até aqui e ter se tornado
+  oficialmente participante da Generation. Estamos ansioses para te receber em nosso bootcamp.
+</p>
+<p class="text-justify text-dark">Enquanto nosso programa não começa, preparamos uma jornada de aprendizado que vai
+  colaborar na sua preparação para o nosso bootcamp.
+</p>
+<p class="text-justify text-dark">A nossa trilha zero está dividida em 4 semanas, com um mix conteúdo técnico,
+  comportamental (soft skills) e oportunidades de conexão com a comunidade Generation.
+</p>
+<p class="text-justify text-dark">- Alguns conteúdos estarão disponíveis diretamente aqui na plataforma e para outros
+  você será direcionado à sites de nossas organizações parceiras (como o Linkedin Learning, por exemplo) - Faça o
+  conteúdo com calma e no seu ritmo, mas não deixe acumular muito conteúdo para a semana seguinte. Aproveite esse
+  momento para ir se ambientando com a nossa plataforma de ensino e metodologia e sentindo o clima do bootcamp. - Não
+  esqueça de interagir e comentar o que tem aprendido na nossa comunidade no Discord.
+</p>
+<p class="text-justify text-dark">Bons estudos!
+</p>
+
+
+
+<div class="row mt-5 mb-5">
+  <div class="col-md-4 mb-4" *ngFor="let item of listaTrilha">
+    <div *ngIf="item.ativo">
+
+      <a (click)='aulas(item.descricao, "danger", item.id)'>
+        <div class="card rounded border-0">
+          <div class="card-body">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-6">
+                <img class="card-img bg-color" src="{{item.icone}}" alt="Imagem do card">
+              </div>
+              <div class="col-md-6">
+                <h4>{{item.descricao}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content p-2">
+      <div class="modal-header">
+        <h5 class="modal-title text-center font-weight-bold" >Jornada do participante</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active ">
+              <h5 class="text-center font-weight-bold">Jornada curso Pessoa desenvolvedora Java Jr</h5>
+             
+            <img class="d-block w-100" src="../../../assets/trilha/Trilha Zero JAVA..jpg" alt="First slide">      
+          </div>
+          <div class="carousel-item">
+            <h5 class="text-center font-weight-bold">Jornada curso Pessoa desenvolvedora .NET Jr</h5>
+           
+            <img class="d-block w-100" src="../../../assets/trilha/Trilha Zero. .NET .jpg" alt="Second slide">
+           
+          </div>
+          <div class="carousel-item">
+            <h5 class="text-center font-weight-bold">Jornada curso Pessoa desenvolvedora Mobile Android Jr</h5>
+            
+            <img class="d-block w-100" src="../../../assets/trilha/Trilha Zero. MOBILE.jpg" alt="Third slide">
+           
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    
+    </div>
+   
+  </div>
+</div>
+<!--disabled="disabled"-->
+<div #myModal  data-toggle="modal" data-target=".bd-example-modal-xl" >
+
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row mt-3 mb-5 d-flex justify-content-center">
+        <div class="col-md-8 shadow">
+
+            <div class="col col-md-6">
+                <div class="form-group">
+                    <label for="nome">nome</label>
+                    <select id="turma" name="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()"
+                        class="form-control bg-black text-dark">
+                        <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                            {{turma.descricao}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="form-group">
+                    <label for="nome">bloco</label>
+                    <select id="turma" name="turma" [(ngModel)]="idTurma" (change)="findByIdTurma()"
+                        class="form-control bg-black text-dark">
+                        <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                            {{turma.descricao}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-3 mb-3">
+            <input type="button" value="Enviar" class="btn btn-outline-success">
+        </div>
+    </div>
+</div>

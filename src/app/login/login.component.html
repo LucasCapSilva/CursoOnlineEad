@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div class="row d-flex align-items-center justify-content-center">
+    <div class="col-md-5">
+      <div class="card mt-4 border-0">
+        <div class="row d-flex justify-content-center mt-5">
+          <div class="col-md-4">
+            <img src="https://via.placeholder.com/200x80?text=LOGO" class="img-fluid" alt="Logo">
+          </div>
+        </div>
+
+      <!-- <h1 class="text-center text-white mt-5">Já é nosso alune?</h1> -->
+      <h1 class="text-center text-white mt-5">Bem vinde !</h1>
+      <p class="text-center text-white">Faça seu login e boas aulas!</p>
+      <div class="row  d-flex justify-content-center">
+        <div class="col-md-8">
+          <form class="mt-5" #myForm="ngForm">
+            <div class="form-group">
+
+              <input type="text" name="login" class="form-control border-top-0 border-right-0 border-left-0 rounded-0" placeholder="E-mail" [(ngModel)]="UserLogin.usuario">
+            </div>
+
+            <div class="form-group">
+
+              <input type="password" name="senha" class="form-control border-top-0 border-right-0 border-left-0 rounded-0"placeholder="Senha" [(ngModel)]="UserLogin.password">
+            </div>
+
+            <div class="form-group d-flex justify-content-center mt-4">
+              <button type="button" class="btn btn-outline-light btn-responsive-50 mt-5 mb-5 mr-1" (click)="logar()">Entrar</button>
+              
+              <!-- <button type="button" class="btn btn-outline-warning btn-responsive-50 mt-5 mb-5 ml-1" (click)="logarTrilhaZero()">Trilha-zero</button> -->
+            </div>
+          </form>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+</div>

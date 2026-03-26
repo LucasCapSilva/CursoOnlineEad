@@ -1,0 +1,148 @@
+
+  <nav>
+    <div class="nav nav-tabs d-flex flex-nowrap" style="overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; border-bottom: none;" id="nav-tab" role="tablist">
+
+      <a class="nav-item flex-shrink-0 nav-link active text-primary font-weight-bold" id="nav-pos-tab" data-toggle="tab" href="#pos"
+        role="tab" aria-controls="nav-pos" aria-selected="true">Pós atendimento</a>
+
+      <a class="nav-item flex-shrink-0 nav-link text-primary font-weight-bold" id="nav-solicita-tab" data-toggle="tab" href="#solicita"
+        role="tab" aria-controls="nav-solicita" aria-selected="false">Solicitações de atendimento <span *ngIf='pendentes != 0' class="p-1 m-0 font-weight-bold text-danger">
+          {{pendentes}}
+        </span>
+      </a>
+
+    </div>
+  </nav>
+
+  <div class="container-fluid mb-5">
+  <div class="tab-content" id="nav-tabContent">
+
+    <div class="tab-pane fade show active" id="pos" role="tabpanel" aria-labelledby="nav-pos-tab">
+      <div class="row mt-5" id="loading">
+        <div class="col d-flex justify-content-center">
+          <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+      </div>
+
+
+      <div *ngFor='let form of listaForms | orderBy: key: true' class="accordion" [attr.id]="'coment' + form.id">
+        <div class="card border mt-3 shadow-sm">
+
+          <div class="row d-flex align-items-center">
+            <div class="col-md-10">
+              <button class="btn btn-link text-primary text-left font-weight-bold text" type="button" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne" [attr.data-target]="'#' + 'comentButton' + form.id" aria-expanded="false">
+              {{form.turma.descricao}} | {{form.user.nome}} | {{form.data | date: 'dd/MM/yyyy'}}
+            </button>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end">
+              <a [routerLink]="['/edit-form-bemestar-pos', form.id]" (click)="titulo('Editar formulário', 'pencil')">
+                <i class="fa fa-pencil text-primary text pr-3" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+
+
+
+          <div [attr.id]="'comentButton' + form.id" class="collapse" aria-labelledby="headingTwo"
+            [attr.data-parent]="'#' + 'coment' + form.id">
+            <hr>
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-8">
+
+                <div class="card-body ">
+                  <h2 class="text-center">{{form.user.nome}}</h2>
+                  <hr>
+
+                  <h5>Dados do participante</h5>
+
+                  <table class="table table-hover table-primary">
+                    <thead>
+                      <tr>
+                        <th scope="col">Turma</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Vulnerabilidade</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr >
+                        <th scope="row">{{form.turma.descricao}}</th>
+                        <td>{{form.curso.descricao}}</td>
+                        <td>{{form.nivelUrgencia}}</td>
+
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <h5>Dados do atendimento</h5>
+
+                  <table class="table table-hover table-primary">
+                    <thead>
+                      <tr>
+                        <th scope="col">Atendido(a) por</th>
+                        <th scope="col">Solicitante</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Duração</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{form.assistenteSocial.nome}}</th>
+                        <td>{{form.solicitante}}</td>
+                        <td>{{form.data | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{form.duracao}} minutos</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <h5>Demandas apresentadas</h5>
+
+                  <ul class="list-group mb-3">
+                    <li *ngIf='form.demandas.administrativo' class="list-group-item text-dark list-group-item-primary font-weight-bold">Administrativo </li>
+                    <li *ngIf='form.demandas.apoioInternetNotebook' class="list-group-item text-dark list-group-item-primary font-weight-bold">Apoio de Internet/Notebook </li>
+                    <li *ngIf='form.demandas.ausencias' class="list-group-item text-dark list-group-item-primary font-weight-bold">Ausências </li>
+                    <li *ngIf='form.demandas.comportamental' class="list-group-item text-dark list-group-item-primary font-weight-bold">Comportamental </li>
+                    <li *ngIf='form.demandas.beneficios' class="list-group-item text-dark list-group-item-primary font-weight-bold">Beneficios </li>
+                    <li *ngIf='form.demandas.conflitoEntreParticipantes' class="list-group-item text-dark list-group-item-primary font-weight-bold">Conflito entre participantes </li>
+                    <li *ngIf='form.demandas.desistencia' class="list-group-item text-dark list-group-item-primary font-weight-bold">Desistência </li>
+                    <li *ngIf='form.demandas.emocional' class="list-group-item text-dark list-group-item-primary font-weight-bold">Emocional </li>
+                    <li *ngIf='form.demandas.engajamento' class="list-group-item text-dark list-group-item-primary font-weight-bold">Engajamento </li>
+                    <li *ngIf='form.demandas.epregabilidade' class="list-group-item text-dark list-group-item-primary font-weight-bold">Empregabilidade </li>
+                    <li *ngIf='form.demandas.presenca' class="list-group-item text-dark list-group-item-primary font-weight-bold">Presença </li>
+                    <li *ngIf='form.demandas.problemasEducacionais' class="list-group-item text-dark list-group-item-primary font-weight-bold">Problemas Educacionais </li>
+                    <li *ngIf='form.demandas.problemasTecnicos' class="list-group-item text-dark list-group-item-primary font-weight-bold">Problemas técnicos </li>
+                    <li *ngIf='form.demandas.saude' class="list-group-item text-dark list-group-item-primary font-weight-bold">Saúde </li>
+                    <li *ngIf='form.demandas.saudeMental' class="list-group-item text-dark list-group-item-primary font-weight-bold">Saúde Mental </li>
+                    <li *ngIf='form.demandas.socioeconomico' class="list-group-item text-dark list-group-item-primary font-weight-bold">Socio Econômico </li>
+                    <li *ngIf='form.demandas.sociofamiliar' class="list-group-item text-dark list-group-item-primary font-weight-bold">Socio Familiar </li>
+                    <li *ngIf='form.demandas.violenciaDeGenero' class="list-group-item text-dark list-group-item-primary font-weight-bold">Violência de Gênero </li>
+                    <li *ngIf='form.demandas.violenciaUrbana' class="list-group-item text-dark list-group-item-primary font-weight-bold">Violência Urbana </li>
+                    <li *ngIf='form.demandas.mapeamentoVunerabilidade' class="list-group-item text-dark list-group-item-primary font-weight-bold">Mapeamento de Vulnerabilidade </li>
+                    <li *ngIf='form.demandas.covid' class="list-group-item text-dark list-group-item-primary font-weight-bold">Covid </li>
+                    <li *ngIf='form.demandas.outros != null' class="list-group-item text-dark list-group-item-primary font-weight-bold">{{form.demandas.outros}} </li>
+                  </ul>
+
+                  <h5>Descrição do atendimento</h5>
+
+                  <p class="border p-4">{{form.descricao}}</p>
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="tab-pane fade m-0" id="solicita" role="tabpanel" aria-labelledby="nav-solicita-tab">
+      <app-lista-form-bemestar-solicita></app-lista-form-bemestar-solicita>
+    </div>
+
+
+  </div>
+</div>

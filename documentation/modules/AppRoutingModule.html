@@ -1,0 +1,278 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>curso-online documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">curso-online documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li>Modules</li>
+    <li>AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/app-routing.module.ts</code>
+        </p>
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { EditarFormBemestarPosComponent } from &#x27;./editar-form-bemestar-pos/editar-form-bemestar-pos.component&#x27;;
+import { FormBemestarSolicitaComponent } from &#x27;./form-bemestar-solicita/form-bemestar-solicita.component&#x27;;
+import { RelatorioBemestarComponent } from &#x27;./relatorio-bemestar/relatorio-bemestar.component&#x27;;
+import { ListaFormBemestarSolicitaComponent } from &#x27;./lista-form-bemestar-solicita/lista-form-bemestar-solicita.component&#x27;;
+import { ListaFormBemestarPosComponent } from &#x27;./lista-form-bemestar-pos/lista-form-bemestar-pos.component&#x27;;
+import { FormBemestarPosComponent } from &#x27;./form-bemestar-pos/form-bemestar-pos.component&#x27;;
+import { EditarAtividadeObrigatoriaComponent } from &#x27;./editar-atividade-obrigatoria/editar-atividade-obrigatoria.component&#x27;;
+import { EditarEntregaAtividadeObrComponent } from &#x27;./editar-entrega-atividade-obr/editar-entrega-atividade-obr.component&#x27;;
+import { EditarAtividadesRevisaoComponent } from &#x27;./editar-atividades-revisao/editar-atividades-revisao.component&#x27;;
+import { AdminComponent } from &#x27;./admin/admin.component&#x27;;
+import { CriarAtividadesRevisaoComponent } from &#x27;./criar-atividades-revisao/criar-atividades-revisao.component&#x27;;
+import { AreaParticipanteComponent } from &#x27;./area-participante/area-participante.component&#x27;;
+import { AreaFacilitadorComponent } from &#x27;./area-facilitador/area-facilitador.component&#x27;;
+import { BlocosComponent } from &#x27;./blocos/blocos.component&#x27;;
+import { EditarPerfilComponent } from &#x27;./editar-perfil/editar-perfil.component&#x27;;
+import { RelatoriosComponent } from &#x27;./relatorios/relatorios.component&#x27;;
+import { EditarAvisosComponent } from &#x27;./editar-avisos/editar-avisos.component&#x27;;
+import { AvisosAlunosComponent } from &#x27;./avisos-alunos/avisos-alunos.component&#x27;;
+import { AvisosInstrutorComponent } from &#x27;./avisos-instrutor/avisos-instrutor.component&#x27;;
+import { RelatorioZoomComponent } from &#x27;./relatorio-zoom/relatorio-zoom.component&#x27;;
+import { EditarLinkZoomComponent } from &#x27;./editar-link-zoom/editar-link-zoom.component&#x27;;
+import { BarometroDiarioComponent } from &#x27;./barometro-diario/barometro-diario.component&#x27;;
+import { SobreNosComponent } from &#x27;./sobre-nos/sobre-nos.component&#x27;;
+import { ZoomAlunoComponent } from &#x27;./zoom-aluno/zoom-aluno.component&#x27;;
+import { ZoomInstrutorComponent } from &#x27;./zoom-instrutor/zoom-instrutor.component&#x27;;
+import { EditarLinkUtilComponent } from &#x27;./editar-link-util/editar-link-util.component&#x27;;
+import { EditarCriacaoAtividadeComponent } from &#x27;./editar-criacao-atividade/editar-criacao-atividade.component&#x27;;
+import { EditarEntregaAtividadeComponent } from &#x27;./editar-entrega-atividade/editar-entrega-atividade.component&#x27;;
+import { EditarComentarioForumComponent } from &#x27;./editar-comentario-forum/editar-comentario-forum.component&#x27;;
+import { EditarDuvidaForumComponent } from &#x27;./editar-duvida-forum/editar-duvida-forum.component&#x27;;
+import { EntregarExercicioComponent } from &#x27;./entregar-exercicio/entregar-exercicio.component&#x27;;
+import { CriarExercicioComponent } from &#x27;./criar-exercicio/criar-exercicio.component&#x27;;
+import { DeletarCronogramaComponent } from &#x27;./deletar-cronograma/deletar-cronograma.component&#x27;;
+import { ForumComponent } from &#x27;./forum/forum.component&#x27;;
+import { CadastroCorComponent } from &#x27;./cadastro-cor/cadastro-cor.component&#x27;;
+import { ChamadaComponent } from &#x27;./chamada/chamada.component&#x27;;
+import { PerfilComponent } from &#x27;./perfil/perfil.component&#x27;;
+import { LinksUteisComponent } from &#x27;./links-uteis/links-uteis.component&#x27;;
+import { CronogramaInstrutorComponent } from &#x27;./cronograma-instrutor/cronograma-instrutor.component&#x27;;
+import { CronogramaAlunoComponent } from &#x27;./cronograma-aluno/cronograma-aluno.component&#x27;;
+import { LiberarAulasComponent } from &#x27;./liberar-aulas/liberar-aulas.component&#x27;;
+import { SoftComponent } from &#x27;./modulos/soft/soft.component&#x27;;
+import { RelatorioBarometroComponent } from &#x27;./relatorio-barometro/relatorio-barometro.component&#x27;;
+import { BarometroComponent } from &#x27;./modulos/barometro/barometro.component&#x27;;
+import { VideosComponent } from &#x27;./modulos/videos/videos.component&#x27;;
+import { CadastroVideoComponent } from &#x27;./upload-videos/cadastro-video/cadastro-video.component&#x27;;
+import { ConteudoUmComponent } from &#x27;./modulos/conteudo-um/conteudo-um.component&#x27;;
+import { UploadComponent } from &#x27;./upload-videos/upload/upload.component&#x27;;
+
+import { ModuloSoftComponent } from &#x27;./modulo-soft/modulo-soft.component&#x27;;
+import { ModuloTresComponent } from &#x27;./modulo-tres/modulo-tres.component&#x27;;
+import { ModuloDoisComponent } from &#x27;./modulo-dois/modulo-dois.component&#x27;;
+import { ModuloUmComponent } from &#x27;./modulo-um/modulo-um.component&#x27;;
+import { HomeComponent } from &#x27;./home/home.component&#x27;;
+import { CadastroComponent } from &#x27;./cadastro/cadastro.component&#x27;;
+import { LoginComponent } from &#x27;./login/login.component&#x27;;
+import { NgModule, Component } from &#x27;@angular/core&#x27;;
+import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
+
+
+const routes: Routes &#x3D; [
+  { path: &#x27;&#x27;, redirectTo: &#x27;home&#x27;, pathMatch: &#x27;full&#x27; },
+  { path: &#x27;login&#x27;, component: LoginComponent },
+  { path: &#x27;cadastro&#x27;, component: CadastroComponent },
+  { path: &#x27;home&#x27;, component: HomeComponent },
+  {path: &#x27;area-facilitador&#x27;, component: AreaFacilitadorComponent},
+  {path: &#x27;area-participante&#x27;, component: AreaParticipanteComponent},
+  {path: &#x27;cadastro-aluno&#x27;, component: CadastroComponent},
+  { path: &#x27;admin&#x27;, component: AdminComponent },
+
+  { path: &#x27;upload-videos&#x27;, component: UploadComponent },
+  { path: &#x27;cadastro-video&#x27;, component: CadastroVideoComponent },
+
+  { path: &#x27;blocos&#x27;, component: BlocosComponent },
+  { path: &#x27;modulo-um&#x27;, component: ModuloUmComponent },
+  { path: &#x27;modulo-dois&#x27;, component: ModuloDoisComponent },
+  { path: &#x27;modulo-tres&#x27;, component: ModuloTresComponent },
+  { path: &#x27;modulo-soft&#x27;, component: ModuloSoftComponent },
+
+  { path: &#x27;conteudo-um&#x27;, component: ConteudoUmComponent },
+  { path: &#x27;conteudo-um/:id&#x27;, component: ConteudoUmComponent },
+  { path: &#x27;videos-conteudo/:id&#x27;, component: VideosComponent },
+
+  { path: &#x27;soft-conteudo&#x27;, component: SoftComponent},
+
+  { path: &#x27;barometro&#x27;, component: BarometroComponent },
+  { path: &#x27;relatorio-barometro&#x27;, component: RelatorioBarometroComponent },
+  { path: &#x27;liberar-aulas&#x27;, component: LiberarAulasComponent },
+
+  { path: &#x27;cronograma-aluno&#x27;, component: CronogramaAlunoComponent},
+  { path: &#x27;cronograma-instrutor&#x27;, component: CronogramaInstrutorComponent},
+  { path: &#x27;cronograma-instrutor/:id&#x27;, component: CronogramaInstrutorComponent },
+  { path: &#x27;links-uteis&#x27;, component: LinksUteisComponent},
+  { path: &#x27;perfil&#x27;, component: PerfilComponent },
+  { path: &#x27;chamada&#x27;, component: ChamadaComponent},
+  { path: &#x27;cadastro-cor&#x27;, component: CadastroCorComponent },
+  { path: &#x27;forum&#x27;, component: ForumComponent },
+  { path: &#x27;deletar-cronograma/:id&#x27;, component: DeletarCronogramaComponent },
+  { path: &#x27;criar-exercicio&#x27;, component: CriarExercicioComponent },
+  { path: &#x27;entregar-exercicio&#x27;, component: EntregarExercicioComponent },
+
+  { path: &#x27;editar-duvida/:id&#x27;, component: EditarDuvidaForumComponent },
+  { path: &#x27;editar-comentario/:id&#x27;, component: EditarComentarioForumComponent },
+  { path: &#x27;editar-entrega-atividade/:id&#x27;, component: EditarEntregaAtividadeComponent },
+  { path: &#x27;editar-criacao-atividade/:id&#x27;, component: EditarCriacaoAtividadeComponent },
+  { path: &#x27;editar-entrega-atividade-obr/:id&#x27;, component: EditarEntregaAtividadeObrComponent },
+  { path: &#x27;editar-atividade-obrigatoria/:id&#x27;, component: EditarAtividadeObrigatoriaComponent },
+
+  { path: &#x27;editar-links/:id&#x27;, component: EditarLinkUtilComponent },
+  { path: &#x27;zoom-instrutor&#x27;, component: ZoomInstrutorComponent},
+  { path: &#x27;zoom-aluno&#x27;, component: ZoomAlunoComponent },
+  { path: &#x27;editar-link-zoom/:id&#x27;, component: EditarLinkZoomComponent },
+  { path: &#x27;sobre-nos&#x27;, component: SobreNosComponent },
+  { path: &#x27;barometro-diario&#x27;, component: BarometroDiarioComponent },
+  { path: &#x27;relatorio-zoom&#x27;, component: RelatorioZoomComponent },
+  { path: &#x27;avisos-instrutor&#x27;, component: AvisosInstrutorComponent },
+  { path: &#x27;avisos-aluno&#x27;, component: AvisosAlunosComponent },
+  { path: &#x27;editar-avisos/:id&#x27;, component: EditarAvisosComponent },
+  { path: &#x27;relatorios&#x27;, component: RelatoriosComponent },
+  { path: &#x27;editar-perfil/:id&#x27;, component: EditarPerfilComponent},
+  { path: &#x27;criar-atividades-revisao&#x27;, component: CriarAtividadesRevisaoComponent },
+  { path: &#x27;editar-atividades-revisao/quest/:id&#x27;, component: EditarAtividadesRevisaoComponent },
+  { path: &#x27;editar-atividades-revisao/resp/:id&#x27;, component: EditarAtividadesRevisaoComponent },
+
+  { path: &#x27;form-bemestar-pos&#x27;, component: FormBemestarPosComponent},
+  { path: &#x27;form-bemestar-solicita&#x27;, component: FormBemestarSolicitaComponent},
+  { path: &#x27;lista-form-bemestar-pos&#x27;, component: ListaFormBemestarPosComponent},
+  { path: &#x27;lista-form-bemestar-solicita&#x27;, component: ListaFormBemestarSolicitaComponent},
+  { path: &#x27;relatorio-bemestar&#x27;, component: RelatorioBemestarComponent},
+  { path: &#x27;edit-form-bemestar-pos/:id&#x27;, component: EditarFormBemestarPosComponent}
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

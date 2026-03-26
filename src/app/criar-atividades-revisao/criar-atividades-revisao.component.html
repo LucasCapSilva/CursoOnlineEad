@@ -1,0 +1,155 @@
+
+
+
+<div class="row d-flex justify-content-center mt-5">
+  <div class="col-md-10">
+    <div class="accordion" id="revisao">
+      <div class="card border-0">
+        <button
+          class="btn btn-link btn-inserir border-0 p-0 collapsed rounded text-uppercase text-center font-weight-bold"
+          type="button" data-toggle="collapse" data-target="#revisaoAtiv" aria-expanded="false"
+          aria-controls="revisaoAtiv">
+          <div class="card-header inserir border-0" id="rev">
+            <h5 class="mb-0">
+              Inserir exercício entre aulas
+            </h5>
+          </div>
+        </button>
+        <div id="revisaoAtiv" class="collapse" aria-labelledby="rev" data-parent="#revisao">
+          <div class="card-body">
+            <div>
+              <div class="form-group">
+                <label class="mb-0" for="enunciado">Enunciado:</label>
+                <textarea type="text" class="form-control" id="enunciado"
+                  placeholder="Digite aqui o enunciado" [(ngModel)]='questao.quastao'></textarea>
+              </div>
+
+              <label id="labelUm" for="primeira" class="w-100">
+                <p class="mb-0" id="txtUm">Primeira alternativa</p>
+                <div class="row">
+
+                  <div class="col-md-11 pr-0">
+                    <input type="text" class="form-control" name="inputUm" id="inputUm" [(ngModel)]='respUm'>
+                  </div>
+
+                  <div class="col-md-1 d-flex align-items-center" id="areaUm">
+                    <i class="fa fa-check-circle-o w-100 text-center" id="iconUm" aria-hidden="true"></i>
+                  </div>
+
+                </div>
+              </label>
+              <input type="checkbox" id="primeira" (change)='corretaUm($event)'>
+
+              <label id="labelDois" for="segunda" class="w-100">
+                <p class="mb-0" id="txtDois">Segunda alternativa</p>
+                <div class="row">
+
+                  <div class="col-md-11 pr-0">
+                    <input type="text" class="form-control" name="inputDois" id="inputDois" [(ngModel)]='respDois'>
+                  </div>
+
+                  <div class="col-md-1 d-flex align-items-center" id="areaDois">
+                    <i class="fa fa-check-circle-o w-100 text-center" id="iconDois" aria-hidden="true"></i>
+                  </div>
+
+                </div>
+              </label>
+              <input type="checkbox" id="segunda" (change)='corretaDois($event)'>
+
+              <label id="labelUm" for="terceira" class="w-100">
+                <p class="mb-0" id="txtTres">Terceira alternativa</p>
+                <div class="row">
+
+                  <div class="col-md-11 pr-0">
+                    <input type="text" class="form-control" name="inputTres" id="inputTres" [(ngModel)]='respTres'>
+                  </div>
+
+                  <div class="col-md-1 d-flex align-items-center" id="areaTres">
+                    <i class="fa fa-check-circle-o w-100 text-center" id="iconTres" aria-hidden="true"></i>
+                  </div>
+
+                </div>
+              </label>
+              <input type="checkbox" id="terceira" (change)='corretaTres($event)'>
+
+
+              <div class="form-group">
+                <label class="mb-0" for="aula">Aula:</label>
+                <select name="aula" [(ngModel)]="idVideo" (change)="findByIdAula()" class="form-control">
+                  <option *ngFor="let aula of listaAulas" value={{aula.id}}>
+                    {{aula.modulo.descricao}} | {{aula.titulo}}
+                  </option>
+                </select>
+              </div>
+
+              <div class="d-flex justify-content-center mt-5">
+                <button type="button" class="btn btn-outline-primary btn-responsive" (click)='cadastrarAtividade()'>Inserir</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<hr class="mt-5 mb-5 w-50">
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h5 class="text-center">
+        Selecione uma aula para ver sua atividade:
+      </h5>
+    </div>
+  </div>
+
+  <div class="row mt-3 d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="form-group">
+        <select name="nome" [(ngModel)]="idAulaListar" (change)="findByIdAulaListar()" class="form-control">
+          <option *ngFor="let item of listaAulas" value={{item.id}}>
+            {{item.modulo.descricao}} | {{item.titulo}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5 mb-5 d-flex justify-content-center" *ngIf='listaQuestaoOk'>
+    <div class="col-md-8 ">
+      <div class="card w-100" *ngFor='let quest of aula.questao'>
+        <div class="card-header bg-blue">
+          <div class="row">
+            <div class="col-md-10">
+              <h5 class="m-0">{{quest.quastao}}</h5>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end">
+              <a class="text-primary" [routerLink]="['/editar-atividades-revisao/quest', quest.id]">Editar</a>
+              <!--a class="text-danger" (click)='onDeleteUser(quest)'>Apagar</a-->
+            </div>
+          </div>
+
+        </div>
+        <ul class="list-group list-group-flush" *ngFor='let resp of quest.responstas'>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-md-10">
+                    <p class="m-0">
+                      <i class="fa fa-times text-danger mr-3" aria-hidden="true" *ngIf='resp.correta == false'></i><i *ngIf='resp.correta' class="fa fa-check text-success mr-3" aria-hidden="true"></i> {{resp.resp}}
+                    </p>
+                  </div>
+                  <div class="col-md-2 d-flex justify-content-end">
+                    <a class="text-primary" [routerLink]="['/editar-atividades-revisao/resp', resp.id]">Editar</a>
+                  </div>
+                </div>
+              </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+

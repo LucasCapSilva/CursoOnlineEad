@@ -1,0 +1,73 @@
+a{
+  cursor: pointer;
+}
+.bg-hr{
+  background-color: #218c74
+}
+
+.title{
+  color: #218c74;
+}
+
+.titulos:hover{
+  box-shadow: 7px 7px 0px -4px #218c74 !important;
+  border: 1px solid #218c74 !important;
+}
+
+.bg{
+  background-color: #218c74;
+
+}
+
+
+.btn-outline-success{
+  border-color: #218c74;
+  color: #218c74;
+}
+
+.btn-outline-success:hover {
+  background-color: #218c74;
+  color: white;
+}
+
+.w-5{
+  width: 50px;
+}
+
+#cardTextOF{
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#cardOF {
+  cursor: pointer;
+}
+
+#cardOF:hover #cardTextOF {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  animation: fade 1s;
+}
+
+#cardOF:after #cardTextOF{
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+
+
+

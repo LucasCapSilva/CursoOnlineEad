@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-end" *ngIf='auth.adm()'>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="Angular" value="Angular" name="fav_language" (click)="changeCurso(1,3)">
+    <label>Angular</label>
+  </div>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="React" value="React" name="fav_language" (click)="changeCurso(2,3)">
+    <label>React</label>
+  </div>
+  <div class="d-flex justify-content-center  mx-2">
+    <input type="radio" id="React" value="React" name="fav_language" (click)="changeCurso(3,3)">
+    <label>Android</label>
+  </div>
+</div>
+
+
+<h4 class="text-dark">Nesse bloco você vai aprender tudo o que você precisa saber para construir o front-end de uma
+  aplicação web:</h4>
+<p class="text-justify text-dark">Abordaremos desde a base, utilizando HTML5 para a marcação do conteúdo, CSS3 para a
+  estilização da página e JavaScript para a interação com o usuário, até a utilização de frameworks como Bootstrap
+  para facilitar a estilização das páginas. Também falaremos sobre Angular, para trabalhar com Single Page Application
+  e modularizar toda a nossa aplicação. No fim de tudo isso vamos realizar o deploy da sua aplicação utilizando a
+  tecnologia Docker.
+</p>
+<div class="row mt-5 mb-5">
+  <div class="col-md-4" *ngFor="let item of listaResultModulo">
+    <a (click)='aulas(item.descricao, "danger", item.id)'>
+      <div class="card rounded border-0">
+        <div class="card-body">
+          <div class="row d-flex align-items-center">
+            <div class="col-md-4">
+              <img class="card-img bg-color" src="{{item.linkImagem}}" alt="Imagem do card">
+            </div>
+            <div class="col-md-8">
+              <h4>{{item.subdescricao}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+<!--disabled="disabled"-->

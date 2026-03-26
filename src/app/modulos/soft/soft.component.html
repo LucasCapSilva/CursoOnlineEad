@@ -1,0 +1,65 @@
+<div class="bg"></div>
+
+<div class="container px-3 px-md-4">
+
+  <div class="row mt-5 mb-5">
+    <div class="col-md-12">
+      <h1 class="text-center">{{tema}}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center iframe-container w-100">
+      <!--Orientação ao Futuro-->
+      <div *ngIf='tema == "Orientação ao Futuro"' class="w-100 iframe-wrapper embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vR-vtK-qbyqsAx0r_dFyJ4BZANseGQcd-dPHBwR9vzIpjTUzqmxvc7Zvs6-ArmdDw/embed?start=true&loop=false&delayms=5000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+
+
+      <!--Reponsabilidade Pessoal-->
+      <div *ngIf='tema == "Reponsabilidade Pessoal"' class="w-100 iframe-wrapper embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vTCaORydIhwqADz1u4ubXhtUcjfGTEAtWu83sF5MjuEoBgf4Lspmcafpji_zAnAHw/embed?start=true&loop=false&delayms=5000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+
+
+      <!--Mentalidade de Crescimento-->
+      <div *ngIf='tema == "Mentalidade de Crescimento"' class="w-100 iframe-wrapper embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vQaEncsrodTsKHCxk_byhW2fjS9ix-9-37czNjhcwSZmDywwwfsJgTNDlaZFYgWFA/embed?start=false&loop=false&delayms=5000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+
+      <!--Persistência-->
+      <div *ngIf='tema == "Persistência"' class="w-100 iframe-wrapper embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vTvvsUJHR5k0WatsrFFYdijaZYXHm8nOphYsxlrDy2-xOeUoRTIE7BOvhvmjIWM3Q/embed?start=true&loop=false&delayms=5000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+
+
+      <!--Trabalho em equipe-->
+      <div *ngIf='tema == "Trabalho em equipe"' class="w-100 iframe-wrapper embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vQtgNBLyTNUy6NWy2MCIVrtxApsVbxbgUsr4QwHXs_wNU8VR41K-ortB6Lbscw6FQ/embed?start=true&loop=false&delayms=5000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+
+
+      <!--Atenção aos detalhes-->
+      <div *ngIf='tema == "Atenção aos detalhes"' class="w-100 iframe-wrapper embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vRD-goYV-whqvZWxjX9GvTAXNAtpXIQi81nsVsrGkxA2OU6fu9lxVWI-8jSFs2kXQ/embed?start=true&loop=false&delayms=5000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+
+      <!--Proatividade-->
+      <div *ngIf='tema == "Proatividade"' class="w-100 iframe-wrapper embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vSPCqs4QngA_iYv44PkGctiZ4qr9LZVJz6FaSrT7-SqI9Wy6amlLMNeUY4LgqCwFw/embed?start=true&loop=false&delayms=5000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+
+
+      <!--Comunicação-->
+      <div *ngIf='tema == "Comunicação"' class="w-100 iframe-wrapper embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vTKpS6toVoGEtCtZ-DzDEjCOKBJtSMvKYccjv4oWg59bxPfwStC-vmGsbxHlAZLlQ/embed?start=true&loop=false&delayms=5000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5 mb-5">
+    <div class="col-md-12 d-flex justify-content-center">
+      <button class="btn btn-outline-success w-100 w-md-25" style="max-width: 300px;" (click)='voltar()'>Voltar</button>
+    </div>
+  </div>
+</div>

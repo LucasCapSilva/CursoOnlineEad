@@ -1,0 +1,176 @@
+<ul class="nav nav-tabs d-flex flex-nowrap" style="overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; border-bottom: none;" id="myTab" role="tablist">
+  <li class="nav-item flex-shrink-0">
+    <a class="nav-link active" id="pos-tab" data-toggle="tab" href="#pos" role="tab" aria-controls="pos"
+      aria-selected="true">Pós atendimento</a>
+  </li>
+  <li class="nav-item flex-shrink-0">
+    <a class="nav-link" id="solicita-tab" data-toggle="tab" href="#solicita" role="tab" aria-controls="profile"
+      aria-selected="false">Solicitação de atendimento</a>
+  </li>
+  <li class="nav-item flex-shrink-0">
+    <a class="nav-link" id="atividades-tab" data-toggle="tab" href="#atividades" role="tab" aria-controls="atividades" aria-selected="false">Entregas de atividades Obrigatórias</a>
+  </li>
+</ul>
+
+
+<div class="tab-content" id="myTabContent">
+
+  <!--Conteúdo de pós atendimento-->
+  <div class="tab-pane fade show active" id="pos" role="tabpanel" aria-labelledby="pos-tab">
+
+    <div class="row">
+      <div class="col-md-3 col-12 border-right mb-4 mb-md-0">
+        <div class="nav flex-column nav-pills mt-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+          <a class="nav-link active" id="v-pills-turma-tab" data-toggle="pill" href="#turma" role="tab"
+            aria-controls="v-pills-turma" aria-selected="true">Atendimentos por turma</a>
+
+          <a class="nav-link" id="v-pills-area-tab" data-toggle="pill" href="#area" role="tab"
+            aria-controls="v-pills-area" aria-selected="false">Solicitações por área</a>
+
+          <a class="nav-link" id="v-pills-demandas-tab" data-toggle="pill" href="#demandas" role="tab"
+            aria-controls="v-pills-demandas" aria-selected="false">Demandas por turma</a>
+
+          <a class="nav-link" id="v-pills-tempototal-tab" data-toggle="pill" href="#tempototal" role="tab"
+            aria-controls="v-pills-tempototal" aria-selected="false">Tempo total dos atendimentos</a>
+
+          <a class="nav-link" id="v-pills-vulnerabilidade-tab" data-toggle="pill" href="#vulnerabilidade" role="tab"
+            aria-controls="v-pills-vulnerabilidade" aria-selected="false">Vulnerabilidade por turma</a>
+
+            <a class="nav-link" id="v-pills-participante-tab" data-toggle="pill" href="#participante" role="tab"
+            aria-controls="v-pills-participante" aria-selected="false">Atendimento por participante</a>
+
+            <a class="nav-link" id="v-pills-tecnico-tab" data-toggle="pill" href="#tecnico" role="tab"
+            aria-controls="v-pills-tecnico" aria-selected="false">Atendimento por técnico</a>
+
+
+        </div>
+      </div>
+      <div class="col-md-9 col-12">
+        <div class="tab-content" id="v-pills-tabContent">
+
+          <!--Atendimentos por turma-->
+          <div class="tab-pane fade show active mt-5" id="turma" role="tabpanel"
+            aria-labelledby="v-pills-turma-tab">
+            <app-relatorio-bemestar-pos-atendimento-turma></app-relatorio-bemestar-pos-atendimento-turma>
+          </div>
+          <!--/Atendimentos por turma-->
+
+          <!--Solicitações por área-->
+          <div class="tab-pane fade" id="area" role="tabpanel" aria-labelledby="v-pills-area-tab">
+
+            <app-relatorio-bemestar-pos-solicitacao-area></app-relatorio-bemestar-pos-solicitacao-area>
+
+          </div>
+          <!--/Solicitações por área-->
+
+          <!--Demandas por turma-->
+          <div class="tab-pane fade" id="demandas" role="tabpanel" aria-labelledby="v-pills-demandas-tab">
+
+            <app-relatorio-bemestar-pos-demanda-turma></app-relatorio-bemestar-pos-demanda-turma>
+
+          </div>
+          <!--/Demandas por turma-->
+
+          <!--Tempo total dos atendimentos-->
+          <div class="tab-pane fade" id="tempototal" role="tabpanel" aria-labelledby="v-pills-tempototal-tab">
+
+            <app-relatorio-bemestar-pos-atendimento-totalmin></app-relatorio-bemestar-pos-atendimento-totalmin>
+
+          </div>
+          <!--/Tempo total dos atendimentos-->
+
+          <!--Vulnerabilidade por turma-->
+          <div class="tab-pane fade" id="vulnerabilidade" role="tabpanel" aria-labelledby="v-pills-vulnerabilidade-tab">
+
+            <app-relatorio-bemestar-pos-vulnerabilidade-turma></app-relatorio-bemestar-pos-vulnerabilidade-turma>
+
+          </div>
+          <!--/Vulnerabilidade por turma-->
+
+          <!--Atendimento por participante-->
+          <div class="tab-pane fade" id="participante" role="tabpanel" aria-labelledby="v-pills-participante-tab">
+
+            <app-relatorio-bemestar-pos-atendimentos-participante></app-relatorio-bemestar-pos-atendimentos-participante>
+
+          </div>
+          <!--/Atendimento por participante-->
+
+          <!--Atendimento por técnico-->
+          <div class="tab-pane fade" id="tecnico" role="tabpanel" aria-labelledby="v-pills-tecnico-tab">
+
+            <app-relatorio-bemestar-pos-atendimentos-tecnico></app-relatorio-bemestar-pos-atendimentos-tecnico>
+
+          </div>
+          <!--/Atendimento por técnico-->
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!--/Conteúdo de pós atendimento-->
+
+
+  <!--Conteúdo de solicitação de atendimento-->
+  <div class="tab-pane fade" id="solicita" role="tabpanel" aria-labelledby="solicita-tab">
+
+
+    <div class="row">
+      <div class="col-md-3 col-12 border-right mb-4 mb-md-0">
+        <div class="nav flex-column nav-pills mt-5" id="v-pills-tab-pos" role="tablist" aria-orientation="vertical">
+
+          <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+            aria-controls="v-pills-home" aria-selected="true">Solicitações por turma</a>
+
+          <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+            aria-controls="v-pills-profile" aria-selected="false">Urgências por turma</a>
+
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+            aria-controls="v-pills-messages" aria-selected="false">Solicitações por participante</a>
+
+        </div>
+      </div>
+      <div class="col-md-9 col-12">
+        <div class="tab-content" id="v-pills-tabContent">
+
+          <!--Solicitações por turma-->
+          <div class="tab-pane fade show active mt-5" id="v-pills-home" role="tabpanel"
+            aria-labelledby="v-pills-home-tab">
+            <app-relatorio-bemestar-solicitacao-turma></app-relatorio-bemestar-solicitacao-turma>
+          </div>
+          <!--/Solicitações por turma-->
+
+          <!--Urgencias por turma-->
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+            <app-relatorio-bemestar-urgencia-turma></app-relatorio-bemestar-urgencia-turma>
+
+          </div>
+          <!--/Urgencias por turma-->
+
+          <!--Solicitações por nome-->
+          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+
+            <app-relatorio-bemestar-solicitacao-participante></app-relatorio-bemestar-solicitacao-participante>
+
+          </div>
+          <!--/Solicitações por nome-->
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!--/Conteúdo de pós atendimento-->
+
+
+  <!--Entregas de atividades obrigatórias-->
+  <div class="tab-pane fade" id="atividades" role="tabpanel" aria-labelledby="atividades-tab">
+    <app-relatorio-entrega-exercicio></app-relatorio-entrega-exercicio>
+  </div>
+  <!--/Entregas de atividades obrigatórias-->
+</div>

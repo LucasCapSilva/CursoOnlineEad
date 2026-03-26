@@ -1,0 +1,66 @@
+<div class="container mt-4">
+  <div class="row d-flex justify-content-center flex-wrap">
+    
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
+      <a routerLink='/barometro-diario' (click)="titulo('Barômetro', 'thermometer')">
+        <div  class="card" >
+          <span *ngIf='barometroPendente != 0' id="entregasPendentes" class="p-1 m-0 font-weight-bold">
+            {{barometroPendente}}
+          </span>
+          <p></p>
+          <p class="fa fa-thermometer"></p>
+          <h3>Barômetro</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
+      <a routerLink='/blocos' (click)="titulo('Blocos', 'th-large')">
+        <div class="card" >
+          <p class="fa fa-th-large"></p>
+          <h3>Blocos</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
+      <a routerLink='/entregar-exercicio' (click)="titulo('Exercícios', 'pencil')">
+        <div  class="card" >
+          <span *ngIf='relatorioService.exerciciosPendentes() != 0' id="entregasPendentes" class="p-1 m-0 font-weight-bold">{{relatorioService.exerciciosPendentes()}}</span>
+          <p class="fa fa-pencil"></p>
+          <h3>Exercícios</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
+      <a routerLink='/zoom-aluno' (click)="titulo('Links Zoom', 'comments')">
+        <div  class="card" >
+          <p class="fa fa-comments"></p>
+          <h3>Links Zoom</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
+      <a routerLink='/cronograma-aluno' (click)="titulo('Cronograma', 'calendar')">
+        <div class="card">
+          <p class="fa fa-calendar"></p>
+          <h3>Cronograma</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center">
+      <a routerLink='/avisos-aluno' (click)="titulo('Avisos', 'bullhorn')">
+        <div  class="card" >
+          <p class="fa fa-bullhorn"></p>
+          <h3>Avisos</h3>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+

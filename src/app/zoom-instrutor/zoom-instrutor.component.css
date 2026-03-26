@@ -1,0 +1,57 @@
+.h-500{
+  min-height: 500px; height: auto;
+}
+
+.w-5{
+  width: 50px;
+}
+
+td {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all ease 1s;
+}
+
+td:hover {
+  height: auto;
+  max-width: 100px;
+  overflow: auto;
+  text-overflow: ellipsis;
+  white-space: initial;
+}
+
+
+pagination-template.ul{
+  padding-left: 0px;
+}
+
+pagination-controls ::ng-deep ul.ngx-pagination {
+  padding: 0px 0px 0px 0px;
+}
+
+pagination-controls ::ng-deep ul li.current {
+  background: gray;
+}
+
+.btn-inserir{
+  box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+}
+
+.btn-inserir:hover{
+  text-decoration: none;
+}
+
+.inserir{
+  background-color: #fff !important;
+  color: #4b4b4b !important;
+  transition: 0.5s;
+}
+
+
+.inserir:hover{
+  background-color: #3e64ff !important;
+  color: #fff !important;
+
+}

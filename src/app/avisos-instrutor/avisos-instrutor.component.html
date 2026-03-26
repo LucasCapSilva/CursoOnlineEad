@@ -1,0 +1,117 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-md-8">
+      <div class="accordion" id="accordionExample">
+        <div class="card border-0">
+          <button class="btn btn-link btn-inserir border-0 p-0 collapsed rounded text-uppercase text-center font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <div class="card-header inserir border-0" id="headingTwo">
+            <h5 class="mb-0">
+                Inserir um novo aviso
+            </h5>
+          </div>
+        </button>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <div>
+                <div class="form-group">
+                  <label class="" for="titulo">*Titulo:</label>
+                  <input type="text" class="form-control" id="titulo" aria-describedby="emailHelp" placeholder="Digite aqui o titulo" [(ngModel)]='avisos.titulo'>
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="texto">*Descrição:</label>
+                    <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui a descrição" [(ngModel)]='avisos.texto'></textarea>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="" for="titulo">Link:</label>
+                      <input type="text" class="form-control" id="titulo" aria-describedby="emailHelp" placeholder="Insira aqui o link (opcional)" [(ngModel)]='avisos.link'>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="" for="titulo">*Turma:</label>
+                      <select name="nome" [(ngModel)]="idTurma" (change)="findByIdTurma()" class="form-control">
+                        <option *ngFor="let turma of listaTurma" value={{turma.id}}>
+                            {{turma.descricao}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center mt-5">
+                    <button type="button" class="btn btn-outline-secondary btn-responsive" (click)="publicar()">Publicar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="mt-5 mb-5 w-50">
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h5 class="text-center">
+        Selecione uma turma para listar os avisos:
+      </h5>
+    </div>
+  </div>
+
+  <div class="row mt-3 d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="form-group">
+        <select name="nome" [(ngModel)]="idTurmaListar" (change)="findAllAvisosByTurma()" class="form-control">
+          <option *ngFor="let listaTurma of listaTurma" value={{listaTurma.id}}>
+              {{listaTurma.descricao}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <hr class="mt-5 mb-5">
+      <div *ngFor='let item of listaAvisos | orderBy : key : reverse'>
+
+          <div class="card mt-5 border border-secondary shadow" >
+            <div class="card-header bg-white border-0">
+
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-10 ">
+                      <img src="https://i.imgur.com/iPnUWdQ.png" class="w-20 img-fluid mr-2" alt=""><span class="card-title font-weight-bold mb-0 mr-2">{{item.user.nome}}:</span>
+                      <span class="font-weight-bold titulo">{{item.titulo}}</span>
+                    </div>
+
+                      <div class="col-md-2 d-flex justify-content-end" *ngIf='idUser == item.user.id'>
+                        <a class="text-secondary mr-2" (click)="titulo('Editar Aviso', 'bullhorn')" [routerLink]="['/editar-avisos', item.id]">Editar</a>
+                        <a class="text-secondary" (click)='onDeleteAviso(item)'>Apagar</a>
+                       </div>
+                </div>
+                <hr class="pb-0 mb-0">
+            </div>
+
+            <div class="card-body pt-0" >
+              <p class="card-text" aria-describedby="texto">{{item.texto}} </p>
+              <div *ngIf='item.link != null'>
+                <a href="{{item.link}}">{{item.link}}</a>
+              </div>
+
+              <div class="d-flex justify-content-end">
+                <small id="texto" class="form-text m-0 text-muted text-monospace">
+                  Postado em {{ item.data | date:'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small>
+              </div>
+
+            </div>
+          </div>
+
+
+    </div>
+  </div>
+
+
+

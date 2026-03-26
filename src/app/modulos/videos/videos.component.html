@@ -1,0 +1,167 @@
+<div *ngIf='barometro; else mostraBarometro'>
+  <div class="container-fluid">
+    <div class="row">
+
+      <!--Área de videos-->
+
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-12">
+
+            <!--Video-->
+            <div class="row w-100">
+              <ng-container *ngIf="naoTemVideo; else elseTemplate">
+                <div class="col-md-12 d-flex justify-content-center ">
+                    <a target="_blank" href="{{aula.linkVideo}}"  >
+                      <img src="https://files.tecnoblog.net/wp-content/uploads/2020/01/pdf-icon.jpg" class="img-fluid" alt="" >
+                    </a>      
+                </div>
+              </ng-container>
+              <ng-template #elseTemplate>
+                <div class="col-md-12 d-flex justify-content-center embed-responsive embed-responsive-16by9">
+                  <video class="embed-responsive-item" id='myVideo' src="{{aula.linkVideo}}" 
+                    oncontextmenu="return false;" controls controlsList="nodownload"
+                    (timeupdate)='videoAssistido($event)'>
+                  </video>
+                </div>
+              </ng-template>
+             
+            </div>
+
+            <div class="row mt-2">
+              <div class="col-md-10">
+                <!--Titulo do video-->
+                <h4 class="text-dark">
+                  <small class="text-dark text-muted">
+                    {{aula.num_sequencia}}
+                  </small>
+                  {{aula.titulo}} |
+                  <button *ngIf='aulaOk == false' class="text-{{cor}} btn btn-link p-0 proxima-aula font-weight-bold"
+                    (click)='assistaTudo()'>Próxima aula <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                  </button>
+                  <button *ngIf='aulaOk' class="text-{{cor}} btn btn-link p-0 proxima-aula font-weight-bold"
+                    (click)='respQuest()'>Próxima aula <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+                  </button>
+                
+                </h4>
+
+              </div>
+
+              <div class="col-md-2 d-flex justify-content-end">
+               
+               
+                <div class="btn-group dropup">
+                  <a type="button" class="btn btn-link text-dark btn-sm dropdown-toggle velocidade font-weight-bold"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Velocidade
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right bg-black">
+                    <button (click)='velociadade(0.5)' class="dropdown-item text-white" type="button">0.5x</button>
+                    <button (click)='velociadade(0.75)' class="dropdown-item text-white" type="button">0.75x</button>
+                    <button (click)='velociadade(1)' class="dropdown-item text-white" type="button">1.0x</button>
+                    <button (click)='velociadade(1.5)' class="dropdown-item text-white" type="button">1.5x</button>
+                    <button (click)='velociadade(2)' class="dropdown-item text-white" type="button">2.0x</button>
+                    <button (click)='velociadade(2.5)' class="dropdown-item text-white" type="button">2.5x</button>
+                    <button (click)='velociadade(3)' class="dropdown-item text-white" type="button">3.0x</button>
+                  </div>
+                </div>
+              </div>
+              <!--botão de próximo-->
+            </div>
+          </div>
+        </div>
+
+
+        <div *ngIf="trilha" class="d-flex justify-content-center">
+          <a class="btn btn-link text-info btn-sm  font-weight-bold avaliacao mb-3"  target="_blank" href="{{linkAvaliacao}}">Avaliação da semana</a>
+        </div>
+
+      </div>
+      <!--/Área de videos-->
+
+      <!--Lista de videos-->
+      <div class="col-md-3 navbar-dark navbar-expand-lg menu-lateral" id="style-1">
+        <div class="row ">
+          <div class="col-md-8 ">
+            <h3 class="text-{{cor}} mt-2 mb-3 d-flex align-items-end">
+              {{temaAula}}
+            </h3>
+          </div>
+
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <a *ngIf='aula.linkGitHub != undefined' href="{{aula.linkGitHub}}" class="text-{{cor}} mr-3 icon-size"
+              data-toggle="tooltip" data-placement="top" title="Projeto no GitHub" target="_blank"><i
+                class="fa fa-github-alt" aria-hidden="true"></i>
+            </a>
+
+            <a *ngIf='aula.linkDrive != undefined' href="{{aula.linkDrive}}" data-toggle="tooltip" data-placement="top"
+              title="Material da aula" class="text-{{cor}} icon-size" target="_blank"><i class="fa fa-book"
+                aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </div>
+        <hr class="bg-dark m-0">
+        <div class="row mt-3 mb-4" id="navbarAulas">
+          <div class="col-md-12" *ngFor='let item of listaAtividadeRevisao'>
+            <div class="">
+
+              <div *ngIf='item.respondido || auth.instrutores() || auth.adm() '>
+                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+
+                <small class="text-dark text-muted">
+                  {{item.aula.num_sequencia}}
+                </small>
+
+                <a class="text-dark" (click)='play()' [routerLink]="['/conteudo-um', item.aula.num_sequencia]">
+                  {{item.aula.titulo}}
+                </a>
+              </div>
+              <div *ngIf="!auth.adm()">
+                <div *ngIf="!auth.instrutores()">
+                  <div *ngIf='item.respondido == false '>
+                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+
+                    <small class="text-dark text-muted">
+                      {{item.aula.num_sequencia}}
+                    </small>
+
+                    <a class="text-dark text-muted">
+                      {{item.aula.titulo}}
+                    </a>
+                  </div>
+                </div>
+
+
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/Lista de videos-->
+    </div>
+  </div>
+</div>
+
+<ng-template #mostraBarometro>
+  <div class="row">
+    <div class="col-md-12">
+      <app-barometro class="mb-5 mt-5"></app-barometro>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+      <button *ngIf='modulo.aulas.length != aula.num_sequencia' class="btn btn-outline-{{cor}} font-weight-bold mb-5"
+        (click)='proxAula()'>
+        Próxima aula
+      </button>
+
+      <button *ngIf='modulo.aulas.length == aula.num_sequencia' class="btn btn-outline-{{cor}} font-weight-bold mb-5"
+        (click)='proxAula()'>
+        Finalizar módulo
+      </button>
+    </div>
+  </div>
+</ng-template>

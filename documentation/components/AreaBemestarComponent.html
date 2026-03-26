@@ -1,0 +1,747 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>curso-online documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">curso-online documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AreaBemestarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/area-bemestar/area-bemestar.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-area-bemestar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./area-bemestar.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./area-bemestar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#listaFormsSolicita">listaFormsSolicita</a>
+                            </li>
+                            <li>
+                                <a href="#pendentes">pendentes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#findAllFormsPos">findAllFormsPos</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#titulo">titulo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, alertas: <a href="../injectables/AlertModelService.html">AlertModelService</a>, bemestarService: <a href="../injectables/BemestarService.html">BemestarService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/area-bemestar/area-bemestar.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertas</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertModelService.html" target="_self" >AlertModelService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>bemestarService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BemestarService.html" target="_self" >BemestarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findAllFormsPos"></a>
+                    <span class="name">
+                        <b>
+                            findAllFormsPos
+                        </b>
+                        <a href="#findAllFormsPos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findAllFormsPos()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/area-bemestar/area-bemestar.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/area-bemestar/area-bemestar.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="titulo"></a>
+                    <span class="name">
+                        <b>
+                            titulo
+                        </b>
+                        <a href="#titulo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>titulo(nome: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, icon: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/area-bemestar/area-bemestar.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nome</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>icon</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listaFormsSolicita"></a>
+                        <span class="name">
+                            <b>
+                            listaFormsSolicita</b>
+                            <a href="#listaFormsSolicita"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/FormBemEstarSolicita.html" target="_self" >FormBemEstarSolicita[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/area-bemestar/area-bemestar.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pendentes"></a>
+                        <span class="name">
+                            <b>
+                            pendentes</b>
+                            <a href="#pendentes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/area-bemestar/area-bemestar.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { FormBemEstarSolicita } from &#x27;./../model/FormBemEstarSolicita&#x27;;
+import { BemestarService } from &#x27;./../service/bemestar.service&#x27;;
+import { environment } from &#x27;./../../environments/environment.prod&#x27;;
+import { AlertModelService } from &#x27;./../shared/alert-model.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-area-bemestar&#x27;,
+  templateUrl: &#x27;./area-bemestar.component.html&#x27;,
+  styleUrls: [&#x27;./area-bemestar.component.css&#x27;]
+})
+export class AreaBemestarComponent implements OnInit {
+
+  listaFormsSolicita: FormBemEstarSolicita[]
+  pendentes: number &#x3D; 0
+
+  constructor(
+    private router: Router,
+    private alertas: AlertModelService,
+    private bemestarService: BemestarService
+  ) { }
+
+  ngOnInit() {
+    environment.titulo &#x3D; &#x27;Inicio&#x27;
+    environment.icon &#x3D; &#x27;home&#x27;
+
+
+
+
+
+    const profile &#x3D; environment.profile;
+
+    if (profile !&#x3D; &#x27;ROLE_BEMESTAR&#x27;) {
+      this.alertas.showAlertDanger(&#x27;Você não tem autorização para acessar essa rota!&#x27;)
+      this.router.navigate([&#x27;/home&#x27;])
+    }
+
+    if (environment.idTurma &#x3D;&#x3D; 8) {
+      this.alertas.showAlertInfo(&#x27;Seu acesso não está mais disponível.&#x27;)
+      environment.token &#x3D; &#x27;&#x27;
+      this.router.navigate([&#x27;/login&#x27;])
+    }
+
+    const token &#x3D; environment.token;
+
+    if (token &#x3D;&#x3D; &#x27;&#x27;) {
+      this.alertas.showAlertInfo(&#x27;Antes de começar, faça o login!&#x27;);
+      this.router.navigate([&#x27;/login&#x27;]);
+    }
+
+    this.findAllFormsPos()
+  }
+
+  titulo(nome: string, icon: string) {
+    environment.titulo &#x3D; nome
+    environment.icon &#x3D; icon
+  }
+
+  findAllFormsPos() {
+    this.bemestarService.getAllFormsSolicita().subscribe((resp: FormBemEstarSolicita[]) &#x3D;&gt; {
+      resp.forEach((i) &#x3D;&gt; {
+        if (i.atendido &#x3D;&#x3D; null) {
+          this.pendentes &#x3D; this.pendentes + 1
+        }
+      })
+
+    })
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+
+  &lt;div class&#x3D;&quot;row d-flex justify-content-center&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-3 d-flex justify-content-center&quot;&gt;
+    &lt;a routerLink&#x3D;&#x27;/form-bemestar-pos&#x27; (click)&#x3D;&quot;titulo(&#x27;Formulário de pós atendimento&#x27;, &#x27;file-o&#x27;)&quot;&gt;
+      &lt;div class&#x3D;&quot;card&quot;&gt;
+        &lt;p class&#x3D;&quot;fa fa-file-o&quot;&gt;&lt;/p&gt;
+        &lt;h3&gt;Formulário pós atendimento&lt;/h3&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;col-md-3 d-flex justify-content-center&quot;&gt;
+      &lt;a routerLink&#x3D;&#x27;/lista-form-bemestar-pos&#x27; (click)&#x3D;&quot;titulo(&#x27;Formulários preenchidos&#x27;, &#x27;file-text-o&#x27;)&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;span *ngIf&#x3D;&#x27;pendentes !&#x3D; 0&#x27; id&#x3D;&quot;entregasPendentes&quot; class&#x3D;&quot;p-1 m-0 font-weight-bold&quot;&gt;
+            {{pendentes}}
+          &lt;/span&gt;
+          &lt;p class&#x3D;&quot;fa fa-file-text-o&quot;&gt;&lt;/p&gt;
+          &lt;h3&gt;Formulários preenchidos&lt;/h3&gt;
+        &lt;/div&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;col-md-3 d-flex justify-content-center&quot;&gt;
+      &lt;a routerLink&#x3D;&#x27;/relatorio-bemestar&#x27; (click)&#x3D;&quot;titulo(&#x27;Relatórios&#x27;, &#x27;file&#x27;)&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot;&gt;
+          &lt;p class&#x3D;&quot;fa fa-file&quot;&gt;&lt;/p&gt;
+          &lt;h3&gt;Relatórios&lt;/h3&gt;
+        &lt;/div&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./area-bemestar.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.fa{
+  font-size: 60pt;
+}
+
+.card{
+  background-color: #fff;
+  border: 0;
+  color: #4b4b4b;
+  box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+  transition: 0.5s;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.card p h3{
+ color: blue;
+}
+
+
+.card:hover{
+  background-color: #3e64ff;
+  color: #fff;
+  height: 210px;
+  width: 210px;
+
+}
+
+a{
+  text-decoration: none;
+}
+
+#entregasPendentes{
+  position: absolute;
+  z-index: 20;
+  top: 0 !important;
+  right: 0 !important;
+  background-color:red;
+  border-radius: 10%;
+  color: #fff;
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="row d-flex justify-content-center">    <div class="col-md-3 d-flex justify-content-center">    <a routerLink=\'/form-bemestar-pos\' (click)="titulo(\'Formulário de pós atendimento\', \'file-o\')">      <div class="card">        <p class="fa fa-file-o"></p>        <h3>Formulário pós atendimento</h3>      </div>    </a>    </div>    <div class="col-md-3 d-flex justify-content-center">      <a routerLink=\'/lista-form-bemestar-pos\' (click)="titulo(\'Formulários preenchidos\', \'file-text-o\')">        <div class="card">          <span *ngIf=\'pendentes != 0\' id="entregasPendentes" class="p-1 m-0 font-weight-bold">            {{pendentes}}          </span>          <p class="fa fa-file-text-o"></p>          <h3>Formulários preenchidos</h3>        </div>      </a>    </div>    <div class="col-md-3 d-flex justify-content-center">      <a routerLink=\'/relatorio-bemestar\' (click)="titulo(\'Relatórios\', \'file\')">        <div class="card">          <p class="fa fa-file"></p>          <h3>Relatórios</h3>        </div>      </a>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AlertModalComponent', 'selector': 'app-alert-modal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreaBemestarComponent', 'selector': 'app-area-bemestar'},{'name': 'AreaFacilitadorComponent', 'selector': 'app-area-facilitador'},{'name': 'AreaParticipanteComponent', 'selector': 'app-area-participante'},{'name': 'AvisosAlunosComponent', 'selector': 'app-avisos-alunos'},{'name': 'AvisosInstrutorComponent', 'selector': 'app-avisos-instrutor'},{'name': 'BarometroComponent', 'selector': 'app-barometro'},{'name': 'BarometroDiarioComponent', 'selector': 'app-barometro-diario'},{'name': 'BlocosComponent', 'selector': 'app-blocos'},{'name': 'CadastroComponent', 'selector': 'app-cadastro'},{'name': 'CadastroCorComponent', 'selector': 'app-cadastro-cor'},{'name': 'CadastroVideoComponent', 'selector': 'app-cadastro-video'},{'name': 'ChamadaComponent', 'selector': 'app-chamada'},{'name': 'ConfirmModelComponent', 'selector': 'app-confirm-model'},{'name': 'ConteudoUmComponent', 'selector': 'app-conteudo-um'},{'name': 'CriarAtividadesRevisaoComponent', 'selector': 'app-criar-atividades-revisao'},{'name': 'CriarExercicioComponent', 'selector': 'app-criar-exercicio'},{'name': 'CriarExercicioObrigatorioComponent', 'selector': 'app-criar-exercicio-obrigatorio'},{'name': 'CronogramaAlunoComponent', 'selector': 'app-cronograma-aluno'},{'name': 'CronogramaInstrutorComponent', 'selector': 'app-cronograma-instrutor'},{'name': 'DeletarCronogramaComponent', 'selector': 'app-deletar-cronograma'},{'name': 'DeletarUsuarioComponent', 'selector': 'app-deletar-usuario'},{'name': 'EditarAtividadeObrigatoriaComponent', 'selector': 'app-editar-atividade-obrigatoria'},{'name': 'EditarAtividadesRevisaoComponent', 'selector': 'app-editar-atividades-revisao'},{'name': 'EditarAvisosComponent', 'selector': 'app-editar-avisos'},{'name': 'EditarComentarioForumComponent', 'selector': 'app-editar-comentario-forum'},{'name': 'EditarCriacaoAtividadeComponent', 'selector': 'app-editar-criacao-atividade'},{'name': 'EditarDuvidaForumComponent', 'selector': 'app-editar-duvida-forum'},{'name': 'EditarEntregaAtividadeComponent', 'selector': 'app-editar-entrega-atividade'},{'name': 'EditarEntregaAtividadeObrComponent', 'selector': 'app-editar-entrega-atividade-obr'},{'name': 'EditarFormBemestarPosComponent', 'selector': 'app-editar-form-bemestar-pos'},{'name': 'EditarLinkUtilComponent', 'selector': 'app-editar-link-util'},{'name': 'EditarLinkZoomComponent', 'selector': 'app-editar-link-zoom'},{'name': 'EditarPerfilComponent', 'selector': 'app-editar-perfil'},{'name': 'EntregarExercicioComponent', 'selector': 'app-entregar-exercicio'},{'name': 'FormBemestarPosComponent', 'selector': 'app-form-bemestar-pos'},{'name': 'FormBemestarSolicitaComponent', 'selector': 'app-form-bemestar-solicita'},{'name': 'ForumComponent', 'selector': 'app-forum'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LiberarAulasComponent', 'selector': 'app-liberar-aulas'},{'name': 'LinksUteisComponent', 'selector': 'app-links-uteis'},{'name': 'ListaFormBemestarPosComponent', 'selector': 'app-lista-form-bemestar-pos'},{'name': 'ListaFormBemestarSolicitaComponent', 'selector': 'app-lista-form-bemestar-solicita'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'ModuloDoisComponent', 'selector': 'app-modulo-dois'},{'name': 'ModuloSoftComponent', 'selector': 'app-modulo-soft'},{'name': 'ModuloTresComponent', 'selector': 'app-modulo-tres'},{'name': 'ModuloUmComponent', 'selector': 'app-modulo-um'},{'name': 'PerfilComponent', 'selector': 'app-perfil'},{'name': 'RelatorioBarometroComponent', 'selector': 'app-relatorio-barometro'},{'name': 'RelatorioBarometroDiaComponent', 'selector': 'app-relatorio-barometro-dia'},{'name': 'RelatorioBemestarComponent', 'selector': 'app-relatorio-bemestar'},{'name': 'RelatorioBemestarPosAtendimentosParticipanteComponent', 'selector': 'app-relatorio-bemestar-pos-atendimentos-participante'},{'name': 'RelatorioBemestarPosAtendimentosTecnicoComponent', 'selector': 'app-relatorio-bemestar-pos-atendimentos-tecnico'},{'name': 'RelatorioBemestarPosAtendimentoTotalminComponent', 'selector': 'app-relatorio-bemestar-pos-atendimento-totalmin'},{'name': 'RelatorioBemestarPosAtendimentoTurmaComponent', 'selector': 'app-relatorio-bemestar-pos-atendimento-turma'},{'name': 'RelatorioBemestarPosDemandaTurmaComponent', 'selector': 'app-relatorio-bemestar-pos-demanda-turma'},{'name': 'RelatorioBemestarPosSolicitacaoAreaComponent', 'selector': 'app-relatorio-bemestar-pos-solicitacao-area'},{'name': 'RelatorioBemestarPosVulnerabilidadeTurmaComponent', 'selector': 'app-relatorio-bemestar-pos-vulnerabilidade-turma'},{'name': 'RelatorioBemestarSolicitacaoParticipanteComponent', 'selector': 'app-relatorio-bemestar-solicitacao-participante'},{'name': 'RelatorioBemestarSolicitacaoTurmaComponent', 'selector': 'app-relatorio-bemestar-solicitacao-turma'},{'name': 'RelatorioBemestarUrgenciaTurmaComponent', 'selector': 'app-relatorio-bemestar-urgencia-turma'},{'name': 'RelatorioEntregaExercicioComponent', 'selector': 'app-relatorio-entrega-exercicio'},{'name': 'RelatorioEntregaExercicioOpcionalComponent', 'selector': 'app-relatorio-entrega-exercicio-opcional'},{'name': 'RelatoriosComponent', 'selector': 'app-relatorios'},{'name': 'RelatorioZoomComponent', 'selector': 'app-relatorio-zoom'},{'name': 'RodapeComponent', 'selector': 'app-rodape'},{'name': 'SobreNosComponent', 'selector': 'app-sobre-nos'},{'name': 'SoftComponent', 'selector': 'app-soft'},{'name': 'UploadComponent', 'selector': 'app-upload'},{'name': 'VideosComponent', 'selector': 'app-videos'},{'name': 'ZoomAlunoComponent', 'selector': 'app-zoom-aluno'},{'name': 'ZoomInstrutorComponent', 'selector': 'app-zoom-instrutor'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AreaBemestarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AreaBemestarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

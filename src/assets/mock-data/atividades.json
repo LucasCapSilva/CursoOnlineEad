@@ -1,0 +1,22 @@
+[
+  { "id": 1, "titulo": "Exercício 01 - Componentes", "descricao": "Crie um componente card reutilizável com @Input.", "tipo": "EXERCICIO", "prazo": "2026-01-10", "pontuacao": 10, "obrigatoria": false, "idAula": 1 },
+  { "id": 2, "titulo": "Exercício 02 - Data Binding", "descricao": "Monte formulário com ngModel e validação.", "tipo": "EXERCICIO", "prazo": "2026-01-11", "pontuacao": 10, "obrigatoria": false, "idAula": 1 },
+  { "id": 3, "titulo": "Exercício 03 - Diretivas", "descricao": "Use *ngIf e *ngFor para exibir dados.", "tipo": "EXERCICIO", "prazo": "2026-01-12", "pontuacao": 10, "obrigatoria": false, "idAula": 2 },
+  { "id": 4, "titulo": "Exercício 04 - Pipes", "descricao": "Aplique DatePipe e CurrencyPipe.", "tipo": "EXERCICIO", "prazo": "2026-01-13", "pontuacao": 10, "obrigatoria": false, "idAula": 2 },
+  { "id": 5, "titulo": "Exercício 05 - Serviço Auth", "descricao": "Crie serviço de autenticação básico.", "tipo": "EXERCICIO", "prazo": "2026-01-14", "pontuacao": 10, "obrigatoria": true, "idAula": 3 },
+  { "id": 6, "titulo": "Exercício 06 - HTTP GET", "descricao": "Consuma API pública em lista.", "tipo": "EXERCICIO", "prazo": "2026-01-15", "pontuacao": 10, "obrigatoria": true, "idAula": 3 },
+  { "id": 7, "titulo": "Exercício 07 - Rotas", "descricao": "Configure rotas com parâmetros.", "tipo": "EXERCICIO", "prazo": "2026-01-16", "pontuacao": 10, "obrigatoria": false, "idAula": 4 },
+  { "id": 8, "titulo": "Exercício 08 - Guards", "descricao": "Crie guarda para rota protegida.", "tipo": "EXERCICIO", "prazo": "2026-01-17", "pontuacao": 10, "obrigatoria": false, "idAula": 4 },
+  { "id": 9, "titulo": "Exercício 09 - Interceptor", "descricao": "Adicione token no header das requisições.", "tipo": "EXERCICIO", "prazo": "2026-01-18", "pontuacao": 10, "obrigatoria": true, "idAula": 5 },
+  { "id": 10, "titulo": "Exercício 10 - RxJS", "descricao": "Use map e switchMap em busca.", "tipo": "EXERCICIO", "prazo": "2026-01-19", "pontuacao": 10, "obrigatoria": false, "idAula": 5 },
+  { "id": 11, "titulo": "Exercício 11 - Java OO", "descricao": "Crie classe com encapsulamento.", "tipo": "EXERCICIO", "prazo": "2026-01-20", "pontuacao": 10, "obrigatoria": false, "idAula": 6 },
+  { "id": 12, "titulo": "Exercício 12 - SQL JOIN", "descricao": "Monte consulta com INNER JOIN.", "tipo": "EXERCICIO", "prazo": "2026-01-21", "pontuacao": 10, "obrigatoria": true, "idAula": 6 },
+  { "id": 13, "titulo": "Exercício 13 - Scrum Backlog", "descricao": "Crie backlog priorizado.", "tipo": "PROJETO", "prazo": "2026-01-22", "pontuacao": 15, "obrigatoria": true, "idAula": 7 },
+  { "id": 14, "titulo": "Exercício 14 - Git Flow", "descricao": "Simule workflow com branches.", "tipo": "EXERCICIO", "prazo": "2026-01-23", "pontuacao": 10, "obrigatoria": false, "idAula": 7 },
+  { "id": 15, "titulo": "Exercício 15 - API REST", "descricao": "Desenhe endpoints CRUD.", "tipo": "PROJETO", "prazo": "2026-01-24", "pontuacao": 15, "obrigatoria": true, "idAula": 8 },
+  { "id": 16, "titulo": "Exercício 16 - NestJS Controller", "descricao": "Implemente controller de usuários.", "tipo": "EXERCICIO", "prazo": "2026-01-25", "pontuacao": 10, "obrigatoria": false, "idAula": 8 },
+  { "id": 17, "titulo": "Exercício 17 - Spring Endpoint", "descricao": "Crie endpoint paginado.", "tipo": "EXERCICIO", "prazo": "2026-01-26", "pontuacao": 10, "obrigatoria": false, "idAula": 9 },
+  { "id": 18, "titulo": "Exercício 18 - Android Layout", "descricao": "Monte tela de login no Android.", "tipo": "EXERCICIO", "prazo": "2026-01-27", "pontuacao": 10, "obrigatoria": false, "idAula": 9 },
+  { "id": 19, "titulo": "Exercício 19 - React Hooks", "descricao": "Use useState e useEffect.", "tipo": "EXERCICIO", "prazo": "2026-01-28", "pontuacao": 10, "obrigatoria": false, "idAula": 10 },
+  { "id": 20, "titulo": "Exercício 20 - Docker", "descricao": "Crie Dockerfile do projeto.", "tipo": "PROJETO", "prazo": "2026-01-29", "pontuacao": 15, "obrigatoria": true, "idAula": 10 }
+]

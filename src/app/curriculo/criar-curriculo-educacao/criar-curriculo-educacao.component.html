@@ -1,0 +1,139 @@
+<div class="container">
+    <div class="text-center mt-4">
+        <h1>Educação </h1>
+        <p>Selecionar as formações mais relevantes (ex: se cursou ou está cursando Ensino Superior, não é necessário incluir Ensino Médio);Inserir da mais recente para a mais antiga sempre;Exemplos de formações Ensino Superior (graduação ou pós-graduação) e Ensino Técnico
+        </p>
+    </div>
+    <div class="row mt-3 mb-1 d-flex justify-content-center align-content-center"
+        *ngFor="let item of listCurriculoEducacao;let i = index">
+        <div class="row" *ngIf="!item.extraCurricular">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="form-group mx-1">
+                    <label for="nome">Instituição de Ensino:</label>
+                    <input type="text" class="form-control" maxlength="30" lenght="30" [value]="item.nomeEscola" disabled />
+                </div>
+                <div class="form-group mx-1 ">
+                    <label for="sobrenome">Curso</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.curso" disabled />
+                </div>
+
+                <div class="form-group mx-1">
+                    <label for="tipo">Status do curso</label>
+                    <input type="text" class="form-control" [(ngModel)]="item.estadoCurso" disabled />
+                  
+                </div>
+
+
+                <div class="form-group mx-1">
+                    <label for="tipo">Data inicio</label>
+                    <input class="form-control" name="tipo" type="date" id="tipo" placeholder="insira o nome da curso:"
+                        [(ngModel)]="item.mesAnoIn" disabled>
+                </div>
+                <div class="form-group mx-1">
+                    <label for="tipo">Data fim</label>
+                    <input class="form-control" name="tipo" type="date" id="tipo" placeholder="insira o nome da curso:"
+                        [(ngModel)]="item.mesAnoFim" disabled>
+                </div>
+                <div class="form-group mx-1 d-flex align-items-end">
+                    <button type="button" class="btn btn-outline-danger button-style"
+                        (click)="onDelete(i)">Deletar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-3 mb-1 d-flex justify-content-center align-content-center">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="form-group  mx-1">
+                    <label for="tipo">Nome da Escola</label>
+                    <input class="form-control" name="tipo" id="tipo" placeholder="insira o nome da Instituição" rows='2'
+                        maxlength="65" [(ngModel)]="curriculoEducacao.nomeEscola">
+                    <div class="d-flex justify-content-end">
+                        <span class="text-bold">{{65 - curriculoEducacao.nomeEscola?.length}}</span>
+                    </div>
+                </div>
+                <div class="form-group mx-1">
+                    <label for="tipo">Curso</label>
+                    <input class="form-control" name="tipo" id="tipo" placeholder="insira o Curso" rows='2'
+                        maxlength="45" [(ngModel)]="curriculoEducacao.curso">
+                    <div class="d-flex justify-content-end">
+                        <span class="text-bold">{{45 - curriculoEducacao.curso?.length}}</span>
+                    </div>
+                </div>
+
+                <div class="form-group mx-1">
+                    <label for="tipo">Status</label>
+                    <select class="form-control" name="tipo" id="tipo" [value]='estadoCurso'
+                        (change)='estadoCursoSelect($event)'>
+                        <option value="">Status do curso:</option>
+                        <option value="Concluido">Concluido</option>
+                        <option value="Cursando">Cursando</option>
+                        <option value="Trancado">Trancado</option>
+                    </select>
+                </div>
+
+                <div class="form-group mx-1">
+                    <label for="tipo">Data inicio</label>
+                    <input class="form-control" name="tipo" type="date" id="tipo"
+                        [(ngModel)]="curriculoEducacao.mesAnoIn">
+
+                </div>
+                <div class="form-group mx-1">
+                    <label for="tipo">Data fim</label>
+                    <input class="form-control" name="tipo" type="date" id="tipo"
+                        [(ngModel)]="curriculoEducacao.mesAnoFim">
+                </div>
+                <div class="form-group mx-1 d-flex align-items-center">
+                    <button type="button" class="btn btn-outline-primary button-style"
+                        (click)="onInsert()">Inserir</button>
+                </div>
+                <div class="d-flex justify-content-center mt-3 mb-3">
+                    <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-3 mb-3">
+        <input type="button" value="Avançar" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal2"/>
+    </div>
+
+</div>
+
+
+ <!-- Modal -->
+ <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bgm">
+            <div class="modal-header d-flex justify-content-center">
+                <h5 class="modal-title textm " id="exampleModalLabel">EDUCACIONAL</h5>
+            </div>
+            <div class="modal-body textm">
+                <p>Selecionar as formações mais relevantes (ex: se cursou ou está cursando Ensino Superior, não é necessário incluir Ensino Médio);Inserir da mais recente para a mais antiga sempre;Exemplos de formações Ensino Superior (graduação ou pós-graduação) e Ensino Técnico
+                </p>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-primary" value="Ok" data-dismiss="modal"/>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+    <!-- Modal 2-->
+    <div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bgm">
+                <div class="modal-header d-flex justify-content-center">
+                    <h5 class="modal-title textm " id="exampleModalLabel">Tem certeza?</h5>
+                </div>
+                <div class="modal-footer  d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar a editar</button>
+                    <input type="button" class="btn btn-primary"  value="{{editarCadastrar}} Próximo" 
+                        (click)="saveEndNextStap()" data-dismiss="modal"/>
+                </div>
+            </div>
+        </div>
+    </div>

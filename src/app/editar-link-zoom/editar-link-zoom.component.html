@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row d-flex align-items-center">
+
+    <div class="col-md-5 p-1">
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Insira aqui a descrição" [(ngModel)]='zoom.descricao'>
+      </div>
+
+    </div>
+    <div class="col-md-4 p-1">
+      <div class="form-group">
+        <label for="link">Link</label>
+        <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Insira aqui o link" [(ngModel)]='zoom.link'>
+      </div>
+
+    </div>
+    <div class="col-md-2 p-1">
+      <div class="form-group">
+        <label for="turma">Turma<span class="text-danger">*</span></label>
+        <select name="turma" id='turma' [(ngModel)]="idTurma" (change)="findByIdTurma()" class="form-control">
+          <option *ngFor="let item of listaTurma" value={{item.id}}>
+            {{item.descricao}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-1 p-1">
+      <div class="form-group">
+        <label for="turma">Tipo<span class="text-danger">*</span></label>
+        <select name="turma" id='turma' [(ngModel)]='isFixo' (change)='valorFixo()' class="form-control">
+          <option value='1'>Fixo</option>
+          <option value='0'>Aulas</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12 d-flex justify-content-center">
+      <button class="btn btn-outline-danger btn-responsive mr-3" routerLink='/zoom-instrutor'>Cancelar</button>
+      <button class="btn btn-outline-success btn-responsive" (click)='atualizar()'>Atualizar</button>
+
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <small class="text-danger ">
+        <strong>*Campo Turma:</strong> Não se esqueça de confirmar a turma a qual o link faz parte.
+      </small>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <small class="text-danger ">
+        <strong>*Campo Tipo:</strong> Se for um link da sala no zoom padrão, escolha <strong>FIXO</strong>, se for um link de uma aula no zoom gravada, escolha <strong>AULAS</strong>.
+      </small>
+    </div>
+  </div>
+
+</div>
+
